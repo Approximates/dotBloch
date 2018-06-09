@@ -22,11 +22,19 @@ public class codeBase : MonoBehaviour {
 	void Start () {
 		disableQuantumBit ();
 		disableClassicalBit();
+
+		enableClassicalBit ();
 	}
 	
 	// Update is called once per frame
 	void Update () {
 		
+	}
+
+	public void enableClassicalBit(){
+		classicalOne.SetActive (true);
+		classicalZero.SetActive (true);
+		classicalBitArrow.SetActive(true);
 	}
 
 	public void disableClassicalBit(){
