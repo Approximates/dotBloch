@@ -22,10 +22,7 @@ public class codeBase : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
-		disableQuantumBit ();
-		disableClassicalBit();
-
-		enableClassicalBit ();
+		enableQuantumBit ();
 	}
 	
 	// Update is called once per frame
@@ -34,6 +31,8 @@ public class codeBase : MonoBehaviour {
 	}
 
 	public void enableClassicalBit(){
+		disableQuantumBit ();
+
 		classicalOne.SetActive (true);
 		classicalZero.SetActive (true);
 		classicalBitArrow.SetActive(true);
@@ -42,6 +41,8 @@ public class codeBase : MonoBehaviour {
 	}
 
 	public void enableQuantumBit(){
+		disableClassicalBit();
+
 		circleX.SetActive(true);
 		circleY.SetActive(true);
 		circleZ.SetActive(true);
@@ -53,6 +54,7 @@ public class codeBase : MonoBehaviour {
 	}
 
 	public void disableClassicalBit(){
+
 		classicalOne.SetActive (false);
 		classicalZero.SetActive (false);
 		classicalBitArrow.SetActive(false);
