@@ -40,6 +40,7 @@ public class codeBase : MonoBehaviour {
 
 		thetaSlider.maxValue = 1;
 		phiSlider.interactable = false;
+		thetaSlider.wholeNumbers = true;
 
 		switchToClassicalBit.GetComponent<Image>().color = Color.yellow; 
 	}
@@ -56,6 +57,7 @@ public class codeBase : MonoBehaviour {
 
 		thetaSlider.maxValue = 180;
 		phiSlider.interactable = true;
+		thetaSlider.wholeNumbers = false;
 
 		switchToQuantumBit.GetComponent<Image>().color = Color.yellow; 
 	}
