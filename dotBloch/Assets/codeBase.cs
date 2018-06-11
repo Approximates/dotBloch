@@ -19,7 +19,8 @@ public class codeBase : MonoBehaviour {
 	public Button switchToClassicalBit;
 	public Button switchToQuantumBit;
 
-
+	public Slider thetaSlider;
+	public Slider phiSlider;
 	// Use this for initialization
 	void Start () {
 		enableQuantumBit ();
@@ -37,6 +38,9 @@ public class codeBase : MonoBehaviour {
 		classicalZero.SetActive (true);
 		classicalBitArrow.SetActive(true);
 
+		thetaSlider.maxValue = 1;
+		phiSlider.interactable = false;
+
 		switchToClassicalBit.GetComponent<Image>().color = Color.yellow; 
 	}
 
@@ -49,6 +53,9 @@ public class codeBase : MonoBehaviour {
 		quantumBitOne.SetActive(true);
 		quantumBitZero.SetActive(true);
 		quantumBitArrow.SetActive(true);
+
+		thetaSlider.maxValue = 180;
+		phiSlider.interactable = true;
 
 		switchToQuantumBit.GetComponent<Image>().color = Color.yellow; 
 	}
