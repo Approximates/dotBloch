@@ -21,6 +21,8 @@ public class codeBase : MonoBehaviour {
 
 	public Slider thetaSlider;
 	public Slider phiSlider;
+
+	public InputField phiInputField;
 	// Use this for initialization
 	void Start () {
 		enableQuantumBit ();
@@ -58,6 +60,7 @@ public class codeBase : MonoBehaviour {
 		thetaSlider.maxValue = 180;
 		phiSlider.interactable = true;
 		thetaSlider.wholeNumbers = false;
+		phiInputField.interactable = true;
 
 		switchToQuantumBit.GetComponent<Image>().color = Color.yellow; 
 	}
@@ -79,6 +82,10 @@ public class codeBase : MonoBehaviour {
 		quantumBitZero.SetActive(false);
 		quantumBitArrow.SetActive(false);
 
+		phiInputField.interactable = false;
+
 		switchToQuantumBit.GetComponent<Image>().color = Color.white;
+
+
 	}
 }
