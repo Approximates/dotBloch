@@ -22,9 +22,13 @@ public class codeBase : MonoBehaviour {
 	public Slider thetaSlider;
 	public Slider phiSlider;
 
+	public InputField thetaInputField;
 	public InputField phiInputField;
 	// Use this for initialization
 	void Start () {
+		thetaInputField.characterLimit = 6;
+		phiInputField.characterLimit = 6;
+
 		enableQuantumBit ();
 	}
 	
