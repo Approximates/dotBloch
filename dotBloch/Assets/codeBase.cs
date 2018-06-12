@@ -5,6 +5,10 @@ using UnityEngine.UI;
 
 public class codeBase : MonoBehaviour {
 
+	public double thetaValue;
+	public double phiValue;
+	public bool bitValue;
+
 	public GameObject classicalOne;
 	public GameObject classicalZero;
 	public GameObject classicalBitArrow; 
@@ -35,6 +39,12 @@ public class codeBase : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
 		
+	}
+
+	public void setBitsValues(bool bitValue, double phiValue, double thetaValue){
+		this.bitValue = bitValue;
+		this.phiValue = phiValue;
+		this.thetaValue = thetaValue;
 	}
 
 	public void enableClassicalBit(){
