@@ -36,7 +36,7 @@ public class codeBase : MonoBehaviour {
 		phiInputField.characterLimit = 6;
 
 		enableQuantumBit ();
-		setBitsValues (true, 90, 270);
+		setBitsValues (true, 120, 270);
 		setPointers ();
 	}
 	
@@ -53,6 +53,9 @@ public class codeBase : MonoBehaviour {
 
 			thetaSlider.value = this.thetaValue;
 			phiSlider.value = this.phiValue;
+
+			quantumBitArrow.transform.rotation = Quaternion.Euler(this.thetaValue-90, 0, 0);
+
 		} else if (bitValue) {
 			this.thetaInputField.text = "1";
 			this.phiInputField.text = "";
@@ -135,7 +138,5 @@ public class codeBase : MonoBehaviour {
 		phiInputField.interactable = false;
 
 		switchToQuantumBit.GetComponent<Image>().color = Color.white;
-
-
 	}
 }
