@@ -1349,6 +1349,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7802870a477b77d4b8943c2135ed4e3b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  thetaValue: 0
+  phiValue: 0
+  bitValue: 0
   classicalOne: {fileID: 1514981782}
   classicalZero: {fileID: 1674144843}
   classicalBitArrow: {fileID: 410995101}
@@ -1362,6 +1365,8 @@ MonoBehaviour:
   switchToQuantumBit: {fileID: 657437909}
   thetaSlider: {fileID: 837200552}
   phiSlider: {fileID: 1921602835}
+  thetaInputField: {fileID: 960357263}
+  phiInputField: {fileID: 1726077919}
 --- !u!4 &801406425
 Transform:
   m_ObjectHideFlags: 0
