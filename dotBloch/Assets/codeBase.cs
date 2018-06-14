@@ -5,8 +5,8 @@ using UnityEngine.UI;
 
 public class codeBase : MonoBehaviour {
 
-	public double thetaValue;
-	public double phiValue;
+	public float thetaValue;
+	public float phiValue;
 	public bool bitValue;
 
 	public GameObject classicalOne;
@@ -50,13 +50,20 @@ public class codeBase : MonoBehaviour {
 		if (isQuantumBitSelected) {
 			this.thetaInputField.text = this.thetaValue.ToString ();
 			this.phiInputField.text = this.phiValue.ToString ();
-		} else if (bitValue)
+
+			thetaSlider.value = this.thetaValue;
+			phiSlider.value = this.phiValue;
+		} else if (bitValue) {
 			this.thetaInputField.text = "1";
-		else
+			thetaSlider.value = 1;
+		} else {
 			this.thetaInputField.text = "0";
+			thetaSlider.value = 0;
+		}
+			
 	}
 
-	public void setBitsValues(bool bitValue, double thetaValue, double phiValue){
+	public void setBitsValues(bool bitValue, float thetaValue, float phiValue){
 		this.bitValue = bitValue;
 		this.phiValue = phiValue;
 		this.thetaValue = thetaValue;
