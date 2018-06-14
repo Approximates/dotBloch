@@ -28,6 +28,8 @@ public class codeBase : MonoBehaviour {
 
 	public InputField thetaInputField;
 	public InputField phiInputField;
+
+	public bool isQuantumBitSelected;
 	// Use this for initialization
 	void Start () {
 		thetaInputField.characterLimit = 6;
@@ -44,8 +46,14 @@ public class codeBase : MonoBehaviour {
 	}
 
 	public void setPointers(){
-		this.thetaInputField.text = this.thetaValue.ToString();
-		this.phiInputField.text = this.phiValue.ToString();
+
+		if (isQuantumBitSelected) {
+			this.thetaInputField.text = this.thetaValue.ToString ();
+			this.phiInputField.text = this.phiValue.ToString ();
+		} else if (bitValue)
+			this.thetaInputField.text = "1";
+		else
+			this.thetaInputField.text = "0";
 	}
 
 	public void setBitsValues(bool bitValue, double thetaValue, double phiValue){
@@ -57,6 +65,8 @@ public class codeBase : MonoBehaviour {
 	public void enableClassicalBit(){
 		disableQuantumBit ();
 
+		isQuantumBitSelected = false;
+
 		classicalOne.SetActive (true);
 		classicalZero.SetActive (true);
 		classicalBitArrow.SetActive(true);
@@ -66,10 +76,14 @@ public class codeBase : MonoBehaviour {
 		thetaSlider.wholeNumbers = true;
 
 		switchToClassicalBit.GetComponent<Image>().color = Color.yellow; 
+
+		setPointers ();
 	}
 
 	public void enableQuantumBit(){
 		disableClassicalBit();
+
+		isQuantumBitSelected = true;
 
 		circleX.SetActive(true);
 		circleY.SetActive(true);
@@ -84,6 +98,8 @@ public class codeBase : MonoBehaviour {
 		phiInputField.interactable = true;
 
 		switchToQuantumBit.GetComponent<Image>().color = Color.yellow; 
+
+		setPointers ();
 	}
 
 	public void disableClassicalBit(){
