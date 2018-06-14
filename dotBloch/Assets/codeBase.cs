@@ -54,7 +54,7 @@ public class codeBase : MonoBehaviour {
 			thetaSlider.value = this.thetaValue;
 			phiSlider.value = this.phiValue;
 
-			quantumBitArrow.transform.rotation = Quaternion.Euler(this.thetaValue-90, 0, 0);
+			quantumBitArrow.transform.rotation = Quaternion.Euler(this.thetaValue-90, this.phiValue, 0);
 
 		} else if (bitValue) {
 			this.thetaInputField.text = "1";
