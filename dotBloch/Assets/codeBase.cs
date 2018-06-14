@@ -62,12 +62,16 @@ public class codeBase : MonoBehaviour {
 
 			thetaSlider.value = 1;
 			phiSlider.value = 0;
+
+			classicalBitArrow.transform.rotation = Quaternion.Euler(-90, 0, 0);
 		} else {
 			this.thetaInputField.text = "0";
 			this.thetaInputField.text = "";
 
 			thetaSlider.value = 0;
 			phiSlider.value = 0;
+
+			classicalBitArrow.transform.rotation = Quaternion.Euler(90, 0, 0);
 		}
 			
 	}
