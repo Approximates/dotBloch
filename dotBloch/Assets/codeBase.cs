@@ -34,7 +34,7 @@ public class codeBase : MonoBehaviour {
 		phiInputField.characterLimit = 6;
 
 		enableQuantumBit ();
-		setBitsValues (true, 90, 90);
+		setBitsValues (true, 90, 270);
 		setPointers ();
 	}
 	
@@ -44,11 +44,11 @@ public class codeBase : MonoBehaviour {
 	}
 
 	public void setPointers(){
-		Debug.Log ("Theta: " + this.thetaValue);
 		this.thetaInputField.text = this.thetaValue.ToString();
+		this.phiInputField.text = this.phiValue.ToString();
 	}
 
-	public void setBitsValues(bool bitValue, double phiValue, double thetaValue){
+	public void setBitsValues(bool bitValue, double thetaValue, double phiValue){
 		this.bitValue = bitValue;
 		this.phiValue = phiValue;
 		this.thetaValue = thetaValue;
