@@ -38,12 +38,24 @@ public class codeBase : MonoBehaviour {
 		enableQuantumBit ();
 		setBitsValues (true, 120, 270);
 		setPointers ();
+
+		thetaSlider.onValueChanged.AddListener(delegate {thetaSliderChanged(); });
+	}
+
+	void thetaSliderChanged(){
+		if (isQuantumBitSelected) {
+			if (thetaValue != thetaSlider.value) { // update quantumBitTheta
+				thetaValue = thetaSlider.value;
+			}
+		} /*else {
+			if(bitValue != (bool)thetaSlider.Value))
+				bitValue = !(bitValue);
+		}*/
+
+		setPointers ();
 	}
 	
-	// Update is called once per frame
-	void Update () {
-		
-	}
+
 
 	public void setPointers(){
 
