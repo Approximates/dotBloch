@@ -40,6 +40,7 @@ public class codeBase : MonoBehaviour {
 		setPointers ();
 
 		thetaSlider.onValueChanged.AddListener(delegate {thetaSliderChanged(); });
+		phiSlider.onValueChanged.AddListener(delegate {phiSliderChanged(); });
 	}
 
 	void thetaSliderChanged(){
@@ -51,6 +52,16 @@ public class codeBase : MonoBehaviour {
 			if(bitValue != (bool)thetaSlider.Value))
 				bitValue = !(bitValue);
 		}*/
+
+		setPointers ();
+	}
+
+	void phiSliderChanged(){
+		if (isQuantumBitSelected) {
+			if (phiValue != phiSlider.value) { // update quantumBitTheta
+				phiValue = phiSlider.value;
+			}
+		}
 
 		setPointers ();
 	}
@@ -84,6 +95,7 @@ public class codeBase : MonoBehaviour {
 			phiSlider.value = 0;
 
 			classicalBitArrow.transform.rotation = Quaternion.Euler(90, 0, 0);
+			Debug.Log ("SetPointers - isQuantumBitSelected - w przeciwnym razie");
 		}
 			
 	}
@@ -152,6 +164,7 @@ public class codeBase : MonoBehaviour {
 		quantumBitArrow.SetActive(false);
 
 		phiInputField.interactable = false;
+		phiInputField.text = "";
 
 		switchToQuantumBit.GetComponent<Image>().color = Color.white;
 	}
