@@ -39,7 +39,7 @@ public class codeBase : MonoBehaviour {
 		phiInputField.characterLimit = 6;
 
 		enableQuantumBit ();
-		setBitsValues (true, 60, 69);
+		setBitsValues (true, 45, 0);
 		//setBitsValues (true, 60, 280);
 		setPointers ();
 
@@ -124,6 +124,7 @@ public class codeBase : MonoBehaviour {
 		thetaSlider.maxValue = 1;
 		phiSlider.interactable = false;
 		thetaSlider.wholeNumbers = true;
+		phiSlider.wholeNumbers = true;
 
 		setPointers ();
 	}
@@ -142,7 +143,6 @@ public class codeBase : MonoBehaviour {
 
 		thetaSlider.maxValue = 180;
 		phiSlider.interactable = true;
-		thetaSlider.wholeNumbers = false;
 
 		setPointers ();
 	}
