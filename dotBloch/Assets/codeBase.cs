@@ -26,6 +26,7 @@ public class codeBase : MonoBehaviour {
 	public Slider phiSlider;
 
 	public Text quantumZeroLabel;
+	public Text quantumOneLabel;
 
 	public InputField thetaInputField;
 	public InputField phiInputField;
@@ -37,7 +38,7 @@ public class codeBase : MonoBehaviour {
 		phiInputField.characterLimit = 6;
 
 		enableQuantumBit ();
-		setBitsValues (true, 0, 280);
+		setBitsValues (true, 60, 69);
 		//setBitsValues (true, 60, 280);
 		setPointers ();
 
@@ -79,8 +80,9 @@ public class codeBase : MonoBehaviour {
 
 			quantumBitArrow.transform.rotation = Quaternion.Euler(this.thetaValue-90, this.phiValue, 0);
 
-			valueOfQuantumZero();
+			//valueOfQuantumZero();
 			quantumZeroLabel.text = valueOfQuantumZero();
+			quantumOneLabel.text = valueOfQuantumOne();
 
 		} else if (bitValue) { 
 			this.thetaInputField.text = "1";
@@ -167,7 +169,13 @@ public class codeBase : MonoBehaviour {
 		return Math.Round(Math.Cos(this.thetaValue/2*Math.PI/180),3).ToString();
 	}
 
-	public void updateQuantumZeroLabel(){
+	public String valueOfQuantumOne(){
 		
+		String result = "";
+
+		result += Math.Round (Math.Cos (this.phiValue * Math.PI / 180) * Math.Sin (this.thetaValue / 2 * Math.PI / 180), 3).ToString ();
+		result += " + " + Math.Round (Math.Sin (this.phiValue * Math.PI / 180) * Math.Sin (this.thetaValue / 2 * Math.PI / 180), 3).ToString () + "i"; 
+
+		return result;
 	}
 }
