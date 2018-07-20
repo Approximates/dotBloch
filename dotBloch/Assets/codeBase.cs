@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using System;
 
 public class codeBase : MonoBehaviour {
 
@@ -20,9 +21,6 @@ public class codeBase : MonoBehaviour {
 	public GameObject quantumBitZero;
 	public GameObject quantumBitArrow;
 
-	public Button switchToClassicalBit;
-	public Button switchToQuantumBit;
-
 	public Slider thetaSlider;
 	public Slider phiSlider;
 
@@ -36,7 +34,7 @@ public class codeBase : MonoBehaviour {
 		phiInputField.characterLimit = 6;
 
 		enableQuantumBit ();
-		setBitsValues (true, 120, 270);
+		setBitsValues (true, 60, 280);
 		setPointers ();
 
 		thetaSlider.onValueChanged.AddListener(delegate {thetaSliderChanged(); });
@@ -45,20 +43,19 @@ public class codeBase : MonoBehaviour {
 
 	void thetaSliderChanged(){
 		if (isQuantumBitSelected) {
-			if (thetaValue != thetaSlider.value) { // update quantumBitTheta
+			if (thetaValue != thetaSlider.value) { 
 				thetaValue = thetaSlider.value;
 			}
-		} /*else {
-			if(bitValue != (bool)thetaSlider.Value))
-				bitValue = !(bitValue);
-		}*/
+		} else {
+			Debug.Log (thetaSlider.value);
+		}
 
 		setPointers ();
 	}
 
 	void phiSliderChanged(){
 		if (isQuantumBitSelected) {
-			if (phiValue != phiSlider.value) { // update quantumBitTheta
+			if (phiValue != phiSlider.value) {
 				phiValue = phiSlider.value;
 			}
 		}
@@ -69,7 +66,6 @@ public class codeBase : MonoBehaviour {
 
 
 	public void setPointers(){
-
 		if (isQuantumBitSelected) {
 			this.thetaInputField.text = this.thetaValue.ToString ();
 			this.phiInputField.text = this.phiValue.ToString ();
@@ -79,7 +75,7 @@ public class codeBase : MonoBehaviour {
 
 			quantumBitArrow.transform.rotation = Quaternion.Euler(this.thetaValue-90, this.phiValue, 0);
 
-		} else if (bitValue) {
+		} else if (bitValue) { 
 			this.thetaInputField.text = "1";
 			this.phiInputField.text = "";
 
@@ -119,8 +115,6 @@ public class codeBase : MonoBehaviour {
 		phiSlider.interactable = false;
 		thetaSlider.wholeNumbers = true;
 
-		switchToClassicalBit.GetComponent<Image>().color = Color.yellow; 
-
 		setPointers ();
 	}
 
@@ -139,9 +133,6 @@ public class codeBase : MonoBehaviour {
 		thetaSlider.maxValue = 180;
 		phiSlider.interactable = true;
 		thetaSlider.wholeNumbers = false;
-		phiInputField.interactable = true;
-
-		switchToQuantumBit.GetComponent<Image>().color = Color.yellow; 
 
 		setPointers ();
 	}
@@ -151,8 +142,6 @@ public class codeBase : MonoBehaviour {
 		classicalOne.SetActive (false);
 		classicalZero.SetActive (false);
 		classicalBitArrow.SetActive(false);
-
-		switchToClassicalBit.GetComponent<Image>().color = Color.white; 
 	}
 
 	public void disableQuantumBit(){
@@ -165,7 +154,5 @@ public class codeBase : MonoBehaviour {
 
 		phiInputField.interactable = false;
 		phiInputField.text = "";
-
-		switchToQuantumBit.GetComponent<Image>().color = Color.white;
 	}
 }
