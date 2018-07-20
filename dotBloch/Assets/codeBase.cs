@@ -27,6 +27,7 @@ public class codeBase : MonoBehaviour {
 
 	public Text quantumZeroLabel;
 	public Text quantumOneLabel;
+	public Text qubitLabel;
 
 	public InputField thetaInputField;
 	public InputField phiInputField;
@@ -84,6 +85,7 @@ public class codeBase : MonoBehaviour {
 			quantumZeroLabel.text = valueOfQuantumZero();
 			quantumOneLabel.text = valueOfQuantumOne();
 
+			qubitLabel.text = valueOfQubit();
 		} else if (bitValue) { 
 			this.thetaInputField.text = "1";
 			this.phiInputField.text = "";
@@ -162,6 +164,7 @@ public class codeBase : MonoBehaviour {
 
 		phiInputField.interactable = false;
 		phiInputField.text = "";
+
 	}
 
 	public String valueOfQuantumZero(){
@@ -178,4 +181,11 @@ public class codeBase : MonoBehaviour {
 
 		return result;
 	}
+
+	//qubitLabel
+	public String valueOfQubit(){
+		return "|" + "\u03A8".ToString () + "> = " + valueOfQuantumZero () + " |0> + " + valueOfQuantumOne () + " |1>";
+			
+	}
+
 }
