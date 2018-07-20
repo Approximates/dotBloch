@@ -3,7 +3,6 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using System;
-using System.Numerics;
 
 public class codeBase : MonoBehaviour {
 
@@ -124,7 +123,7 @@ public class codeBase : MonoBehaviour {
 		thetaSlider.maxValue = 1;
 		phiSlider.interactable = false;
 		thetaSlider.wholeNumbers = true;
-		phiSlider.wholeNumbers = true;
+
 
 		setPointers ();
 	}
@@ -143,6 +142,7 @@ public class codeBase : MonoBehaviour {
 
 		thetaSlider.maxValue = 180;
 		phiSlider.interactable = true;
+		phiSlider.wholeNumbers = true;
 
 		setPointers ();
 	}
