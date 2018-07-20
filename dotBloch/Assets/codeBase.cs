@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using System;
+using System.Numerics;
 
 public class codeBase : MonoBehaviour {
 
@@ -34,7 +35,8 @@ public class codeBase : MonoBehaviour {
 		phiInputField.characterLimit = 6;
 
 		enableQuantumBit ();
-		setBitsValues (true, 60, 280);
+		setBitsValues (true, 0, 280);
+		//setBitsValues (true, 60, 280);
 		setPointers ();
 
 		thetaSlider.onValueChanged.AddListener(delegate {thetaSliderChanged(); });
@@ -75,6 +77,8 @@ public class codeBase : MonoBehaviour {
 
 			quantumBitArrow.transform.rotation = Quaternion.Euler(this.thetaValue-90, this.phiValue, 0);
 
+			valueOfQuantumZero();
+
 		} else if (bitValue) { 
 			this.thetaInputField.text = "1";
 			this.phiInputField.text = "";
@@ -91,7 +95,6 @@ public class codeBase : MonoBehaviour {
 			phiSlider.value = 0;
 
 			classicalBitArrow.transform.rotation = Quaternion.Euler(90, 0, 0);
-			Debug.Log ("SetPointers - isQuantumBitSelected - w przeciwnym razie");
 		}
 			
 	}
@@ -154,5 +157,10 @@ public class codeBase : MonoBehaviour {
 
 		phiInputField.interactable = false;
 		phiInputField.text = "";
+	}
+
+	public String valueOfQuantumZero(){
+		//Debug.Log (Math.Round(Math.Cos(this.thetaValue/2*Math.PI/180),3).ToString());
+		return Math.Round(Math.Cos(this.thetaValue/2*Math.PI/180),3).ToString();
 	}
 }
