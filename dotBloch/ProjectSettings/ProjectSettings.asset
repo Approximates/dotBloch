@@ -12,8 +12,8 @@ PlayerSettings:
   targetDevice: 2
   useOnDemandResources: 0
   accelerometerFrequency: 60
-  companyName: DefaultCompany
-  productName: dotBloch
+  companyName: "NTI PWSZ Elbl\u0105g"
+  productName: 'dotBloch: quantum bit simulator'
   defaultCursor: {fileID: 0}
   cursorHotspot: {x: 0, y: 0}
   m_SplashScreenBackgroundColor: {r: 0.13725491, g: 0.12156863, b: 0.1254902, a: 1}
@@ -241,8 +241,8 @@ PlayerSettings:
   AndroidTargetArchitectures: 5
   AndroidSplashScreenScale: 0
   androidSplashScreen: {fileID: 0}
-  AndroidKeystoreName: 
-  AndroidKeyaliasName: 
+  AndroidKeystoreName: C:/Users/Admin/Desktop/dotBloch - Android/dotBloch- key.keystore
+  AndroidKeyaliasName: dotbloch - key
   AndroidTVCompatibility: 1
   AndroidIsGame: 1
   AndroidEnableTango: 0
