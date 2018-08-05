@@ -187,5 +187,11 @@ public class codeBase : MonoBehaviour {
 		return "|" + "\u03A8".ToString () + "> = " + valueOfQuantumZero () + " |0> + " + valueOfQuantumOne () + " |1>";
 			
 	}
-
+	void Update()
+	{
+		if (Input.GetKey(KeyCode.Escape))
+		{
+			 Application.Quit();
+		}
+	}
 }
