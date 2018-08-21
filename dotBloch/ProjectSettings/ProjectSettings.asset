@@ -154,7 +154,7 @@ PlayerSettings:
   applicationIdentifier:
     Android: com.nti.dotbloch
   buildNumber: {}
-  AndroidBundleVersionCode: 1
+  AndroidBundleVersionCode: 2
   AndroidMinSdkVersion: 23
   AndroidTargetSdkVersion: 0
   AndroidPreferredInstallLocation: 1
@@ -243,7 +243,7 @@ PlayerSettings:
   AndroidTargetArchitectures: 5
   AndroidSplashScreenScale: 0
   androidSplashScreen: {fileID: 0}
-  AndroidKeystoreName: C:/Users/Admin/Desktop/dotBloch- key.keystore
+  AndroidKeystoreName: C:/dotBloch- key.keystore
   AndroidKeyaliasName: dotbloch - key
   AndroidBuildApkPerCpuArchitecture: 0
   AndroidTVCompatibility: 1
