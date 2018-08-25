@@ -29,8 +29,10 @@ public class codeBase : MonoBehaviour {
 	public Text qubitLabel;
 
 	float FPSmilliseconds = 1;
+	float millisecondsSinceLaunch = 0;
 	int framesCount = 0;
 	public Text FPSCounter;
+	public Text millisecondsSinceLastFrame;
 
 	public InputField thetaInputField;
 	public InputField phiInputField;
@@ -74,9 +76,13 @@ public class codeBase : MonoBehaviour {
 
 	void framesPerSecond(ref float millisecondsLeft, ref int frames){
 
+		millisecondsSinceLaunch += Time.deltaTime;
 		millisecondsLeft -= Time.deltaTime;
 		Debug.Log (millisecondsLeft);
 		++frames;
+
+		millisecondsSinceLastFrame.text = (Math.Round((double)Time.deltaTime*1000)).ToString() + " ms";
+
 
 		if (millisecondsLeft <= 0) {
 			FPSCounter.text = frames.ToString ();
