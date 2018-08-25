@@ -857,7 +857,7 @@ GameObject:
   - component: {fileID: 513572079}
   - component: {fileID: 513572078}
   m_Layer: 5
-  m_Name: fpscounter_reader
+  m_Name: fpscounter
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -878,8 +878,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -359, y: 191}
-  m_SizeDelta: {x: 29.5, y: 20.6}
+  m_AnchoredPosition: {x: -344.7, y: 178.4}
+  m_SizeDelta: {x: 32.75, y: 25.2}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &513572078
 MonoBehaviour:
@@ -1418,6 +1418,7 @@ MonoBehaviour:
   quantumZeroLabel: {fileID: 490397308}
   quantumOneLabel: {fileID: 1011817718}
   qubitLabel: {fileID: 2043265321}
+  FPSCounter: {fileID: 513572078}
   thetaInputField: {fileID: 960357263}
   phiInputField: {fileID: 1726077919}
   isQuantumBitSelected: 0
