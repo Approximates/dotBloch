@@ -28,8 +28,8 @@ public class codeBase : MonoBehaviour {
 	public Text quantumOneLabel;
 	public Text qubitLabel;
 
-	float FPSmilliseconds = 1000;
-	int FPS = 0;
+	float FPSmilliseconds = 1;
+	int framesCount = 0;
 	public Text FPSCounter;
 
 	public InputField thetaInputField;
@@ -72,8 +72,18 @@ public class codeBase : MonoBehaviour {
 		setPointers ();
 	}
 
-	void framesPerSecond(ref float millisecondsLeft){
-		FPSCounter.text = millisecondsLeft.ToString ();
+	void framesPerSecond(ref float millisecondsLeft, ref int frames){
+
+		millisecondsLeft -= Time.deltaTime;
+		Debug.Log (millisecondsLeft);
+		++frames;
+
+		if (millisecondsLeft <= 0) {
+			FPSCounter.text = frames.ToString ();
+
+			millisecondsLeft = 1;
+			frames = 0;
+		}
 	}
 	
 
@@ -197,7 +207,7 @@ public class codeBase : MonoBehaviour {
 	}
 	void Update()
 	{
-		framesPerSecond(ref FPSmilliseconds);
+		framesPerSecond(ref FPSmilliseconds, ref framesCount);
 
 		if (Input.GetKey(KeyCode.Escape))
 		{
