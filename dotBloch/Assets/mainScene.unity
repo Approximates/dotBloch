@@ -358,7 +358,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -323, y: 163}
+  m_AnchoredPosition: {x: -344.5, y: -187.4}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &227220138
@@ -913,8 +913,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -1.510015, y: 19.520025}
-  m_SizeDelta: {x: 73.14, y: 16.96}
+  m_AnchoredPosition: {x: 0, y: 3.7}
+  m_SizeDelta: {x: 52.03, y: 14.27}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &513572078
 MonoBehaviour:
@@ -948,7 +948,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: ' FPS'
+  m_Text: 
 --- !u!222 &513572079
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -3147,7 +3147,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -1.9, y: 4.7725}
+  m_AnchoredPosition: {x: 0, y: -10.7}
   m_SizeDelta: {x: 31.7, y: 12.535}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1764753869
