@@ -12,7 +12,7 @@ public class SkyboxEdit : MonoBehaviour {
     // Use this for initialization
     void Start () {
 
-        ChangeSkybox(starsLightBlue);
+        ChangeSkybox(starsRed);
 
     }
 	
