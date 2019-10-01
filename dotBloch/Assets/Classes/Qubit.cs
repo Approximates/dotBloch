@@ -2,24 +2,42 @@
 using System.Collections.Generic;
 using UnityEngine;
 using System.Numerics;
+using System;
 
 public class Qubit 
 {
-    public float phiAngle;
-    public Complex zero;
-    public Complex one;
-    public Complex add;
-    public Complex mul;
+    private float phiAngle;
+    private float thetaAngle;
+    public Complex zeroValue;
+    public Complex oneValue;
+    public bool isClassicalBit;
 
-    public Qubit(float phiAngle)
+    public Qubit(float phiAngle, float thetaAngle, bool isClassicalBit)
     {
         this.phiAngle = phiAngle;
-        zero = new Complex(3.1, 2.5);
-        one = new Complex(2.2, 3.3);
-        add = new Complex();
-        mul = new Complex();
-        add = Complex.Add(one, zero);
-        mul = Complex.Multiply(one, zero);
+        this.thetaAngle = thetaAngle;
+        this.isClassicalBit = isClassicalBit;
+    }
+
+    public void setZeroValue(float phiAngle, float thetaAngle) 
+    {
 
     }
+
+    public void setOneValue(float phiAngle, float thetaAngle) 
+    {
+     
+    }
+
+    public string printBlochVector() 
+    {
+        throw new NotImplementedException();
+    }
+
+    public string printZeroValue() 
+    { 
+        throw new NotImplementedException();
+    }
+
+    public string printOneValue() => throw new NotImplementedException();
 }

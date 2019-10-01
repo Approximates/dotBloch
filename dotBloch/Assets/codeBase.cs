@@ -42,13 +42,13 @@ public class codeBase : MonoBehaviour {
     public Qubit quantumBit;
 	// Use this for initialization
 	void Start () {
-        quantumBit = new Qubit(5);
+        /*quantumBit = new Qubit(5);
         Debug.Log("Phi angle:" + quantumBit.phiAngle);
         Debug.Log("Complex example:" + quantumBit.zero);
         Debug.Log("Real number of complex:" + quantumBit.zero.Real);
         Debug.Log("Imaginary numer of complex:" + quantumBit.zero.Imaginary);
         Debug.Log("Adding complex: " + quantumBit.add);
-        Debug.Log("Adding complex: " + quantumBit.mul);
+        Debug.Log("Multiplying complex: " + quantumBit.mul);*/
 
         thetaInputField.characterLimit = 6;
 		phiInputField.characterLimit = 6;
