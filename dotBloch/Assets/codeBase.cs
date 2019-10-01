@@ -38,8 +38,13 @@ public class codeBase : MonoBehaviour {
 	public InputField phiInputField;
 
 	public bool isQuantumBitSelected;
+
+    public Qubit quantumBit;
 	// Use this for initialization
 	void Start () {
+        quantumBit = new Qubit(5);
+        Debug.Log("Phi angle:" + quantumBit.phiAngle);
+
 		thetaInputField.characterLimit = 6;
 		phiInputField.characterLimit = 6;
 
