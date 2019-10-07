@@ -6,38 +6,59 @@ using System;
 
 public class Qubit 
 {
-    private float phiAngle;
-    private float thetaAngle;
-    public Complex zeroValue;
-    public Complex oneValue;
+    private float _phiAngle;
+    private float _thetaAngle;
+    private Complex zeroValue;
+    private Complex oneValue;
     public bool isClassicalBit;
 
-    public Qubit(float phiAngle, float thetaAngle, bool isClassicalBit)
+    public Qubit(float _phiAngle, float _thetaAngle, bool isClassicalBit)
     {
-        this.phiAngle = phiAngle;
-        this.thetaAngle = thetaAngle;
+        this._phiAngle = _phiAngle;
+        this._thetaAngle = _thetaAngle;
         this.isClassicalBit = isClassicalBit;
     }
 
-    public void setZeroValue(float phiAngle, float thetaAngle) 
+#region geters_and_setters
+    public float phiAngle
     {
-
+        get 
+        {
+            return _phiAngle;
+        }
+        set
+        {
+            //add validators
+            _phiAngle = value;
+        }
     }
 
-    public void setOneValue(float phiAngle, float thetaAngle) 
+    public float thetaAngle
     {
-     
+        get
+        {
+            return _thetaAngle;
+        }
+        set
+        {
+            //add validators
+            _thetaAngle = value;
+        }
     }
-
-    public string printBlochVector() 
+#endregion
+    public void updateAngles(float _phiAngle, float _thetaAngle)
     {
         throw new NotImplementedException();
     }
 
-    public string printZeroValue() 
+    public string printBlochVector(int decimalPlaces) 
+    {
+        throw new NotImplementedException();
+    }
+
+    public string printZeroValue(int decimalPlaces) 
     { 
         throw new NotImplementedException();
     }
-
-    public string printOneValue() => throw new NotImplementedException();
+    public string printOneValue(bool printPlus, int decimalPlaces) => throw new NotImplementedException();
 }
