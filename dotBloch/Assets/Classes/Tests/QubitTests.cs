@@ -8,29 +8,21 @@ namespace Tests
 {
     public class QubitTests
     {
+        
         // A Test behaves as an ordinary method
         [Test]
         public void HelloWorldTest()
         {
             Assert.AreEqual(true, true);
-            Assert.AreEqual(false, true);
+            Assert.AreEqual(null, null);
         }
 
         [Test]
-        public void QubitTestsSimplePasses()
+        public void thetaZero()
         {
-            Assert.AreEqual(true, true);
-            // Use the Assert class to test conditions
-        }
-
-        // A UnityTest behaves like a coroutine in Play Mode. In Edit Mode you can use
-        // `yield return null;` to skip a frame.
-        [UnityTest]
-        public IEnumerator QubitTestsWithEnumeratorPasses()
-        {
-            // Use the Assert class to test conditions.
-            // Use yield to skip a frame.
-            yield return null;
+            Qubit quantumBit;  
+            quantumBit = new Qubit(0,15);
+            //Assert.AreEqual(,"|Ψ> =   1|0> + 0 |1>");
         }
     }
 }

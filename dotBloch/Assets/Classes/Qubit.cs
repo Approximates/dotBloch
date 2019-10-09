@@ -10,13 +10,11 @@ public class Qubit
     private float _thetaAngle;
     private Complex zeroValue;
     private Complex oneValue;
-    public bool isClassicalBit;
 
-    public Qubit(float _phiAngle, float _thetaAngle, bool isClassicalBit)
+    public Qubit(float _phiAngle, float _thetaAngle)
     {
         this._phiAngle = _phiAngle;
         this._thetaAngle = _thetaAngle;
-        this.isClassicalBit = isClassicalBit;
     }
 
 #region geters_and_setters
