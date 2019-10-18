@@ -6,6 +6,8 @@ using System;
 
 public class Qubit 
 {
+    // dodac decimal place character - enum . ,
+    // imaginary unit i,j
     private float _phiAngle;
     private float _thetaAngle;
     private Complex zeroValue;
