@@ -6,17 +6,23 @@ using System;
 
 public class Qubit 
 {
-    // dodac decimal place character - enum . ,
-    // imaginary unit i,j
     private float _phiAngle;
     private float _thetaAngle;
     private Complex zeroValue;
     private Complex oneValue;
 
+    public PrintBlochSettings printSettings;
+
     public Qubit(float _phiAngle, float _thetaAngle)
     {
         this._phiAngle = _phiAngle;
         this._thetaAngle = _thetaAngle;
+
+        printSettings.printSpaces = true;
+        printSettings.decimalSpaces = 3;
+        printSettings.decimalSeparator = PrintBlochSettings.DecimalSeparator.dot;
+        printSettings.imaginaryUnit = PrintBlochSettings.ImaginaryUnit.i;
+
     }
 
 #region geters_and_setters
