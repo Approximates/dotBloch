@@ -25,19 +25,22 @@ namespace Tests
             quantumBit.thetaAngle = 0;
 
             quantumBit.phiAngle = 0;
-            Assert.AreEqual(quantumBit.printBlochVector(),"|Ψ> = 1 |0> + 0 |1>");
+            Assert.AreEqual("|Ψ> = 1 |0> + 0 |1>", quantumBit.printBlochVector());
 
             quantumBit.phiAngle = 45;
-            Assert.AreEqual(quantumBit.printBlochVector(),"|Ψ> = 1 |0> + 0 |1>");
+            Assert.AreEqual("|Ψ> = 1 |0> + 0 |1>", quantumBit.printBlochVector());
 
             quantumBit.phiAngle = 90;
-            Assert.AreEqual(quantumBit.printBlochVector(),"|Ψ> = 1 |0> + 0 |1>");
+            Assert.AreEqual("|Ψ> = 1 |0> + 0 |1>",quantumBit.printBlochVector());
 
             quantumBit.phiAngle = 180;
-            Assert.AreEqual(quantumBit.printBlochVector(),"|Ψ> = 1 |0> + 0 |1>");
+            Assert.AreEqual("|Ψ> = 1 |0> + 0 |1>", quantumBit.printBlochVector());
 
             quantumBit.phiAngle = 270;
-            Assert.AreEqual(quantumBit.printBlochVector(),"|Ψ> = 1 |0> + 0 |1>");
+            Assert.AreEqual("|Ψ> = 1 |0> + 0 |1>", quantumBit.printBlochVector());
+
+            quantumBit.phiAngle = 359;
+            Assert.AreEqual("|Ψ> = 1 |0> + 0 |1>", quantumBit.printBlochVector());
         }
         
         [Test]
@@ -59,6 +62,10 @@ namespace Tests
 
             quantumBit.phiAngle = 270;
             Assert.AreEqual("|Ψ> = 0,966 |0> - 0,259i |1>", quantumBit.printBlochVector());
+
+            quantumBit.phiAngle = 359;
+            Assert.AreEqual("|Ψ> = 0,966 |0> + 0,259 |1>", quantumBit.printBlochVector());
+
         }
 
         [Test]
@@ -80,6 +87,9 @@ namespace Tests
 
             quantumBit.phiAngle = 270;
             Assert.AreEqual("|Ψ> = 0,924 |0> - 0,383i |1>", quantumBit.printBlochVector());
+
+            quantumBit.phiAngle = 359;
+            Assert.AreEqual("|Ψ> = 0,924 |0> + 0,383 |1>", quantumBit.printBlochVector());
         }
 
         [Test]
@@ -101,6 +111,9 @@ namespace Tests
 
             quantumBit.phiAngle = 270;
             Assert.AreEqual("Ψ> = 0,866 |0> - 0,5i |1>", quantumBit.printBlochVector());
+
+            quantumBit.phiAngle = 359;
+            Assert.AreEqual("Ψ> 0,866 |0> + 0,5 |1>", quantumBit.printBlochVector());
         }
 
         [Test]
@@ -122,6 +135,9 @@ namespace Tests
 
             quantumBit.phiAngle = 270;
             Assert.AreEqual("Ψ> = 0,707 |0> + 0,707i |1>", quantumBit.printBlochVector());
+
+            quantumBit.phiAngle = 359;
+            Assert.AreEqual("Ψ> = 0,707 |0> + 0,707 |1>", quantumBit.printBlochVector());
         }
 
         [Test]
@@ -141,7 +157,10 @@ namespace Tests
             Assert.AreEqual("Ψ> = 0,5 |0> - 0,866 |1>", quantumBit.printBlochVector());
 
             quantumBit.phiAngle = 270;
-            Assert.AreEqual("Ψ> = 0,5|0> + 0,866 |1>", quantumBit.printBlochVector());
+            Assert.AreEqual("Ψ> = 0,5 |0> + 0,866 |1>", quantumBit.printBlochVector());
+
+            quantumBit.phiAngle = 359;
+            Assert.AreEqual("Ψ> = 0,5 |0> + 0,866 |1>", quantumBit.printBlochVector());
         }
 
         [Test]
@@ -150,19 +169,22 @@ namespace Tests
             quantumBit.thetaAngle = 180;
 
             quantumBit.phiAngle = 0;
-            Assert.AreEqual("|Ψ> = 0|0> + 1 |1>", quantumBit.printBlochVector());
+            Assert.AreEqual("|Ψ> = 0 |0> + 1 |1>", quantumBit.printBlochVector());
 
             quantumBit.phiAngle = 45;
-            Assert.AreEqual("Ψ> = 0|0> + 0,707+0,707i |1>", quantumBit.printBlochVector());
+            Assert.AreEqual("Ψ> = 0 |0> + 0,707+0,707i |1>", quantumBit.printBlochVector());
 
             quantumBit.phiAngle = 90;
-            Assert.AreEqual("|Ψ> = 0|0> + i |1>", quantumBit.printBlochVector());
+            Assert.AreEqual("|Ψ> = 0 |0> + i |1>", quantumBit.printBlochVector());
 
             quantumBit.phiAngle = 180;
-            Assert.AreEqual("|Ψ> = 0|0> - 1 |1>", quantumBit.printBlochVector());
+            Assert.AreEqual("|Ψ> = 0 |0> - 1 |1>", quantumBit.printBlochVector());
 
             quantumBit.phiAngle = 270;
-            Assert.AreEqual("|Ψ> = 0|0> - i |1>", quantumBit.printBlochVector());
+            Assert.AreEqual("|Ψ> = 0 |0> - i |1>", quantumBit.printBlochVector());
+
+            quantumBit.phiAngle = 359;
+            Assert.AreEqual("|Ψ> = 0 |0> + 1 |1>", quantumBit.printBlochVector());
         }
 
         [Test]
