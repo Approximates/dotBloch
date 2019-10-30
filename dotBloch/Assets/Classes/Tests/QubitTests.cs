@@ -39,7 +39,8 @@ namespace Tests
             quantumBit.phiAngle = 270;
             Assert.AreEqual(quantumBit.printBlochVector(),"|Ψ> = 1 |0> + 0 |1>");
         }
-
+        
+        [Test]
         public void printBlochVector_theta30_Tests()
         {
             quantumBit.thetaAngle = 30;
@@ -60,6 +61,7 @@ namespace Tests
             Assert.AreEqual("|Ψ> = 0,966 |0> - 0,259i |1>", quantumBit.printBlochVector());
         }
 
+        [Test]
         public void printBlochVector_theta45_Tests()
         {
             quantumBit.thetaAngle = 45;
@@ -80,6 +82,7 @@ namespace Tests
             Assert.AreEqual("|Ψ> = 0,924 |0> - 0,383i |1>", quantumBit.printBlochVector());
         }
 
+        [Test]
         public void printBlochVector_theta60_Tests()
         {
             quantumBit.thetaAngle = 60;
@@ -100,6 +103,7 @@ namespace Tests
             Assert.AreEqual("Ψ> = 0,866 |0> - 0,5i |1>", quantumBit.printBlochVector());
         }
 
+        [Test]
         public void printBlochVector_theta90_Tests()
         {
             quantumBit.thetaAngle = 90;
@@ -120,6 +124,7 @@ namespace Tests
             Assert.AreEqual("Ψ> = 0,707 |0> + 0,707i |1>", quantumBit.printBlochVector());
         }
 
+        [Test]
         public void printBlochVector_theta120_Tests(){
             quantumBit.thetaAngle = 120;
 
@@ -139,6 +144,7 @@ namespace Tests
             Assert.AreEqual("Ψ> = 0,5|0> + 0,866 |1>", quantumBit.printBlochVector());
         }
 
+        [Test]
         public void printBlochVector_theta180_Tests()
         {
             quantumBit.thetaAngle = 180;
@@ -158,6 +164,8 @@ namespace Tests
             quantumBit.phiAngle = 270;
             Assert.AreEqual("|Ψ> = 0|0> - i |1>", quantumBit.printBlochVector());
         }
+
+        [Test]
         public void printBlochVector_invalid_arguments()
         {
             quantumBit.thetaAngle = -10;
@@ -176,6 +184,8 @@ namespace Tests
             quantumBit.phiAngle = 380;
             Assert.AreEqual(new ArgumentException("Phi angle is greater than 360 degrees"), quantumBit.printBlochVector());
         }
+
+        [Test]
         public void printBlochVector_customSettings_Tests()
         {
             quantumBit.thetaAngle = 30;
