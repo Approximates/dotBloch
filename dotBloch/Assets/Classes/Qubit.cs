@@ -22,7 +22,6 @@ public class Qubit
         printSettings.decimalSpaces = 3;
         printSettings.decimalSeparator = PrintBlochSettings.DecimalSeparator.dot;
         printSettings.imaginaryUnit = PrintBlochSettings.ImaginaryUnit.i;
-
     }
 
 #region geters_and_setters
@@ -52,11 +51,6 @@ public class Qubit
         }
     }
 #endregion
-    // public void updateAngles(float _phiAngle, float _thetaAngle)
-    // {
-    //     throw new NotImplementedException();
-    // }
-
     public string printBlochVector(PrintBlochSettings printSettings = null) 
     {
         throw new NotImplementedException();

@@ -12,7 +12,7 @@ namespace Tests
         Qubit quantumBit;
         // A Test behaves as an ordinary method
         [Test]
-        public void HelloWorldTest()
+        public void nUnit_test()
         {
             quantumBit = new Qubit(0,0);
             Assert.AreEqual(true, true);
@@ -48,7 +48,7 @@ namespace Tests
             Assert.AreEqual("|Ψ> = 0,966 |0> + 0,259 |1>", quantumBit.printBlochVector());
 
             quantumBit.phiAngle = 45;
-            Assert.AreEqual("|Ψ> = 0,966 |0> + 0,183+0,183i |1>", quantumBit.printBlochVector());
+            Assert.AreEqual("|Ψ> = 0,966 |0> + 0,183 + 0,183i |1>", quantumBit.printBlochVector());
 
             quantumBit.phiAngle = 90;
             Assert.AreEqual("|Ψ> = 0,966 |0> + 0,259i |1>", quantumBit.printBlochVector());
@@ -65,19 +65,19 @@ namespace Tests
             quantumBit.thetaAngle = 45;
 
             quantumBit.phiAngle = 0;
-            Assert.AreEqual("Ψ> = 0,924|0> + 0,383 |1>", quantumBit.printBlochVector());
+            Assert.AreEqual("Ψ> = 0,924 |0> + 0,383 |1>", quantumBit.printBlochVector());
 
             quantumBit.phiAngle = 45;
-            Assert.AreEqual("Ψ> = 0,924|0> + 0,271+0,271i |1>", quantumBit.printBlochVector());
+            Assert.AreEqual("Ψ> = 0,924 |0> + 0,271 + 0,271i |1>", quantumBit.printBlochVector());
 
             quantumBit.phiAngle = 90;
-            Assert.AreEqual("|Ψ> = 0,924|0> + 0,383i |1>", quantumBit.printBlochVector());
+            Assert.AreEqual("|Ψ> = 0,924 |0> + 0,383i |1>", quantumBit.printBlochVector());
 
             quantumBit.phiAngle = 180;
-            Assert.AreEqual("|Ψ> = 0,924|0> - 0,383 |1>", quantumBit.printBlochVector());
+            Assert.AreEqual("|Ψ> = 0,924 |0> - 0,383 |1>", quantumBit.printBlochVector());
 
             quantumBit.phiAngle = 270;
-            Assert.AreEqual("|Ψ> = 0,924|0> - 0,383i |1>", quantumBit.printBlochVector());
+            Assert.AreEqual("|Ψ> = 0,924 |0> - 0,383i |1>", quantumBit.printBlochVector());
         }
 
         public void printBlochVector_theta60_Tests()
@@ -88,7 +88,7 @@ namespace Tests
             Assert.AreEqual("Ψ> = 0,866 |0> + 0,5 |1>", quantumBit.printBlochVector());
 
             quantumBit.phiAngle = 45;
-            Assert.AreEqual("Ψ> = 0,866 |0> + 0,354+0,354i |1>", quantumBit.printBlochVector());
+            Assert.AreEqual("Ψ> = 0,866 |0> + 0,354 + 0,354i |1>", quantumBit.printBlochVector());
 
             quantumBit.phiAngle = 90;
             Assert.AreEqual("Ψ> = 0,866 |0> + 0,5i |1>", quantumBit.printBlochVector());
@@ -108,7 +108,7 @@ namespace Tests
             Assert.AreEqual("Ψ> = 0,707 |0> + 0,707 |1>", quantumBit.printBlochVector());
 
             quantumBit.phiAngle = 45;
-            Assert.AreEqual("Ψ> = 0,707 |0> + 0,5+0,5i |1>", quantumBit.printBlochVector());
+            Assert.AreEqual("Ψ> = 0,707 |0> + 0,5 + 0,5i |1>", quantumBit.printBlochVector());
 
             quantumBit.phiAngle = 90;
             Assert.AreEqual("Ψ> = 0,707|0> + 0,707i |1>", quantumBit.printBlochVector());
@@ -158,7 +158,7 @@ namespace Tests
             quantumBit.phiAngle = 270;
             Assert.AreEqual("|Ψ> = 0|0> - i |1>", quantumBit.printBlochVector());
         }
-        public void printBlochVectorInvalidArgument()
+        public void printBlochVector_invalid_arguments()
         {
             quantumBit.thetaAngle = -10;
             quantumBit.phiAngle = 15;
@@ -176,41 +176,22 @@ namespace Tests
             quantumBit.phiAngle = 380;
             Assert.AreEqual(new ArgumentException("Phi angle is greater than 360 degrees"), quantumBit.printBlochVector());
         }
-        public void printBlochVector_decimalCharacters_Tests()
+        public void printBlochVector_customSettings_Tests()
         {
-            /*
-                180	0	|Ψ> =   0|0> + 1 |1>
-                180	45	|Ψ> =   0|0> + 0,707+0,707i |1>
-                180	90	|Ψ> =   0|0> + i |1>
-                180	180	|Ψ> =   0|0> - 1 |1>
-                180	270	|Ψ> =   0|0> - i |1>
-             */
-        }
+            quantumBit.thetaAngle = 30;
+            quantumBit.phiAngle = 45;
+            
+            PrintBlochSettings settings = new PrintBlochSettings(false,1,PrintBlochSettings.DecimalSeparator.comma,PrintBlochSettings.ImaginaryUnit.i);
+            Assert.AreEqual("|Ψ>=1,0|0>+0,2+0,3i|1>",quantumBit.printBlochVector(settings));
 
-        
+            settings = new PrintBlochSettings(true,4,PrintBlochSettings.DecimalSeparator.dot,PrintBlochSettings.ImaginaryUnit.I);
+            Assert.AreEqual("|Ψ> = 0.9659 |0> + 0.183 + 0.2588I |1>",quantumBit.printBlochVector(settings));
 
-        public void printBlochVector_decimalPlaces_Tests()
-        {
-            /*
-                Sprawdzić miejsca po przecinkach!
-             */
-        }
+            settings = new PrintBlochSettings(false,8,PrintBlochSettings.DecimalSeparator.comma,PrintBlochSettings.ImaginaryUnit.j);
+            Assert.AreEqual("|Ψ>=0,96592583|0>+0,18301270+0,25881905j|1>",quantumBit.printBlochVector(settings));
 
-        public void printBlochVectorImaginaryUnit()
-        {
-            /* Liczby zespolone */
-        }
-
-        public void printBlochVector_nullpointer_Tests()
-        {
-            /*
-                nulle jako argumenty
-             */
-        }
-
-        private void printBlochVector_handlingInvalidData_Tests()
-        {
-
+            settings = new PrintBlochSettings(true,15,PrintBlochSettings.DecimalSeparator.dot,PrintBlochSettings.ImaginaryUnit.J);
+            Assert.AreEqual("|Ψ> = 0.965925826289068 |0> + 0.183012701892219 + 0.258819045102521J |1>",quantumBit.printBlochVector(settings));
         }
     }
 }
