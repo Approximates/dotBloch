@@ -20,6 +20,39 @@ namespace Tests
         }
 
         [Test]
+        public void printZeroValue_Tests(){
+            quantumBit.thetaAngle = 0;
+            Assert.AreEqual("1", quantumBit.printZeroValue());
+
+            quantumBit.thetaAngle = 5;
+            Assert.AreEqual("0,999", quantumBit.printZeroValue());
+
+            quantumBit.thetaAngle = 37;
+            Assert.AreEqual("0,948", quantumBit.printZeroValue());
+
+            quantumBit.thetaAngle = 43;
+            Assert.AreEqual("0,930", quantumBit.printZeroValue());
+
+            quantumBit.thetaAngle = 87;
+            Assert.AreEqual("0,725", quantumBit.printZeroValue());
+
+            quantumBit.thetaAngle = 97;
+            Assert.AreEqual("0,663", quantumBit.printZeroValue());
+
+            quantumBit.thetaAngle = 127;
+            Assert.AreEqual("0,446", quantumBit.printZeroValue());
+
+            quantumBit.thetaAngle = 167;
+            Assert.AreEqual("0,113", quantumBit.printZeroValue());
+
+            quantumBit.thetaAngle = 179;
+            Assert.AreEqual("0,009", quantumBit.printZeroValue());
+
+            quantumBit.thetaAngle = 180;
+            Assert.AreEqual("0", quantumBit.printZeroValue());
+        }
+
+        [Test]
         public void printBlochVector_thetaZero_Tests()
         {
             quantumBit.thetaAngle = 0;
@@ -188,7 +221,7 @@ namespace Tests
         }
 
         [Test]
-        public void printBlochVector_invalid_arguments()
+        public void printBlochVector_invalid_arguments_Tests()
         {
             quantumBit.thetaAngle = -10;
             quantumBit.phiAngle = 15;
