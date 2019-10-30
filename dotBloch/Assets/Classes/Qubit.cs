@@ -13,10 +13,10 @@ public class Qubit
 
     public PrintBlochSettings printSettings;
 
-    public Qubit(float _phiAngle, float _thetaAngle)
+    public Qubit(float _thetaAngle, float _phiAngle)
     {
-        this._phiAngle = _phiAngle;
         this._thetaAngle = _thetaAngle;
+        this._phiAngle = _phiAngle;
 
         printSettings.printSpaces = true;
         printSettings.decimalSpaces = 3;
@@ -52,10 +52,10 @@ public class Qubit
         }
     }
 #endregion
-    public void updateAngles(float _phiAngle, float _thetaAngle)
-    {
-        throw new NotImplementedException();
-    }
+    // public void updateAngles(float _phiAngle, float _thetaAngle)
+    // {
+    //     throw new NotImplementedException();
+    // }
 
     public string printBlochVector(int decimalPlaces) 
     {
