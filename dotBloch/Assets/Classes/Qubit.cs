@@ -17,7 +17,7 @@ public class Qubit
     {
         this._thetaAngle = _thetaAngle;
         this._phiAngle = _phiAngle;
-
+        
         printSettings.printSpaces = true;
         printSettings.decimalSpaces = 3;
         printSettings.decimalSeparator = PrintBlochSettings.DecimalSeparator.dot;
@@ -57,14 +57,14 @@ public class Qubit
     //     throw new NotImplementedException();
     // }
 
-    public string printBlochVector(int decimalPlaces) 
+    public string printBlochVector(PrintBlochSettings printSettings = null) 
     {
         throw new NotImplementedException();
     }
 
-    public string printZeroValue(int decimalPlaces) 
+    public string printZeroValue(PrintBlochSettings printSettings) 
     { 
         throw new NotImplementedException();
     }
-    public string printOneValue(bool printPlus, int decimalPlaces) => throw new NotImplementedException();
+    public string printOneValue(PrintBlochSettings printSettings) => throw new NotImplementedException();
 }
