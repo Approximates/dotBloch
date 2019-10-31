@@ -15,57 +15,8 @@ namespace Tests
         [Test]
         public void nUnit_test()
         {
-            
             Assert.AreEqual(true, true);
             Assert.AreEqual(null, null);
-        }
-
-        
-        [Test]
-        public void printOneValue_Tests(){
-            quantumBit = new Qubit(0,0);
-            quantumBit.thetaAngle = 0;
-            quantumBit.phiAngle = 0;
-            Assert.AreEqual("0", quantumBit.printOneValue(false));
-            Assert.AreEqual("0", quantumBit.printOneValue(true));
-
-            quantumBit.thetaAngle = 180;
-            quantumBit.phiAngle = 0;
-            Assert.AreEqual("1", quantumBit.printOneValue(false));
-            Assert.AreEqual("1", quantumBit.printOneValue(true));
-
-            quantumBit.thetaAngle = 30;
-            quantumBit.phiAngle = 0;
-            Assert.AreEqual("0,259", quantumBit.printOneValue(false));
-            Assert.AreEqual("+ 0,259", quantumBit.printOneValue(true));
-
-            quantumBit.thetaAngle = 120;
-            quantumBit.phiAngle = 180;
-            Assert.AreEqual("- 0,866", quantumBit.printOneValue(false));
-            Assert.AreEqual("- 0,866", quantumBit.printOneValue(true));
-
-            quantumBit.thetaAngle = 60;
-            quantumBit.phiAngle = 45;
-            Assert.AreEqual("0,354 + 0,354i", quantumBit.printOneValue(false));
-            Assert.AreEqual("+ 0,354 + 0,354i", quantumBit.printOneValue(true));
-
-            quantumBit.thetaAngle = 90;
-            quantumBit.phiAngle = 90;
-            Assert.AreEqual("+ 0,707i", quantumBit.printOneValue(true));
-            Assert.AreEqual("0,707i", quantumBit.printOneValue(false));
-
-            quantumBit.thetaAngle = 90;
-            quantumBit.phiAngle = 180;
-            PrintBlochSettings settings = new PrintBlochSettings(true,3,PrintBlochSettings.DecimalSeparator.dot,PrintBlochSettings.ImaginaryUnit.J);
-            Assert.AreEqual("-0,707", quantumBit.printOneValue(false,settings));
-            Assert.AreEqual("-0,707", quantumBit.printOneValue(true,settings));
-            
-            quantumBit.thetaAngle = 45;
-            quantumBit.phiAngle = 45;
-            settings = new PrintBlochSettings(true,3,PrintBlochSettings.DecimalSeparator.comma,PrintBlochSettings.ImaginaryUnit.I);
-            Assert.AreEqual("+ 0.271 + 0.271I", quantumBit.printOneValue(true,settings));
-            settings = new PrintBlochSettings(false,3,PrintBlochSettings.DecimalSeparator.comma,PrintBlochSettings.ImaginaryUnit.j);
-            Assert.AreEqual("0,271+0,271j", quantumBit.printOneValue(false,settings));
         }
 
         [Test]
