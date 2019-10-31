@@ -61,5 +61,5 @@ public class Qubit
     { 
         throw new NotImplementedException();
     }
-    public string printOneValue(PrintBlochSettings printSettings) => throw new NotImplementedException();
+    public string printOneValue(bool leadingPlus,PrintBlochSettings printSettings = null) => throw new NotImplementedException();
 }
