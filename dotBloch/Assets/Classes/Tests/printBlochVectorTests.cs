@@ -8,7 +8,7 @@ using static PrintBlochSettings;
 
 namespace Tests
 {
-    public class QubitTests
+    public class printBlochVectorTests
     {
         Qubit quantumBit;
         // A Test behaves as an ordinary method
@@ -20,7 +20,7 @@ namespace Tests
         }
 
         [Test]
-        public void printBlochVector_thetaZero_Tests()
+        public void thetaZero_Tests()
         {
             quantumBit = new Qubit(0,0);
             quantumBit.thetaAngle = 0;
@@ -45,7 +45,7 @@ namespace Tests
         }
         
         [Test]
-        public void printBlochVector_theta30_Tests()
+        public void theta30_Tests()
         {
             quantumBit = new Qubit(0,0);
             quantumBit.thetaAngle = 30;
@@ -70,7 +70,7 @@ namespace Tests
         }
 
         [Test]
-        public void printBlochVector_theta45_Tests()
+        public void theta45_Tests()
         {
             quantumBit = new Qubit(0,0);
             quantumBit.thetaAngle = 45;
@@ -95,7 +95,7 @@ namespace Tests
         }
 
         [Test]
-        public void printBlochVector_theta60_Tests()
+        public void theta60_Tests()
         {
             quantumBit = new Qubit(0,0);
             quantumBit.thetaAngle = 60;
@@ -120,7 +120,7 @@ namespace Tests
         }
 
         [Test]
-        public void printBlochVector_theta90_Tests()
+        public void theta90_Tests()
         {
             quantumBit = new Qubit(0,0);
             quantumBit.thetaAngle = 90;
@@ -145,7 +145,7 @@ namespace Tests
         }
 
         [Test]
-        public void printBlochVector_theta120_Tests(){
+        public void theta120_Tests(){
             quantumBit = new Qubit(0,0);
             quantumBit.thetaAngle = 120;
 
@@ -169,7 +169,7 @@ namespace Tests
         }
 
         [Test]
-        public void printBlochVector_theta180_Tests()
+        public void theta180_Tests()
         {
             quantumBit = new Qubit(0,0);
             quantumBit.thetaAngle = 180;
@@ -194,7 +194,7 @@ namespace Tests
         }
 
         [Test]
-        public void printBlochVector_invalid_arguments_Tests()
+        public void invalid_arguments_Tests()
         {
             quantumBit = new Qubit(0,0);
             quantumBit.thetaAngle = -10;
@@ -215,7 +215,7 @@ namespace Tests
         }
 
         [Test]
-        public void printBlochVector_customSettings_Tests()
+        public void customSettings_Tests()
         {
             quantumBit = new Qubit(0,0);
             quantumBit.thetaAngle = 30;
