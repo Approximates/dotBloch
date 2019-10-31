@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using NUnit.Framework;
 using UnityEngine;
 using UnityEngine.TestTools;
+using static PrintBlochSettings;
 
 namespace Tests
 {
@@ -37,16 +38,16 @@ namespace Tests
             Assert.AreEqual("0,725", quantumBit.printZeroValue());
 
             quantumBit.thetaAngle = 97;
-            Assert.AreEqual("0,663", quantumBit.printZeroValue());
+            Assert.AreEqual("0.663", quantumBit.printZeroValue(DecimalSeparator.dot));
 
             quantumBit.thetaAngle = 127;
-            Assert.AreEqual("0,446", quantumBit.printZeroValue());
+            Assert.AreEqual("0.446", quantumBit.printZeroValue(DecimalSeparator.dot));
 
             quantumBit.thetaAngle = 167;
-            Assert.AreEqual("0,113", quantumBit.printZeroValue());
+            Assert.AreEqual("0,113", quantumBit.printZeroValue(DecimalSeparator.comma));
 
             quantumBit.thetaAngle = 179;
-            Assert.AreEqual("0,009", quantumBit.printZeroValue());
+            Assert.AreEqual("0,009", quantumBit.printZeroValue(DecimalSeparator.comma));
 
             quantumBit.thetaAngle = 180;
             Assert.AreEqual("0", quantumBit.printZeroValue());
@@ -205,7 +206,7 @@ namespace Tests
             Assert.AreEqual("|Ψ> = 0 |0> + 1 |1>", quantumBit.printBlochVector());
 
             quantumBit.phiAngle = 45;
-            Assert.AreEqual("Ψ> = 0 |0> + 0,707+0,707i |1>", quantumBit.printBlochVector());
+            Assert.AreEqual("Ψ> = 0 |0> + 0,707 + 0,707i |1>", quantumBit.printBlochVector());
 
             quantumBit.phiAngle = 90;
             Assert.AreEqual("|Ψ> = 0 |0> + i |1>", quantumBit.printBlochVector());

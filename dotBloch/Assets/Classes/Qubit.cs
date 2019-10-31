@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using System.Numerics;
 using System;
+using static PrintBlochSettings;
 
 public class Qubit 
 {
@@ -20,7 +21,7 @@ public class Qubit
         
         printSettings.printSpaces = true;
         printSettings.decimalSpaces = 3;
-        printSettings.decimalSeparator = PrintBlochSettings.DecimalSeparator.dot;
+        printSettings.decimalSeparator = PrintBlochSettings.DecimalSeparator.comma;
         printSettings.imaginaryUnit = PrintBlochSettings.ImaginaryUnit.i;
     }
 
@@ -56,7 +57,7 @@ public class Qubit
         throw new NotImplementedException();
     }
 
-    public string printZeroValue(PrintBlochSettings printSettings) 
+    public string printZeroValue(DecimalSeparator? decimalSeparator = null) 
     { 
         throw new NotImplementedException();
     }
