@@ -14,15 +14,12 @@ public class Qubit
 
     public PrintBlochSettings printSettings;
 
-    public Qubit(float _thetaAngle, float _phiAngle)
+    public Qubit(float thetaAngle, float phiAngle)
     {
-        this._thetaAngle = _thetaAngle;
-        this._phiAngle = _phiAngle;
+        this._thetaAngle = thetaAngle;
+        this._phiAngle = phiAngle;
         
-        printSettings.printSpaces = true;
-        printSettings.decimalSpaces = 3;
-        printSettings.decimalSeparator = PrintBlochSettings.DecimalSeparator.comma;
-        printSettings.imaginaryUnit = PrintBlochSettings.ImaginaryUnit.i;
+        printSettings = new PrintBlochSettings(true,3,PrintBlochSettings.DecimalSeparator.comma,PrintBlochSettings.ImaginaryUnit.i);
     }
 
 #region geters_and_setters
