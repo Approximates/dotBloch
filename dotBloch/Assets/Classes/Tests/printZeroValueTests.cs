@@ -58,28 +58,32 @@ namespace Tests
         public void theta_97_Test(){
             quantumBit = new Qubit(0,0);
             quantumBit.thetaAngle = 97;
-            Assert.AreEqual("0.663", quantumBit.printZeroValue(DecimalSeparator.dot));
+            PrintBlochSettings customSettings = new PrintBlochSettings(true,3,PrintBlochSettings.DecimalSeparator.dot,PrintBlochSettings.ImaginaryUnit.i);
+            Assert.AreEqual("0.663", quantumBit.printZeroValue(customSettings));
         }
         
         [Test]
         public void theta_127_Test(){
             quantumBit = new Qubit(0,0);
             quantumBit.thetaAngle = 127;
-            Assert.AreEqual("0.446", quantumBit.printZeroValue(DecimalSeparator.dot));
+            PrintBlochSettings customSettings = new PrintBlochSettings(true,3,PrintBlochSettings.DecimalSeparator.dot,PrintBlochSettings.ImaginaryUnit.i);
+            Assert.AreEqual("0.446", quantumBit.printZeroValue(customSettings));
         }
         
         [Test]
         public void theta_167_Test(){
             quantumBit = new Qubit(0,0);
             quantumBit.thetaAngle = 167;
-            Assert.AreEqual("0,113", quantumBit.printZeroValue(DecimalSeparator.comma));
+            PrintBlochSettings customSettings = new PrintBlochSettings(true,3,PrintBlochSettings.DecimalSeparator.comma,PrintBlochSettings.ImaginaryUnit.i);
+            Assert.AreEqual("0,113", quantumBit.printZeroValue(customSettings));
         }
         
         [Test]
         public void theta_179_Test(){
             quantumBit = new Qubit(0,0);
             quantumBit.thetaAngle = 179;
-            Assert.AreEqual("0,009", quantumBit.printZeroValue(DecimalSeparator.comma));
+            PrintBlochSettings customSettings = new PrintBlochSettings(true,3,PrintBlochSettings.DecimalSeparator.comma,PrintBlochSettings.ImaginaryUnit.i);
+            Assert.AreEqual("0,009", quantumBit.printZeroValue(customSettings));
         }
         
         [Test]

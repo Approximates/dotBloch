@@ -60,15 +60,20 @@ public class Qubit
         throw new NotImplementedException();
     }
 
-    public string printZeroValue(DecimalSeparator? decimalSeparator = null, PrintBlochSettings printingSettings = null) 
+    public string printZeroValue(PrintBlochSettings printingSettings = null) 
     { 
         string result = "";
 
         if(printingSettings==null){  // no custom settings
             result = (Math.Round(zeroValue.Real,this.printSettings.decimalSpaces)).ToString();
+            result = result.Replace(".",",");
         }
         else{
             result = (Math.Round(zeroValue.Real,printingSettings.decimalSpaces)).ToString();
+
+            if(printingSettings.decimalSeparator == DecimalSeparator.comma){
+                result = result.Replace(".",",");
+            }
         }
 
         return result;
