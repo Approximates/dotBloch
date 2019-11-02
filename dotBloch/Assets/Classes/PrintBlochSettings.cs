@@ -5,6 +5,8 @@ using UnityEngine;
 public class PrintBlochSettings 
 {
     private bool _printSpaces;
+
+    private bool _endingZeros;
     private int _decimalSpaces; 
 
     private DecimalSeparator _decimalSeparator;
@@ -18,10 +20,11 @@ public class PrintBlochSettings
         i, I, j, J
     }
 
-    public PrintBlochSettings(bool printSpaces, int decimalSpaces, 
+    public PrintBlochSettings(bool printSpaces, bool endingZeros, int decimalSpaces, 
     DecimalSeparator decimalSeparator, ImaginaryUnit imaginaryUnit){
         
         this._printSpaces = printSpaces;
+        this._endingZeros = endingZeros;
         this._decimalSpaces = decimalSpaces;
         this._decimalSeparator = decimalSeparator;
         this._imaginaryUnit = imaginaryUnit;
@@ -29,6 +32,11 @@ public class PrintBlochSettings
     public bool printSpaces{
         get { return _printSpaces; }
         set { _printSpaces = value; }
+    }
+
+    public bool endingZeros{
+        get { return _endingZeros; }
+        set { _endingZeros = value; }
     }
     public int decimalSpaces{
         get { return _decimalSpaces; }

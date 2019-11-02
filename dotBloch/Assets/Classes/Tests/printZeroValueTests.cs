@@ -40,12 +40,20 @@ namespace Tests
             Assert.AreEqual("0,948", quantumBit.printZeroValue());
         }        
         [Test]
-        public void theta_43_Test(){
+        public void theta_43_without_ending_zeros_Test(){
             quantumBit = new Qubit(0,0);
             quantumBit.thetaAngle = 43;
-            Assert.AreEqual("0,930", quantumBit.printZeroValue());
+            PrintBlochSettings customSettings = new PrintBlochSettings(true,false,3,PrintBlochSettings.DecimalSeparator.dot,PrintBlochSettings.ImaginaryUnit.i);
+            Assert.AreEqual("0,93", quantumBit.printZeroValue());
         }
 
+        [Test]
+        public void theta_43_with_ending_zeros_Test(){
+            quantumBit = new Qubit(0,0);
+            quantumBit.thetaAngle = 43;
+            PrintBlochSettings customSettings = new PrintBlochSettings(true,true,3,PrintBlochSettings.DecimalSeparator.dot,PrintBlochSettings.ImaginaryUnit.i);
+            Assert.AreEqual("0,930", quantumBit.printZeroValue());
+        }
         
         [Test]
         public void theta_87_Test(){
@@ -58,7 +66,7 @@ namespace Tests
         public void theta_97_Test(){
             quantumBit = new Qubit(0,0);
             quantumBit.thetaAngle = 97;
-            PrintBlochSettings customSettings = new PrintBlochSettings(true,3,PrintBlochSettings.DecimalSeparator.dot,PrintBlochSettings.ImaginaryUnit.i);
+            PrintBlochSettings customSettings = new PrintBlochSettings(true,false,3,PrintBlochSettings.DecimalSeparator.dot,PrintBlochSettings.ImaginaryUnit.i);
             Assert.AreEqual("0.663", quantumBit.printZeroValue(customSettings));
         }
         
@@ -66,7 +74,7 @@ namespace Tests
         public void theta_127_Test(){
             quantumBit = new Qubit(0,0);
             quantumBit.thetaAngle = 127;
-            PrintBlochSettings customSettings = new PrintBlochSettings(true,3,PrintBlochSettings.DecimalSeparator.dot,PrintBlochSettings.ImaginaryUnit.i);
+            PrintBlochSettings customSettings = new PrintBlochSettings(true,false,3,PrintBlochSettings.DecimalSeparator.dot,PrintBlochSettings.ImaginaryUnit.i);
             Assert.AreEqual("0.446", quantumBit.printZeroValue(customSettings));
         }
         
@@ -74,7 +82,7 @@ namespace Tests
         public void theta_167_Test(){
             quantumBit = new Qubit(0,0);
             quantumBit.thetaAngle = 167;
-            PrintBlochSettings customSettings = new PrintBlochSettings(true,3,PrintBlochSettings.DecimalSeparator.comma,PrintBlochSettings.ImaginaryUnit.i);
+            PrintBlochSettings customSettings = new PrintBlochSettings(true,false,3,PrintBlochSettings.DecimalSeparator.comma,PrintBlochSettings.ImaginaryUnit.i);
             Assert.AreEqual("0,113", quantumBit.printZeroValue(customSettings));
         }
         
@@ -82,7 +90,7 @@ namespace Tests
         public void theta_179_Test(){
             quantumBit = new Qubit(0,0);
             quantumBit.thetaAngle = 179;
-            PrintBlochSettings customSettings = new PrintBlochSettings(true,3,PrintBlochSettings.DecimalSeparator.comma,PrintBlochSettings.ImaginaryUnit.i);
+            PrintBlochSettings customSettings = new PrintBlochSettings(true,false,3,PrintBlochSettings.DecimalSeparator.comma,PrintBlochSettings.ImaginaryUnit.i);
             Assert.AreEqual("0,009", quantumBit.printZeroValue(customSettings));
         }
         

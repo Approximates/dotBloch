@@ -19,7 +19,7 @@ public class Qubit
         this._thetaAngle = thetaAngle;
         this._phiAngle = phiAngle;
         
-        printSettings = new PrintBlochSettings(true,3,PrintBlochSettings.DecimalSeparator.comma,PrintBlochSettings.ImaginaryUnit.i);
+        printSettings = new PrintBlochSettings(true,false,3,PrintBlochSettings.DecimalSeparator.comma,PrintBlochSettings.ImaginaryUnit.i);
     }
 
 #region geters_and_setters
