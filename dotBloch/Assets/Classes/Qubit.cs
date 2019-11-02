@@ -7,14 +7,14 @@ using static PrintBlochSettings;
 
 public class Qubit 
 {
-    private float _phiAngle;
-    private float _thetaAngle;
+    private double _phiAngle;
+    private double _thetaAngle;
     private Complex zeroValue;
     private Complex oneValue;
 
     public PrintBlochSettings printSettings;
 
-    public Qubit(float thetaAngle, float phiAngle)
+    public Qubit(double thetaAngle, double phiAngle)
     {
         this._thetaAngle = thetaAngle;
         this._phiAngle = phiAngle;
@@ -23,7 +23,7 @@ public class Qubit
     }
 
 #region geters_and_setters
-    public float phiAngle
+    public double phiAngle
     {
         get 
         {
@@ -36,7 +36,7 @@ public class Qubit
         }
     }
 
-    public float thetaAngle
+    public double thetaAngle
     {
         get
         {
@@ -46,7 +46,13 @@ public class Qubit
         {
             //add validators
             _thetaAngle = value;
+            zeroValue = new Complex(Math.Cos(DegreeToRadian(value)/2),0);
         }
+    }
+
+    private double DegreeToRadian(double angle)
+    {
+        return Math.PI * angle / 180.0;
     }
 #endregion
     public string printBlochVector(PrintBlochSettings printSettings = null) 
@@ -54,9 +60,18 @@ public class Qubit
         throw new NotImplementedException();
     }
 
-    public string printZeroValue(DecimalSeparator? decimalSeparator = null) 
+    public string printZeroValue(DecimalSeparator? decimalSeparator = null, PrintBlochSettings printingSettings = null) 
     { 
-        throw new NotImplementedException();
+        string result = "";
+
+        if(printingSettings==null){  // no custom settings
+            result = (Math.Round(zeroValue.Real,this.printSettings.decimalSpaces)).ToString();
+        }
+        else{
+            result = (Math.Round(zeroValue.Real,printingSettings.decimalSpaces)).ToString();
+        }
+
+        return result;
     }
     public string printOneValue(bool leadingPlus,PrintBlochSettings printSettings = null) => throw new NotImplementedException();
 }
