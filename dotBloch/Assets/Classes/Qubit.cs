@@ -80,6 +80,7 @@ public class Qubit
         if(conditions.decimalSeparator == DecimalSeparator.comma)
             result = result.Replace(".",",");
 
+
         return result;
     }
     public string printOneValue(bool leadingPlus,PrintBlochSettings printSettings = null) => throw new NotImplementedException();

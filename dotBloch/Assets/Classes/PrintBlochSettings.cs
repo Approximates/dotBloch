@@ -6,7 +6,7 @@ public class PrintBlochSettings
 {
     private bool _printSpaces;
 
-    private bool _endingZeros;
+    private bool _trailingZeros;
     private int _decimalSpaces; 
 
     private DecimalSeparator _decimalSeparator;
@@ -20,11 +20,11 @@ public class PrintBlochSettings
         i, I, j, J
     }
 
-    public PrintBlochSettings(bool printSpaces, bool endingZeros, int decimalSpaces, 
+    public PrintBlochSettings(bool printSpaces, bool trailingZeros, int decimalSpaces, 
     DecimalSeparator decimalSeparator, ImaginaryUnit imaginaryUnit){
         
         this._printSpaces = printSpaces;
-        this._endingZeros = endingZeros;
+        this._trailingZeros = trailingZeros;
         this._decimalSpaces = decimalSpaces;
         this._decimalSeparator = decimalSeparator;
         this._imaginaryUnit = imaginaryUnit;
@@ -35,8 +35,8 @@ public class PrintBlochSettings
     }
 
     public bool endingZeros{
-        get { return _endingZeros; }
-        set { _endingZeros = value; }
+        get { return _trailingZeros; }
+        set { _trailingZeros = value; }
     }
     public int decimalSpaces{
         get { return _decimalSpaces; }

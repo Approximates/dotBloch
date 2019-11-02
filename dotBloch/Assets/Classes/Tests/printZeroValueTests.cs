@@ -20,9 +20,18 @@ namespace Tests
         }
 
         [Test]
-        public void theta_0_Test(){
+        public void theta_0_without_trailing_zeros_Test(){
             quantumBit = new Qubit(0,0);
             quantumBit.thetaAngle = 0;
+            Assert.AreEqual("1", quantumBit.printZeroValue());
+        }
+
+        [Test]
+        public void theta_0_with_trailing_zeros_Test(){
+            // no trailing zeroes when value is 0 or 1
+            quantumBit = new Qubit(0,0);
+            quantumBit.thetaAngle = 0;
+            PrintBlochSettings customSettings = new PrintBlochSettings(true,true,3,PrintBlochSettings.DecimalSeparator.comma,PrintBlochSettings.ImaginaryUnit.i);
             Assert.AreEqual("1", quantumBit.printZeroValue());
         }
 
@@ -40,14 +49,14 @@ namespace Tests
             Assert.AreEqual("0,948", quantumBit.printZeroValue());
         }        
         [Test]
-        public void theta_43_without_ending_zeros_Test(){
+        public void theta_43_without_trailing_zeros_Test(){
             quantumBit = new Qubit(0,0);
             quantumBit.thetaAngle = 43;
             Assert.AreEqual("0,93", quantumBit.printZeroValue());
         }
 
         [Test]
-        public void theta_43_with_ending_zeros_Test(){
+        public void theta_43_with_trailing_zeros_Test(){
             quantumBit = new Qubit(0,0);
             quantumBit.thetaAngle = 43;
             PrintBlochSettings customSettings = new PrintBlochSettings(true,true,3,PrintBlochSettings.DecimalSeparator.dot,PrintBlochSettings.ImaginaryUnit.i);
@@ -94,9 +103,17 @@ namespace Tests
         }
         
         [Test]
-        public void theta_180_Test(){
+        public void theta_180_without_trailing_zeros_Test(){
             quantumBit = new Qubit(0,0);
             quantumBit.thetaAngle = 180;
+            Assert.AreEqual("0", quantumBit.printZeroValue());
+        }
+
+        [Test]
+        public void theta_180_with_trailing_zeros_Test(){
+            quantumBit = new Qubit(0,0);
+            quantumBit.thetaAngle = 180;
+            PrintBlochSettings customSettings = new PrintBlochSettings(true,true,3,PrintBlochSettings.DecimalSeparator.dot,PrintBlochSettings.ImaginaryUnit.i);
             Assert.AreEqual("0", quantumBit.printZeroValue());
         }
     }
