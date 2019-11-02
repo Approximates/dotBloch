@@ -43,7 +43,6 @@ namespace Tests
         public void theta_43_without_ending_zeros_Test(){
             quantumBit = new Qubit(0,0);
             quantumBit.thetaAngle = 43;
-            PrintBlochSettings customSettings = new PrintBlochSettings(true,false,3,PrintBlochSettings.DecimalSeparator.dot,PrintBlochSettings.ImaginaryUnit.i);
             Assert.AreEqual("0,93", quantumBit.printZeroValue());
         }
 
@@ -52,7 +51,7 @@ namespace Tests
             quantumBit = new Qubit(0,0);
             quantumBit.thetaAngle = 43;
             PrintBlochSettings customSettings = new PrintBlochSettings(true,true,3,PrintBlochSettings.DecimalSeparator.dot,PrintBlochSettings.ImaginaryUnit.i);
-            Assert.AreEqual("0,930", quantumBit.printZeroValue());
+            Assert.AreEqual("0.930", quantumBit.printZeroValue(customSettings));
         }
         
         [Test]

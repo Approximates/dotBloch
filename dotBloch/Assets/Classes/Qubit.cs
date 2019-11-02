@@ -61,20 +61,24 @@ public class Qubit
     }
 
     public string printZeroValue(PrintBlochSettings printingSettings = null) 
-    { 
+    {
         string result = "";
+        PrintBlochSettings conditions;
 
-        if(printingSettings==null){  // no custom settings
-            result = (Math.Round(zeroValue.Real,this.printSettings.decimalSpaces)).ToString();
+        if(printingSettings==null)
+            conditions = this.printSettings;
+        else
+            conditions = printingSettings;
+        
+        string decimalCondition = "";
+
+        if(conditions.endingZeros == true)
+            decimalCondition = "N"+conditions.decimalSpaces.ToString();
+
+        result = (Math.Round(zeroValue.Real,conditions.decimalSpaces)).ToString(decimalCondition);
+
+        if(conditions.decimalSeparator == DecimalSeparator.comma)
             result = result.Replace(".",",");
-        }
-        else{
-            result = (Math.Round(zeroValue.Real,printingSettings.decimalSpaces)).ToString();
-
-            if(printingSettings.decimalSeparator == DecimalSeparator.comma){
-                result = result.Replace(".",",");
-            }
-        }
 
         return result;
     }
