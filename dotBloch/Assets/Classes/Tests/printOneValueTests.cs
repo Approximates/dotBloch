@@ -54,6 +54,15 @@ namespace Tests
             Assert.AreEqual("- 0,866", quantumBit.printOneValue(false));
             Assert.AreEqual("- 0,866", quantumBit.printOneValue(true));
         }   
+
+        [Test]
+        public void theta_120_phi_270_Test(){
+            quantumBit = new Qubit(0,0);
+            quantumBit.thetaAngle = 120;
+            quantumBit.phiAngle = 270;
+            Assert.AreEqual("- 0,866i", quantumBit.printOneValue(false));
+            Assert.AreEqual("- 0,866i", quantumBit.printOneValue(true));
+        }  
              
         [Test]
         public void theta_60_phi_45_Test(){

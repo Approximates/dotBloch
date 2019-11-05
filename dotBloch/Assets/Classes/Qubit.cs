@@ -73,9 +73,19 @@ public class Qubit
         return Math.PI * angle / 180.0;
     }
 #endregion
-    public string printBlochVector(PrintBlochSettings printSettings = null) 
+    public string printBlochVector(PrintBlochSettings printingSettings = null) 
     {
-        throw new NotImplementedException();
+        string result = "";
+        PrintBlochSettings conditions;
+
+        if(printingSettings==null)
+            conditions = this.printSettings;
+        else
+            conditions = printingSettings;
+
+        result += "|" + "\u03A8".ToString() + "> = " + this.printZeroValue(conditions) + " |0> " + this.printOneValue(true, conditions) + " |1>";
+
+        return result;
     }
 
     public string printZeroValue(PrintBlochSettings printingSettings = null) 
@@ -119,12 +129,12 @@ public class Qubit
        double real_number = Math.Round(oneValue.Real,conditions.decimalSpaces);
        double imaginary_number = Math.Round(oneValue.Imaginary,conditions.decimalSpaces);
 
-        /*Debug.Log("Theta: " + this.thetaAngle + "\n");
+        Debug.Log("Theta: " + this.thetaAngle + "\n");
         Debug.Log("Phi: " + this.phiAngle + "\n");
         Debug.Log("Real: "+oneValue.Real + "\n");
         Debug.Log("Imaginary: " + oneValue.Imaginary + "\n");
         Debug.Log("Real rounded: " + real_number+"\n");
-        Debug.Log("Imaginary numer: " + imaginary_number+"\n");*/
+        Debug.Log("Imaginary numer: " + imaginary_number+"\n");
 
         if(real_number==0){
             if(imaginary_number==0){
@@ -142,7 +152,9 @@ public class Qubit
                 if(leadingPlus && imaginary_number >= 0)
                     result += "+ ";
 
-                result += imaginary_number.ToString(decimalCondition);
+                if(imaginary_number<0)
+                     result += "- ";   
+                result += Math.Abs(imaginary_number).ToString(decimalCondition);
 
                 result += conditions.imaginaryUnit.ToString();
             }
@@ -171,12 +183,13 @@ public class Qubit
                 result += " ";
 
                 if(imaginary_number > 0){
-                    result += "+";
+                    result += "+ ";
                 }
-      
-                result += " ";
+                else if(imaginary_number < 0 ){
+                    result += "- ";
+                }
 
-                result += imaginary_number.ToString(decimalCondition);
+                result += Math.Abs(imaginary_number).ToString(decimalCondition);
 
                 result += conditions.imaginaryUnit.ToString();
             }
