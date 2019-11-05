@@ -78,7 +78,7 @@ namespace Tests
             quantumBit = new Qubit(0,0);
             quantumBit.thetaAngle = 90;
             quantumBit.phiAngle = 180;
-            PrintBlochSettings settings = new PrintBlochSettings(true,false,3,PrintBlochSettings.DecimalSeparator.comma,PrintBlochSettings.ImaginaryUnit.J);
+            PrintBlochSettings settings = new PrintBlochSettings(false,false,3,PrintBlochSettings.DecimalSeparator.comma,PrintBlochSettings.ImaginaryUnit.J);
             Assert.AreEqual("-0,707", quantumBit.printOneValue(false,settings));
             Assert.AreEqual("-0,707", quantumBit.printOneValue(true,settings));
         }

@@ -111,8 +111,6 @@ public class Qubit
         else
             conditions = printingSettings;
 
-        
-
         string decimalCondition = "";
         if(conditions.endingZeros == true){
             decimalCondition = "N"+conditions.decimalSpaces.ToString();
@@ -121,14 +119,12 @@ public class Qubit
        double real_number = Math.Round(oneValue.Real,conditions.decimalSpaces);
        double imaginary_number = Math.Round(oneValue.Imaginary,conditions.decimalSpaces);
 
-        Debug.Log("Theta: " + this.thetaAngle + "\n");
+        /*Debug.Log("Theta: " + this.thetaAngle + "\n");
         Debug.Log("Phi: " + this.phiAngle + "\n");
         Debug.Log("Real: "+oneValue.Real + "\n");
         Debug.Log("Imaginary: " + oneValue.Imaginary + "\n");
         Debug.Log("Real rounded: " + real_number+"\n");
-        Debug.Log("Imaginary numer: " + imaginary_number+"\n");
-
-
+        Debug.Log("Imaginary numer: " + imaginary_number+"\n");*/
 
         if(real_number==0){
             if(imaginary_number==0){
@@ -186,29 +182,11 @@ public class Qubit
             }
         }
 
-        
-
-        /*result += (Math.Round(oneValue.Real,conditions.decimalSpaces)).ToString(decimalCondition);
-
-
-        if(oneValue.Imaginary != 0){
-            result += " ";
-
-            if(oneValue.Imaginary > 0)
-                result += "+";
-        
-            result += " ";
-
-            result += (Math.Round(oneValue.Imaginary,conditions.decimalSpaces)).ToString(decimalCondition);
-
-            result += conditions.imaginaryUnit.ToString();
-        }
-        */
         if(conditions.decimalSeparator == DecimalSeparator.comma)
             result = result.Replace(".",",");
 
         if(conditions.printSpaces==false){
-            result.Trim();
+            result = result.Replace(" ", string.Empty);
         }
 
         return result;
