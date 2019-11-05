@@ -70,7 +70,7 @@ public class Qubit
 
     private double DegreeToRadian(double angle, int? decimalSpaces = null)
     {
-        return Math.Round(Math.PI * angle / 180.0,3);
+        return Math.PI * angle / 180.0;
     }
 #endregion
     public string printBlochVector(PrintBlochSettings printSettings = null) 
