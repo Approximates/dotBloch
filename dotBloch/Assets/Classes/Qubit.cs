@@ -143,11 +143,8 @@ public class Qubit
             else
             {
                 // print only imaginary
-                if(imaginary_number >= 0)
-                    result += "+";
-                    
-        
-                result += " ";
+                if(leadingPlus && imaginary_number >= 0)
+                    result += "+ ";
 
                 result += imaginary_number.ToString(decimalCondition);
 
@@ -163,9 +160,6 @@ public class Qubit
                 
                 if(real_number<0) 
                     result += "- ";
-
-
-                Debug.Log("Powinno wykonać się tutaj");
 
                 result += Math.Abs(real_number).ToString(decimalCondition);
             }
