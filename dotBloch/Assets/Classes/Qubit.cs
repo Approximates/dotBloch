@@ -19,8 +19,8 @@ public class Qubit
         this._thetaAngle = thetaAngle;
         this._phiAngle = phiAngle;
 
-        updateZero();
-        updateOne();
+        this.updateZero();
+        this.updateOne();
         
         printSettings = new PrintBlochSettings(true,false,3,PrintBlochSettings.DecimalSeparator.comma,PrintBlochSettings.ImaginaryUnit.i);
     }
@@ -74,10 +74,18 @@ public class Qubit
 
     private void updateOne(){
         double cos_phi_ = Math.Cos(DegreeToRadian(this.phiAngle));
+        // Debug.Log("cos_phi_: " + cos_phi_ + "\n");
         double sin_theta_div_2_ = Math.Sin(DegreeToRadian(this.thetaAngle)/2);
+        // Debug.Log("sin_theta_div_2_: " + sin_theta_div_2_ + "\n");
         double sin_phi = Math.Sin(DegreeToRadian(this.phiAngle));
-
-        this.oneValue = new Complex(cos_phi_*sin_theta_div_2_,sin_phi*sin_theta_div_2_);
+        // Debug.Log("sin_phi" + sin_phi + "\n");
+        
+        
+        
+        // this.oneValue = new Complex(cos_phi_*sin_theta_div_2_,sin_phi*sin_theta_div_2_);
+        // Debug.Log("Real calculation: " + cos_phi_*sin_theta_div_2_ + "\n");
+        // Debug.Log("Imaginary calculation: " + sin_phi*sin_theta_div_2_ + "\n");
+        // Debug.Log("Konstruktor |1>: " + this.oneValue + "\n");
     }
 
     private double DegreeToRadian(double angle, int? decimalSpaces = null)
@@ -90,6 +98,9 @@ public class Qubit
         string result = "";
         PrintBlochSettings conditions;
 
+        Debug.Log("|0>: " + this.zeroValue + "\n");
+        Debug.Log("|1>: " + this.oneValue + "\n");
+
         if(printingSettings==null)
             conditions = this.printSettings;
         else
@@ -97,6 +108,10 @@ public class Qubit
 
         result += "|" + "\u03A8".ToString() + "> = " + this.printZeroValue(conditions) + " |0> " + this.printOneValue(true, conditions) + " |1>";
 
+        if(conditions.printSpaces==false){
+            result = result.Replace(" ", string.Empty);
+        }
+        
         return result;
     }
 
@@ -126,6 +141,9 @@ public class Qubit
     public string printOneValue(bool leadingPlus,PrintBlochSettings printingSettings = null) {
         string result = "";
 
+        // Debug.Log("Imaginary: " + oneValue.Imaginary + "\n");
+        // Debug.Log("Real: "+oneValue.Real + "\n");
+
         PrintBlochSettings conditions;
 
         if(printingSettings==null)
@@ -141,12 +159,11 @@ public class Qubit
        double real_number = Math.Round(oneValue.Real,conditions.decimalSpaces);
        double imaginary_number = Math.Round(oneValue.Imaginary,conditions.decimalSpaces);
 
-        Debug.Log("Theta: " + this.thetaAngle + "\n");
-        Debug.Log("Phi: " + this.phiAngle + "\n");
-        Debug.Log("Real: "+oneValue.Real + "\n");
-        Debug.Log("Imaginary: " + oneValue.Imaginary + "\n");
-        Debug.Log("Real rounded: " + real_number+"\n");
-        Debug.Log("Imaginary numer: " + imaginary_number+"\n");
+        // Debug.Log("Theta: " + this.thetaAngle + "\n");
+        // Debug.Log("Phi: " + this.phiAngle + "\n");
+        
+        // Debug.Log("Real rounded: " + real_number+"\n");
+        // Debug.Log("Imaginary numer: " + imaginary_number+"\n");
 
         if(real_number==0){
             if(imaginary_number==0){
@@ -212,7 +229,6 @@ public class Qubit
         if(conditions.decimalSeparator == DecimalSeparator.comma)
             result = result.Replace(".",",");
 
-        Debug.Log("tutaj");
         if(conditions.printSpaces==false){
             result = result.Replace(" ", string.Empty);
         }

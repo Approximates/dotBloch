@@ -248,7 +248,7 @@ namespace Tests
         {
             quantumBit = new Qubit(30,45);
             PrintBlochSettings settings = new PrintBlochSettings(false,true,1,PrintBlochSettings.DecimalSeparator.comma,PrintBlochSettings.ImaginaryUnit.i);
-            Assert.AreEqual("|Ψ>=1,0|0>+0,2+0,3i|1>",quantumBit.printBlochVector(settings));
+            Assert.AreEqual("|Ψ>=1,0|0>+0,2+0,2i|1>",quantumBit.printBlochVector(settings));
         }
 
         [Test]
@@ -256,21 +256,27 @@ namespace Tests
         {
             quantumBit = new Qubit(30,45);
             PrintBlochSettings settings = new PrintBlochSettings(true,true,4,PrintBlochSettings.DecimalSeparator.dot,PrintBlochSettings.ImaginaryUnit.I);
-            Assert.AreEqual("|Ψ> = 0.9659 |0> + 0.1830 + 0.2588I |1>",quantumBit.printBlochVector(settings));
+            Assert.AreEqual("|Ψ> = 0.9659 |0> + 0.1830 + 0.1830I |1>",quantumBit.printBlochVector(settings));
+            settings = new PrintBlochSettings(true,false,4,PrintBlochSettings.DecimalSeparator.dot,PrintBlochSettings.ImaginaryUnit.I);
+            Assert.AreEqual("|Ψ> = 0.9659 |0> + 0.183 + 0.183I |1>",quantumBit.printBlochVector(settings));
         }
         [Test]
         public void customSettings_theta30_phi_45_Test_3()
         {
-            quantumBit = new Qubit(30,45);
-            PrintBlochSettings settings = new PrintBlochSettings(false,false,8,PrintBlochSettings.DecimalSeparator.comma,PrintBlochSettings.ImaginaryUnit.j);
-            Assert.AreEqual("|Ψ>=0,96592583|0>+0,18301270+0,25881905j|1>",quantumBit.printBlochVector(settings));
+            quantumBit = new Qubit(0,0);
+            quantumBit.thetaAngle = 30;
+            quantumBit.phiAngle = 45;
+            PrintBlochSettings settings = new PrintBlochSettings(false,true,8,PrintBlochSettings.DecimalSeparator.comma,PrintBlochSettings.ImaginaryUnit.j);
+            Assert.AreEqual("|Ψ>=0,96592583|0>+0,18301270+0,18301270j|1>",quantumBit.printBlochVector(settings));
+            settings = new PrintBlochSettings(false,false,8,PrintBlochSettings.DecimalSeparator.comma,PrintBlochSettings.ImaginaryUnit.j);
+            Assert.AreEqual("|Ψ>=0,96592583|0>+0,1830127+0,1830127j|1>",quantumBit.printBlochVector(settings));
         }
         [Test]
         public void customSettings_theta30_phi_45_Test_4()
         {
             quantumBit = new Qubit(30,45);
             PrintBlochSettings settings = new PrintBlochSettings(true,true,15,PrintBlochSettings.DecimalSeparator.dot,PrintBlochSettings.ImaginaryUnit.J);
-            Assert.AreEqual("|Ψ> = 0.965925826289068 |0> + 0.183012701892219 + 0.258819045102521J |1>",quantumBit.printBlochVector(settings));
+            Assert.AreEqual("|Ψ> = 0.965925826289068 |0> + 0.183012701892219 + 0.183012701892219J |1>",quantumBit.printBlochVector(settings));
         }
     }
 }
