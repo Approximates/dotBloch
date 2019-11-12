@@ -49,7 +49,7 @@ public class Qubit
 
             Debug.Log("sin(Θ/2) " + Math.Sin(DegreeToRadian(this.thetaAngle)/2) + "\n");*/
 
-            updateOne();
+            this.updateOne();
         }
     }
 
