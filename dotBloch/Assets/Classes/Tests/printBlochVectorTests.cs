@@ -219,7 +219,7 @@ namespace Tests
             Assert.AreEqual("|Ψ> = 0 |0> - i |1>", quantumBit.printBlochVector());
 
             quantumBit.phiAngle = 359;
-            Assert.AreEqual("|Ψ> = 0 |0> + 1 |1>", quantumBit.printBlochVector());
+            Assert.AreEqual("|Ψ> = 0 |0> + 1 - 0,017i |1>", quantumBit.printBlochVector());
         }
 
         [Test]

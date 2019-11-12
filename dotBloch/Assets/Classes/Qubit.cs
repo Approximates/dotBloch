@@ -166,7 +166,9 @@ public class Qubit
 
                 if(imaginary_number<0)
                      result += "- ";   
-                result += Math.Abs(imaginary_number).ToString(decimalCondition);
+                
+                if(Math.Abs(imaginary_number)!=1)
+                    result += Math.Abs(imaginary_number).ToString(decimalCondition);
 
                 result += conditions.imaginaryUnit.ToString();
             }
