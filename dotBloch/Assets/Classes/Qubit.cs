@@ -212,6 +212,7 @@ public class Qubit
         if(conditions.decimalSeparator == DecimalSeparator.comma)
             result = result.Replace(".",",");
 
+        Debug.Log("tutaj");
         if(conditions.printSpaces==false){
             result = result.Replace(" ", string.Empty);
         }
