@@ -107,7 +107,7 @@ namespace Tests
             quantumBit = new Qubit(0,120);
             Assert.AreEqual("0",quantumBit.printOneValue(false));
             quantumBit.thetaAngle = 30;
-            Assert.AreEqual("- 130 + 0,224i",quantumBit.printOneValue(false));
+            Assert.AreEqual("-0,130 + 0,224i",quantumBit.printOneValue(false));
         }
 
         [Test]
@@ -128,9 +128,9 @@ namespace Tests
         [Test]
         public void theta_change_120_to_170(){
             quantumBit = new Qubit(120,140);
-            Assert.AreEqual("- 0,663 + 0,557",quantumBit.printOneValue(false));
+            Assert.AreEqual("-0,663 + 0,557i",quantumBit.printOneValue(false));
             quantumBit.thetaAngle = 170;
-            Assert.AreEqual("- 0,763 + 0,640",quantumBit.printOneValue(false));
+            Assert.AreEqual("-0,763 + 0,640i",quantumBit.printOneValue(false));
         }
     }
 }

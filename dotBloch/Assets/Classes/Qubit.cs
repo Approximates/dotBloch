@@ -18,6 +18,9 @@ public class Qubit
     {
         this._thetaAngle = thetaAngle;
         this._phiAngle = phiAngle;
+
+        updateZero();
+        updateOne();
         
         printSettings = new PrintBlochSettings(true,false,3,PrintBlochSettings.DecimalSeparator.comma,PrintBlochSettings.ImaginaryUnit.i);
     }
@@ -46,11 +49,7 @@ public class Qubit
 
             Debug.Log("sin(Θ/2) " + Math.Sin(DegreeToRadian(this.thetaAngle)/2) + "\n");*/
 
-            double cos_phi_ = Math.Cos(DegreeToRadian(value));
-            double sin_theta_div_2_ = Math.Sin(DegreeToRadian(this.thetaAngle)/2);
-            double sin_phi = Math.Sin(DegreeToRadian(value));
-
-            oneValue = new Complex(cos_phi_*sin_theta_div_2_,sin_phi*sin_theta_div_2_);
+            updateOne();
         }
     }
 
@@ -64,8 +63,21 @@ public class Qubit
         {
             //add validators
             _thetaAngle = value;
-            zeroValue = new Complex(Math.Cos(DegreeToRadian(value)/2),0);
+            this.updateZero();
+            this.updateOne();
         }
+    }
+
+    private void updateZero(){
+        this.zeroValue = new Complex(Math.Cos(DegreeToRadian(this.thetaAngle)/2),0);
+    }
+
+    private void updateOne(){
+        double cos_phi_ = Math.Cos(DegreeToRadian(this.phiAngle));
+        double sin_theta_div_2_ = Math.Sin(DegreeToRadian(this.thetaAngle)/2);
+        double sin_phi = Math.Sin(DegreeToRadian(this.phiAngle));
+
+        this.oneValue = new Complex(cos_phi_*sin_theta_div_2_,sin_phi*sin_theta_div_2_);
     }
 
     private double DegreeToRadian(double angle, int? decimalSpaces = null)
