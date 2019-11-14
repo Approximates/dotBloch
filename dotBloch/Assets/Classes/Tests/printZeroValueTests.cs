@@ -13,7 +13,7 @@ namespace Tests
         Qubit quantumBit;
         // A Test behaves as an ordinary method
         [Test]
-        public void nUnit_test()
+        public void nUnit_Test()
         {
             Assert.AreEqual(true, true);
             Assert.AreEqual(null, null);

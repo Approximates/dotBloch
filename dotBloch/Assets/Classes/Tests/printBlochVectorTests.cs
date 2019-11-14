@@ -13,7 +13,7 @@ namespace Tests
         Qubit quantumBit;
         // A Test behaves as an ordinary method
         [Test]
-        public void nUnit_test()
+        public void nUnit_Test()
         {
             Assert.AreEqual(true, true);
             Assert.AreEqual(null, null);
@@ -240,7 +240,7 @@ namespace Tests
         }
 
         [Test]
-        public void invalid_argument_phi_minus_Tests(){
+        public void invalid_argument_phi_minus_Test(){
             quantumBit = new Qubit(120,45);
             Assert.AreEqual("|Ψ> = 0,5 |0> + 0,612 + 0,612i |1>", quantumBit.printBlochVector());
             quantumBit.phiAngle= - 13;
