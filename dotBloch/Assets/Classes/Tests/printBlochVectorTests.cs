@@ -222,33 +222,47 @@ namespace Tests
             Assert.AreEqual("|Ψ> = 0 |0> + 1 - 0,017i |1>", quantumBit.printBlochVector());
         }
 
+
         [Test]
-        public void invalid_arguments_Tests()
-        {
-            quantumBit = new Qubit(0,0);
-            quantumBit.thetaAngle = -10;
-            quantumBit.phiAngle = 15;
-            Assert.AreEqual(new ArgumentException("Theta angle is less than 0 degrees"), quantumBit.printBlochVector());
+        public void invalid_argument_theta_minus_Tests(){
+            quantumBit = new Qubit(120,45);
+            Assert.AreEqual("|Ψ> = 0,5 |0> + 0,612 + 0,612i |1>", quantumBit.printBlochVector());
+            quantumBit.thetaAngle = - 10;
+            Assert.AreEqual("|Ψ> = 0,5 |0> + 0,612 + 0,612i |1>", quantumBit.printBlochVector());
+        }
 
-            quantumBit.thetaAngle = 86;
-            quantumBit.phiAngle = -23;
-            Assert.AreEqual(new ArgumentException("Phi angle is less than 0 degrees"), quantumBit.printBlochVector());
+        [Test]
+        public void invalid_argument_thetha_too_big_Test(){
+            quantumBit = new Qubit(120,45);
+            Assert.AreEqual("|Ψ> = 0,5 |0> + 0,612 + 0,612i |1>", quantumBit.printBlochVector());
+            quantumBit.thetaAngle = - 183;
+            Assert.AreEqual("|Ψ> = 0,5 |0> + 0,612 + 0,612i |1>", quantumBit.printBlochVector());
+        }
 
-            quantumBit.thetaAngle = 183;
-            quantumBit.phiAngle = 270;
-            Assert.AreEqual(new ArgumentException("Theta angle is greater than 180 degrees"), quantumBit.printBlochVector());
+        [Test]
+        public void invalid_argument_phi_minus_Tests(){
+            quantumBit = new Qubit(120,45);
+            Assert.AreEqual("|Ψ> = 0,5 |0> + 0,612 + 0,612i |1>", quantumBit.printBlochVector());
+            quantumBit.phiAngle= - 13;
+            Assert.AreEqual("|Ψ> = 0,5 |0> + 0,612 + 0,612i |1>", quantumBit.printBlochVector());
+        }
 
-            quantumBit.thetaAngle = 20;
-            quantumBit.phiAngle = 380;
-            Assert.AreEqual(new ArgumentException("Phi angle is greater than 360 degrees"), quantumBit.printBlochVector());
+        [Test]
+        public void invalid_argument_phi_too_big_Test(){
+            quantumBit = new Qubit(120,45);
+            Assert.AreEqual("|Ψ> = 0,5 |0> + 0,612 + 0,612i |1>", quantumBit.printBlochVector());
+            quantumBit.thetaAngle = - 378;
+            Assert.AreEqual("|Ψ> = 0,5 |0> + 0,612 + 0,612i |1>", quantumBit.printBlochVector());
         }
 
         [Test]
         public void customSettings_theta30_phi_45_Test_1()
         {
-            quantumBit = new Qubit(30,45);
-            PrintBlochSettings settings = new PrintBlochSettings(false,true,1,PrintBlochSettings.DecimalSeparator.comma,PrintBlochSettings.ImaginaryUnit.i);
-            Assert.AreEqual("|Ψ>=1,0|0>+0,2+0,2i|1>",quantumBit.printBlochVector(settings));
+            quantumBit = new Qubit(120,45);
+            quantumBit.thetaAngle = 120;
+            quantumBit.phiAngle = 45;
+            Assert.AreEqual("|Ψ> = 0,5 |0> + 0,612 + 0,612i |1>", quantumBit.printBlochVector());
+
         }
 
         [Test]

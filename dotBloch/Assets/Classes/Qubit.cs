@@ -16,13 +16,41 @@ public class Qubit
 
     public Qubit(double thetaAngle, double phiAngle)
     {
-        this._thetaAngle = thetaAngle;
-        this._phiAngle = phiAngle;
+        if(anglesAreValid(thetaAngle,phiAngle)){
+            this._thetaAngle = thetaAngle;
+            this._phiAngle = phiAngle;
 
-        this.updateZero();
-        this.updateOne();
+            this.updateZero();
+            this.updateOne();
         
-        printSettings = new PrintBlochSettings(true,false,3,PrintBlochSettings.DecimalSeparator.comma,PrintBlochSettings.ImaginaryUnit.i);
+            printSettings = new PrintBlochSettings(true,false,3,PrintBlochSettings.DecimalSeparator.comma,PrintBlochSettings.ImaginaryUnit.i);
+        }
+        else
+        {
+            throw new ArgumentException("Value of theta or phi angle is wrong");
+            Debug.Log("Value of theta or phi angle is wrong");
+        }
+    }
+
+    private bool anglesAreValid(double theta, double phi){
+        if(thetaIsValid(this.thetaAngle) && phiIsValid(this.phiAngle))
+            return true;
+        else 
+            return false;
+    }
+
+    private bool phiIsValid(double angle){
+        if(angle >=0 && angle<=360)
+            return true;
+        else
+            return false;
+    }
+
+    private bool thetaIsValid(double angle){
+        if(angle >=0 && angle<=180)
+            return true;
+        else
+            return false;
     }
 
 #region geters_and_setters
@@ -34,9 +62,13 @@ public class Qubit
         }
         set
         {
-            //add validators
-            _phiAngle = value;
-
+            if(phiIsValid(value)){
+                _phiAngle = value;
+                this.updateOne();
+            }
+            else{
+                Debug.Log("Value of theta or phi angle is wrong");
+            }
             /*Debug.Log("Theta setter:" + this.thetaAngle + "\n");
             Debug.Log("Phi setter:" + value + "\n");
 
@@ -48,8 +80,6 @@ public class Qubit
 
 
             Debug.Log("sin(Θ/2) " + Math.Sin(DegreeToRadian(this.thetaAngle)/2) + "\n");*/
-
-            this.updateOne();
         }
     }
 
@@ -62,9 +92,14 @@ public class Qubit
         set
         {
             //add validators
-            _thetaAngle = value;
-            this.updateZero();
-            this.updateOne();
+            Debug.Log("theta value przed: " + value);
+            if(thetaIsValid(value)){
+                Debug.Log("theta value po: " + value);
+                _thetaAngle = value;
+                this.updateZero();
+                this.updateOne();
+            }
+            
         }
     }
 
