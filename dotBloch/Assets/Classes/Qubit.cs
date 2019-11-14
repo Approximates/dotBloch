@@ -82,7 +82,7 @@ public class Qubit
         
         
         
-        // this.oneValue = new Complex(cos_phi_*sin_theta_div_2_,sin_phi*sin_theta_div_2_);
+        this.oneValue = new Complex(cos_phi_*sin_theta_div_2_,sin_phi*sin_theta_div_2_);
         // Debug.Log("Real calculation: " + cos_phi_*sin_theta_div_2_ + "\n");
         // Debug.Log("Imaginary calculation: " + sin_phi*sin_theta_div_2_ + "\n");
         // Debug.Log("Konstruktor |1>: " + this.oneValue + "\n");
