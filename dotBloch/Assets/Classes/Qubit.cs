@@ -240,11 +240,15 @@ public class Qubit
             else
             {
                 // real AND imaginary
-                if(leadingPlus){
+                if(leadingPlus && real_number>=0){
                     result += "+ ";
                 }
                 
-                result += real_number.ToString(decimalCondition);
+                if(real_number<0)
+                {
+                    result += "- ";
+                }
+                result += Math.Abs(real_number).ToString(decimalCondition);
                 
                 result += " ";
 
