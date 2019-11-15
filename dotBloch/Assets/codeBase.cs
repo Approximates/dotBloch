@@ -6,8 +6,10 @@ using System;
 
 public class codeBase : MonoBehaviour {
 
-	public float thetaValue;
-	public float phiValue;
+	//public float thetaValue;
+	//public float phiValue;
+
+	Qubit quantumBit;
 	public bool bitValue;
 
 	public GameObject classicalOne;
@@ -39,7 +41,6 @@ public class codeBase : MonoBehaviour {
 
 	public bool isQuantumBitSelected;
 
-    public Qubit quantumBit;
 	// Use this for initialization
 	void Start () {
         /*quantumBit = new Qubit(5);
@@ -49,7 +50,7 @@ public class codeBase : MonoBehaviour {
         Debug.Log("Imaginary numer of complex:" + quantumBit.zero.Imaginary);
         Debug.Log("Adding complex: " + quantumBit.add);
         Debug.Log("Multiplying complex: " + quantumBit.mul);*/
-
+		quantumBit = new Qubit(45,0);
         thetaInputField.characterLimit = 6;
 		phiInputField.characterLimit = 6;
 
@@ -64,8 +65,8 @@ public class codeBase : MonoBehaviour {
 
 	void thetaSliderChanged(){
 		if (isQuantumBitSelected) {
-			if (thetaValue != thetaSlider.value) { 
-				thetaValue = thetaSlider.value;
+			if (quantumBit.thetaAngle != thetaSlider.value) { 
+				quantumBit.thetaAngle = thetaSlider.value;
 			}
 		} else {
 			Debug.Log (thetaSlider.value);
@@ -76,8 +77,8 @@ public class codeBase : MonoBehaviour {
 
 	void phiSliderChanged(){
 		if (isQuantumBitSelected) {
-			if (phiValue != phiSlider.value) {
-				phiValue = phiSlider.value;
+			if (quantumBit.phiAngle != phiSlider.value) {
+				quantumBit.phiAngle = phiSlider.value;
 			}
 		}
 
@@ -115,19 +116,19 @@ public class codeBase : MonoBehaviour {
 
 	public void setPointers(){
 		if (isQuantumBitSelected) {
-			this.thetaInputField.text = this.thetaValue.ToString ();
-			this.phiInputField.text = this.phiValue.ToString ();
+			this.thetaInputField.text = this.quantumBit.thetaAngle.ToString ();
+			this.phiInputField.text = this.quantumBit.phiAngle.ToString ();
 
-			thetaSlider.value = this.thetaValue;
-			phiSlider.value = this.phiValue;
+			thetaSlider.value = (float)this.quantumBit.thetaAngle;
+			phiSlider.value = (float)this.quantumBit.phiAngle;
 
-			quantumBitArrow.transform.rotation = Quaternion.Euler(this.thetaValue-90, this.phiValue, 0);
+			quantumBitArrow.transform.rotation = Quaternion.Euler((float)this.quantumBit.thetaAngle-90, (float)this.quantumBit.phiAngle, 0);
 
 			//valueOfQuantumZero();
-			quantumZeroLabel.text = valueOfQuantumZero();
-			quantumOneLabel.text = valueOfQuantumOne();
+			quantumZeroLabel.text = this.quantumBit.printZeroValue();
+			quantumOneLabel.text = this.quantumBit.printOneValue(false);
 
-			qubitLabel.text = valueOfQubit();
+			qubitLabel.text = this.quantumBit.printBlochVector();
 		} else if (bitValue) { 
 			this.thetaInputField.text = "1";
 			this.phiInputField.text = "";
@@ -150,8 +151,8 @@ public class codeBase : MonoBehaviour {
 
 	public void setBitsValues(bool bitValue, float thetaValue, float phiValue){
 		this.bitValue = bitValue;
-		this.phiValue = phiValue;
-		this.thetaValue = thetaValue;
+		//this.phiValue = phiValue;
+		//this.thetaValue = thetaValue;
 	}
 
 	public void enableClassicalBit(){
@@ -210,26 +211,26 @@ public class codeBase : MonoBehaviour {
 
 	}
 
-	public String valueOfQuantumZero(){
-		//Debug.Log (Math.Round(Math.Cos(this.thetaValue/2*Math.PI/180),3).ToString());
-		return Math.Round(Math.Cos(this.thetaValue/2*Math.PI/180),3).ToString();
-	}
+	// public String valueOfQuantumZero(){
+	// 	//Debug.Log (Math.Round(Math.Cos(this.thetaValue/2*Math.PI/180),3).ToString());
+	// 	return Math.Round(Math.Cos(this.thetaValue/2*Math.PI/180),3).ToString();
+	// }
 
-	public String valueOfQuantumOne(){
+	// public String valueOfQuantumOne(){
 		
-		String result = "";
+	// 	String result = "";
 
-		result += Math.Round (Math.Cos (this.phiValue * Math.PI / 180) * Math.Sin (this.thetaValue / 2 * Math.PI / 180), 3).ToString ();
-		result += " + " + Math.Round (Math.Sin (this.phiValue * Math.PI / 180) * Math.Sin (this.thetaValue / 2 * Math.PI / 180), 3).ToString () + "i"; 
+	// 	result += Math.Round (Math.Cos (this.phiValue * Math.PI / 180) * Math.Sin (this.thetaValue / 2 * Math.PI / 180), 3).ToString ();
+	// 	result += " + " + Math.Round (Math.Sin (this.phiValue * Math.PI / 180) * Math.Sin (this.thetaValue / 2 * Math.PI / 180), 3).ToString () + "i"; 
 
-		return result;
-	}
+	// 	return result;
+	// }
 
 	//qubitLabel
-	public String valueOfQubit(){
-		return "|" + "\u03A8".ToString () + "> = " + valueOfQuantumZero () + " |0> + " + valueOfQuantumOne () + " |1>";
+	// public String valueOfQubit(){
+	// 	return "|" + "\u03A8".ToString () + "> = " + valueOfQuantumZero () + " |0> + " + valueOfQuantumOne () + " |1>";
 			
-	}
+	// }
 	void Update()
 	{
 		framesPerSecond(ref FPSmilliseconds, ref framesCount);
