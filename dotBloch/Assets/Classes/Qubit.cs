@@ -173,6 +173,10 @@ public class Qubit
 
         return result;
     }
+
+    private string print(Complex number){
+        return "";
+    }
     public string printOneValue(bool leadingPlus,PrintBlochSettings printingSettings = null) {
         string result = "";
 
