@@ -174,8 +174,66 @@ public class Qubit
         return result;
     }
 
-    private string print(Complex number){
-        return "";
+    private PrintBlochSettings setConditions(ref PrintBlochSettings printingSettings){
+        if(printingSettings==null) // metoda
+            return this.printSettings; // metoda set_default_printing_condition();
+        else
+            return printingSettings; // metoda??? put_given_printing_condition();
+    }
+
+    private string print(Complex number,PrintBlochSettings printingSettings = null){
+        string result = "";
+        PrintBlochSettings conditions = setConditions(ref printingSettings);
+        
+
+        //string decimalSpaces = this.setRounding(conditions);
+
+        //method roundRealNumber
+        double real_number = Math.Round(number.Real,conditions.decimalSpaces);
+        double imaginary_number = Math.Round(number.Imaginary,conditions.decimalSpaces);//method roundImaginaryNumber
+
+        // if(real_number==0 && imaginary_number==0) //
+        //     result += real_number.ToString(decimalSpaces);  
+    //result += Math.Abs(imaginary_number).ToString(decimalCondition);
+        
+        // remove spaces
+        
+        // if(real_number==0){
+        //     if(imaginary_number==0){
+        //         result += real_number.ToString(decimalSpaces);  
+        //     }
+        //     else{
+        //         // only imaginary
+        //     }
+        // }
+        // else
+
+        return result;
+    }
+
+    private string printReal(Complex number,PrintBlochSettings printingSettings = null){
+        PrintBlochSettings conditions = setConditions(ref printingSettings);
+        string decimalSpaces = this.setRounding(conditions);
+
+        double real_number = Math.Round(number.Real,conditions.decimalSpaces);
+
+        return real_number.ToString(decimalSpaces);
+    }
+
+    private string printImaginary(Complex number,PrintBlochSettings printingSettings = null){
+        PrintBlochSettings conditions = setConditions(ref printingSettings);
+        string decimalSpaces = this.setRounding(conditions);
+
+        double imaginary_number = Math.Round(number.Real,conditions.decimalSpaces);
+
+        return imaginary_number.ToString(decimalSpaces);
+    }
+
+    private string setRounding(PrintBlochSettings settings){
+        if(settings.endingZeros == true)
+            return "N"+settings.decimalSpaces.ToString();
+        else
+            return String.Empty;
     }
     public string printOneValue(bool leadingPlus,PrintBlochSettings printingSettings = null) {
         string result = "";

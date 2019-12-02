@@ -140,7 +140,6 @@ namespace Tests
             quantumBit = new Qubit(90,100);
             Assert.AreEqual("- 0,123 + 0,696i",quantumBit.printOneValue(true));
             Assert.AreEqual("- 0,123 + 0,696i",quantumBit.printOneValue(false));
-
         }
     }
 }
