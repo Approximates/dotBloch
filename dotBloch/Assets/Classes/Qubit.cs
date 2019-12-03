@@ -184,8 +184,6 @@ public class Qubit
     private string print(Complex number,PrintBlochSettings printingSettings = null){
         string result = "";
         PrintBlochSettings conditions = setConditions(ref printingSettings);
-        
-
         //string decimalSpaces = this.setRounding(conditions);
 
         //method roundRealNumber
@@ -197,6 +195,28 @@ public class Qubit
     //result += Math.Abs(imaginary_number).ToString(decimalCondition);
         
         // remove spaces
+
+        if(number_not_zero(real_number)){
+            if(number_not_zero(imaginary_number)){
+                result += printNumber(real_number,conditions) + printDecimalCharacter(imaginary_number,conditions) + printNumber(imaginary_number,conditions);
+                // print real and imaginary
+            }
+            else{
+                //imaginary zero
+                result += printNumber(real_number,conditions);
+            }
+        }
+        else{
+            if(imaginary_number==0){
+                // print only real, 0
+                result += printNumber(real_number,conditions);
+
+            }
+            else{
+                //print only imaginary
+                result += printNumber(imaginary_number,conditions);
+            }
+        }
         
         // if(real_number==0){
         //     if(imaginary_number==0){
@@ -208,32 +228,68 @@ public class Qubit
         // }
         // else
 
+        // remove spaces if needed
+
+
+        result = remove_spaces_if_needed(result,conditions.printSpaces);
+
         return result;
     }
 
-    private string printReal(Complex number,PrintBlochSettings printingSettings = null){
+    private string remove_spaces_if_needed(string argument, bool needed){
+        if(needed)
+            argument = remove_spaces(argument);
+
+        return argument;
+    }
+
+    private string remove_spaces(string argument){
+        return argument.Replace(" ", string.Empty);
+    }
+
+    private bool number_is_zero(double number){
+        number==0 ? true; : return false;
+    }
+    private bool number_not_zero(double number){
+        if(number > 0 || number < 0)
+            return true;
+        else
+            return false;
+    }
+
+    private string printNumber(double number,PrintBlochSettings printingSettings = null){
         PrintBlochSettings conditions = setConditions(ref printingSettings);
         string decimalSpaces = this.setRounding(conditions);
 
-        double real_number = Math.Round(number.Real,conditions.decimalSpaces);
+        double result = Math.Round(number,conditions.decimalSpaces);
 
-        return real_number.ToString(decimalSpaces);
+        return result.ToString(decimalSpaces);
     }
 
-    private string printImaginary(Complex number,PrintBlochSettings printingSettings = null){
-        PrintBlochSettings conditions = setConditions(ref printingSettings);
-        string decimalSpaces = this.setRounding(conditions);
+    // private string printImaginary(Complex number,PrintBlochSettings printingSettings = null){
+    //     PrintBlochSettings conditions = setConditions(ref printingSettings);
+    //     string decimalSpaces = this.setRounding(conditions);
 
-        double imaginary_number = Math.Round(number.Real,conditions.decimalSpaces);
+    //     double imaginary_number = Math.Round(number.Real,conditions.decimalSpaces);
 
-        return imaginary_number.ToString(decimalSpaces);
-    }
+    //     return imaginary_number.ToString(decimalSpaces);
+    // }
 
     private string setRounding(PrintBlochSettings settings){
         if(settings.endingZeros == true)
             return "N"+settings.decimalSpaces.ToString();
         else
             return String.Empty;
+    }
+
+    private string printDecimalCharacter(double number,PrintBlochSettings printingSettings = null){
+        string result = "";
+        if(number >= 0)
+            result += " + ";
+        else
+            result += " - ";
+
+        return result;
     }
     public string printOneValue(bool leadingPlus,PrintBlochSettings printingSettings = null) {
         string result = "";
