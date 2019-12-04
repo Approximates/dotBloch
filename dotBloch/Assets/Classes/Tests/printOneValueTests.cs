@@ -72,7 +72,7 @@ namespace Tests
             quantumBit = new Qubit(0,0);
             quantumBit.thetaAngle = 90;
             quantumBit.phiAngle = 90;
-            Assert.AreEqual("+ 0,707i", quantumBit.printOneValue());
+            Assert.AreEqual("0,707i", quantumBit.printOneValue());
         }   
              
         [Test]

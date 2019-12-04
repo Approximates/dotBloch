@@ -201,6 +201,7 @@ public class Qubit
             if(number_not_zero(imaginary_number)){
                 result += print_number(real_number,printing_rules) + printDecimalCharacter(imaginary_number,printing_rules) + print_number(imaginary_number,printing_rules);
                 // print real and imaginary
+                result += add_imaginary_unit(printing_rules.imaginaryUnit);
             }
             else{
                 //imaginary zero
@@ -216,28 +217,20 @@ public class Qubit
             else{
                 //print only imaginary
                 result += print_number(imaginary_number,printing_rules);
+                result += add_imaginary_unit(printing_rules.imaginaryUnit);
             }
         }
-        
-        // if(real_number==0){
-        //     if(imaginary_number==0){
-        //         result += real_number.ToString(decimalSpaces);  
-        //     }
-        //     else{
-        //         // only imaginary
-        //     }
-        // }
-        // else
 
-        // remove spaces if needed
-
-
+        Debug.Log("result: " + result + " przed usuwaniem spacji");
         result = remove_spaces_if_needed(result,printing_rules.printSpaces);
+        Debug.Log("result: " + result + " po usunieciu spacji");
         result = set_decimal_separator(result,printing_rules.decimalSeparator);
 
-        // result = result.Replace(".",",");
-
         return result;
+    }
+
+    private string add_imaginary_unit(ImaginaryUnit imaginaryUnit){
+        return imaginaryUnit.ToString();
     }
 
     private string set_decimal_separator(string argument, DecimalSeparator separator){
