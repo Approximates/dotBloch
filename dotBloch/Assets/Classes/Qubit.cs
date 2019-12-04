@@ -152,29 +152,30 @@ public class Qubit
 
     public string printZeroValue(PrintBlochSettings printingSettings = null) 
     {
-        string result = "";
-        PrintBlochSettings conditions;
+        return print(zeroValue,printingSettings);
+        // string result = "";
+        // PrintBlochSettings conditions;
 
-        if(printingSettings==null)
-            conditions = this.printSettings;
-        else
-            conditions = printingSettings;
+        // if(printingSettings==null)
+        //     conditions = this.printSettings;
+        // else
+        //     conditions = printingSettings;
         
-        string decimalCondition = "";
+        // string decimalCondition = "";
 
-        if(conditions.endingZeros == true)
-            decimalCondition = "N"+conditions.decimalSpaces.ToString();
+        // if(conditions.endingZeros == true)
+        //     decimalCondition = "N"+conditions.decimalSpaces.ToString();
 
-        result = (Math.Round(zeroValue.Real,conditions.decimalSpaces)).ToString(decimalCondition);
+        // result = (Math.Round(zeroValue.Real,conditions.decimalSpaces)).ToString(decimalCondition);
 
-        if(conditions.decimalSeparator == DecimalSeparator.comma)
-            result = result.Replace(".",",");
+        // if(conditions.decimalSeparator == DecimalSeparator.comma)
+        //     result = result.Replace(".",",");
 
 
-        return result;
+        // return result;
     }
 
-    private PrintBlochSettings setConditions(ref PrintBlochSettings printingSettings){
+    private PrintBlochSettings set_printing_rules(ref PrintBlochSettings printingSettings){
         if(printingSettings==null) // metoda
             return this.printSettings; // metoda set_default_printing_condition();
         else
@@ -183,12 +184,12 @@ public class Qubit
 
     private string print(Complex number,PrintBlochSettings printingSettings = null){
         string result = "";
-        PrintBlochSettings conditions = setConditions(ref printingSettings);
+        PrintBlochSettings printing_rules = set_printing_rules(ref printingSettings);
         //string decimalSpaces = this.setRounding(conditions);
 
         //method roundRealNumber
-        double real_number = Math.Round(number.Real,conditions.decimalSpaces);
-        double imaginary_number = Math.Round(number.Imaginary,conditions.decimalSpaces);//method roundImaginaryNumber
+        double real_number = Math.Round(number.Real,printing_rules.decimalSpaces);
+        double imaginary_number = Math.Round(number.Imaginary,printing_rules.decimalSpaces);
 
         // if(real_number==0 && imaginary_number==0) //
         //     result += real_number.ToString(decimalSpaces);  
@@ -198,23 +199,23 @@ public class Qubit
 
         if(number_not_zero(real_number)){
             if(number_not_zero(imaginary_number)){
-                result += printNumber(real_number,conditions) + printDecimalCharacter(imaginary_number,conditions) + printNumber(imaginary_number,conditions);
+                result += print_number(real_number,printing_rules) + printDecimalCharacter(imaginary_number,printing_rules) + print_number(imaginary_number,printing_rules);
                 // print real and imaginary
             }
             else{
                 //imaginary zero
-                result += printNumber(real_number,conditions);
+                result += print_number(real_number,printing_rules);
             }
         }
         else{
             if(imaginary_number==0){
                 // print only real, 0
-                result += printNumber(real_number,conditions);
+                result += print_number(real_number,printing_rules);
 
             }
             else{
                 //print only imaginary
-                result += printNumber(imaginary_number,conditions);
+                result += print_number(imaginary_number,printing_rules);
             }
         }
         
@@ -231,9 +232,20 @@ public class Qubit
         // remove spaces if needed
 
 
-        result = remove_spaces_if_needed(result,conditions.printSpaces);
+        result = remove_spaces_if_needed(result,printing_rules.printSpaces);
+        result = set_decimal_separator(result,printing_rules.decimalSeparator);
+
+        // result = result.Replace(".",",");
 
         return result;
+    }
+
+    private string set_decimal_separator(string argument, DecimalSeparator separator){
+
+        if(separator == DecimalSeparator.comma)
+            argument = argument.Replace(".",",");
+            
+        return argument;
     }
 
     private string remove_spaces_if_needed(string argument, bool needed){
@@ -248,7 +260,7 @@ public class Qubit
     }
 
     private bool number_is_zero(double number){
-        number==0 ? true; : return false;
+        return number == 0 ? true : false;
     }
     private bool number_not_zero(double number){
         if(number > 0 || number < 0)
@@ -257,11 +269,11 @@ public class Qubit
             return false;
     }
 
-    private string printNumber(double number,PrintBlochSettings printingSettings = null){
-        PrintBlochSettings conditions = setConditions(ref printingSettings);
-        string decimalSpaces = this.setRounding(conditions);
+    private string print_number(double number,PrintBlochSettings printingSettings = null){
+        PrintBlochSettings printing_rules = set_printing_rules(ref printingSettings);
+        string decimalSpaces = this.set_number_rounding(printing_rules);
 
-        double result = Math.Round(number,conditions.decimalSpaces);
+        double result = Math.Round(number,printing_rules.decimalSpaces);
 
         return result.ToString(decimalSpaces);
     }
@@ -275,7 +287,7 @@ public class Qubit
     //     return imaginary_number.ToString(decimalSpaces);
     // }
 
-    private string setRounding(PrintBlochSettings settings){
+    private string set_number_rounding(PrintBlochSettings settings){
         if(settings.endingZeros == true)
             return "N"+settings.decimalSpaces.ToString();
         else
