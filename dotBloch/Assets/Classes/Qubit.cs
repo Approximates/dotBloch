@@ -284,11 +284,9 @@ public class Qubit
     }
 
     private string print_decimal_character(double number,PrintBlochSettings printingSettings = null){
-        string result = "";
+        string result = " ";
         if(number >= 0)
-            result += " + ";
-        else
-            result += " - ";
+            result += "+ ";
 
         return result;
     }
