@@ -91,6 +91,7 @@ namespace Tests
             PrintBlochSettings settings = new PrintBlochSettings(true,false,3,PrintBlochSettings.DecimalSeparator.dot,PrintBlochSettings.ImaginaryUnit.I);
             Assert.AreEqual("0.271 + 0.271I", quantumBit.printOneValue(settings));
             settings = new PrintBlochSettings(false,false,3,PrintBlochSettings.DecimalSeparator.comma,PrintBlochSettings.ImaginaryUnit.j);
+            Assert.AreEqual("0,271+0,271j", quantumBit.printOneValue(settings));
         }
 
         [Test]

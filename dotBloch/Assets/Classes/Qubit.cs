@@ -241,8 +241,8 @@ public class Qubit
         return argument;
     }
 
-    private string remove_spaces_if_needed(string argument, bool needed){
-        if(needed)
+    private string remove_spaces_if_needed(string argument, bool keep_spaces){
+        if(keep_spaces==false)
             argument = remove_spaces(argument);
 
         return argument;
