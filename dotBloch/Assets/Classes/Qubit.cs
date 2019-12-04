@@ -1,6 +1,4 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 using System.Numerics;
 using System;
 using static PrintBlochSettings;
@@ -16,12 +14,12 @@ public class Qubit
 
     public Qubit(double thetaAngle, double phiAngle)
     {
-        if(anglesAreValid(thetaAngle,phiAngle)){
+        if(angles_are_valid(thetaAngle,phiAngle)){
             this._thetaAngle = thetaAngle;
             this._phiAngle = phiAngle;
 
-            this.updateZero();
-            this.updateOne();
+            this.update_quantum_zero_value();
+            this.update_quantum_one_value();
         
             printSettings = new PrintBlochSettings(true,false,3,PrintBlochSettings.DecimalSeparator.comma,PrintBlochSettings.ImaginaryUnit.i);
         }
@@ -32,21 +30,21 @@ public class Qubit
         }
     }
 
-    private bool anglesAreValid(double theta, double phi){
-        if(thetaIsValid(this.thetaAngle) && phiIsValid(this.phiAngle))
+    private bool angles_are_valid(double thetaAngle, double phiAngle){
+        if(theta_is_valid(thetaAngle) && phi_angle_is_valid(phiAngle))
             return true;
         else 
             return false;
     }
 
-    private bool phiIsValid(double angle){
+    private bool phi_angle_is_valid(double angle){
         if(angle >=0 && angle<=360)
             return true;
         else
             return false;
     }
 
-    private bool thetaIsValid(double angle){
+    private bool theta_is_valid(double angle){
         if(angle >=0 && angle<=180)
             return true;
         else
@@ -62,24 +60,13 @@ public class Qubit
         }
         set
         {
-            if(phiIsValid(value)){
+            if(phi_angle_is_valid(value)){
                 _phiAngle = value;
-                this.updateOne();
+                this.update_quantum_one_value();
             }
             else{
                 Debug.Log("Value of theta or phi angle is wrong");
             }
-            /*Debug.Log("Theta setter:" + this.thetaAngle + "\n");
-            Debug.Log("Phi setter:" + value + "\n");
-
-            Debug.Log("cos(ϕ) " + Math.Cos(DegreeToRadian(value)) + "\n");
-            Debug.Log("sin(ϕ) " + Math.Sin(DegreeToRadian(value)) + "\n");
-            Debug.Log("3) sin(ϕ) " + Math.Round(Math.Sin(DegreeToRadian(value))) + "\n");
-
-            Debug.Log("180 stopni: " + DegreeToRadian(180) + "\n");
-
-
-            Debug.Log("sin(Θ/2) " + Math.Sin(DegreeToRadian(this.thetaAngle)/2) + "\n");*/
         }
     }
 
@@ -91,44 +78,31 @@ public class Qubit
         }
         set
         {
-            //add validators
-            Debug.Log("theta value przed: " + value);
-            if(thetaIsValid(value)){
-                Debug.Log("theta value po: " + value);
+            if(theta_is_valid(value)){
                 _thetaAngle = value;
-                this.updateZero();
-                this.updateOne();
+                this.update_quantum_zero_value();
+                this.update_quantum_one_value();
             }
-            
         }
     }
 
-    private void updateZero(){
-        this.zeroValue = new Complex(Math.Cos(DegreeToRadian(this.thetaAngle)/2),0);
+    private void update_quantum_zero_value(){
+        this.zeroValue = new Complex(Math.Cos(degree_to_radian(this.thetaAngle)/2),0);
     }
 
-    private void updateOne(){
-        double cos_phi_ = Math.Cos(DegreeToRadian(this.phiAngle));
-        // Debug.Log("cos_phi_: " + cos_phi_ + "\n");
-        double sin_theta_div_2_ = Math.Sin(DegreeToRadian(this.thetaAngle)/2);
-        // Debug.Log("sin_theta_div_2_: " + sin_theta_div_2_ + "\n");
-        double sin_phi = Math.Sin(DegreeToRadian(this.phiAngle));
-        // Debug.Log("sin_phi" + sin_phi + "\n");
-        
-        
-        
+    private void update_quantum_one_value(){
+        double cos_phi_ = Math.Cos(degree_to_radian(this.phiAngle));
+        double sin_theta_div_2_ = Math.Sin(degree_to_radian(this.thetaAngle)/2);
+        double sin_phi = Math.Sin(degree_to_radian(this.phiAngle));
+
         this.oneValue = new Complex(cos_phi_*sin_theta_div_2_,sin_phi*sin_theta_div_2_);
-        // Debug.Log("Real calculation: " + cos_phi_*sin_theta_div_2_ + "\n");
-        // Debug.Log("Imaginary calculation: " + sin_phi*sin_theta_div_2_ + "\n");
-        // Debug.Log("Konstruktor |1>: " + this.oneValue + "\n");
     }
 
-    private double DegreeToRadian(double angle, int? decimalSpaces = null)
-    {
+    private double degree_to_radian(double angle, int? decimalSpaces = null){
         return Math.PI * angle / 180.0;
     }
 #endregion
-    public string printBlochVector(PrintBlochSettings printingSettings = null) 
+    public string print_bloch_vector(PrintBlochSettings printingSettings = null) 
     {
         string result = "";
         PrintBlochSettings conditions;
@@ -141,7 +115,7 @@ public class Qubit
         else
             conditions = printingSettings;
 
-        result += "|" + "\u03A8".ToString() + "> = " + this.printZeroValue(conditions) + " |0> " + this.printOneValue(conditions) + " |1>";
+        result += "|" + "\u03A8".ToString() + "> = " + this.print_zero_value(conditions) + " |0> " + this.print_one_value(conditions) + " |1>";
 
         if(conditions.printSpaces==false){
             result = result.Replace(" ", string.Empty);
@@ -150,20 +124,23 @@ public class Qubit
         return result;
     }
 
-    public string printZeroValue(PrintBlochSettings printingSettings = null) 
+    public string print_zero_value(PrintBlochSettings printingSettings = null) 
     {
         return print(zeroValue,printingSettings);
     }
 
-    private PrintBlochSettings set_printing_rules(ref PrintBlochSettings printing_settings){
-        if(custom_settings_added(printing_settings)) // metoda
-            return this.printSettings; // metoda set_default_printing_condition();
+    public string print_one_value(PrintBlochSettings printingSettings = null) {
+        return print(oneValue,printingSettings);
+    }
+
+    private PrintBlochSettings set_printing_rules(ref PrintBlochSettings printingSettings){
+        if(custom_settings_added(printingSettings)) 
+            return this.printSettings; 
         else
-            return printing_settings; // metoda??? put_given_printing_condition();
+            return printingSettings;
     }
 
     private bool custom_settings_added(PrintBlochSettings settings){
-        //
         return settings == null ? true : false;
     }
 
@@ -209,15 +186,14 @@ public class Qubit
     }
 
     private string set_decimal_separator(string argument, DecimalSeparator separator){
-
         if(separator == DecimalSeparator.comma)
             argument = argument.Replace(".",",");
             
         return argument;
     }
 
-    private string remove_spaces_if_needed(string argument, bool keep_spaces){
-        if(keep_spaces==false)
+    private string remove_spaces_if_needed(string argument, bool keepSpaces){
+        if(keepSpaces==false)
             argument = remove_spaces(argument);
 
         return argument;
@@ -245,7 +221,7 @@ public class Qubit
         double rounded_number = Math.Round(number,printing_rules.decimalSpaces);
 
         if(rounded_number<0)
-            result += "- ";
+            result += "- "; //add_minus_to_result
         
         result += Math.Abs(rounded_number).ToString(decimalSpaces);
 
@@ -265,8 +241,5 @@ public class Qubit
             result += "+ ";
 
         return result;
-    }
-    public string printOneValue(PrintBlochSettings printingSettings = null) {
-        return print(oneValue,printingSettings);
     }
 }

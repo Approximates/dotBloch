@@ -125,10 +125,10 @@ public class codeBase : MonoBehaviour {
 			quantumBitArrow.transform.rotation = Quaternion.Euler((float)this.quantumBit.thetaAngle-90, (float)this.quantumBit.phiAngle, 0);
 
 			//valueOfQuantumZero();
-			quantumZeroLabel.text = this.quantumBit.printZeroValue();
-			quantumOneLabel.text = this.quantumBit.printOneValue();
+			quantumZeroLabel.text = this.quantumBit.print_zero_value();
+			quantumOneLabel.text = this.quantumBit.print_one_value();
 
-			qubitLabel.text = this.quantumBit.printBlochVector();
+			qubitLabel.text = this.quantumBit.print_bloch_vector();
 		} else if (bitValue) { 
 			this.thetaInputField.text = "1";
 			this.phiInputField.text = "";
