@@ -128,9 +128,15 @@ namespace Tests
         }
 
         [Test]
-        public void theta_90_phi_100_Tests(){
+        public void theta_90_phi_100_Test(){
             quantumBit = new Qubit(90,100);
             Assert.AreEqual("- 0,123 + 0,696i",quantumBit.printOneValue());
+        }
+
+        [Test]
+        public void theta_95_phi_200_Test(){
+            quantumBit = new Qubit(95,200);
+            Assert.AreEqual("- 0,693 - 0,252i",quantumBit.printOneValue());
         }
     }
 }
