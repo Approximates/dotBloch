@@ -141,7 +141,7 @@ public class Qubit
         else
             conditions = printingSettings;
 
-        result += "|" + "\u03A8".ToString() + "> = " + this.printZeroValue(conditions) + " |0> " + this.printOneValue(true, conditions) + " |1>";
+        result += "|" + "\u03A8".ToString() + "> = " + this.printZeroValue(conditions) + " |0> " + this.printOneValue(conditions) + " |1>";
 
         if(conditions.printSpaces==false){
             result = result.Replace(" ", string.Empty);
@@ -303,105 +303,106 @@ public class Qubit
 
         return result;
     }
-    public string printOneValue(bool leadingPlus,PrintBlochSettings printingSettings = null) {
-        string result = "";
+    public string printOneValue(PrintBlochSettings printingSettings = null) {
+        return print(oneValue,printingSettings);
+
 
         // Debug.Log("Imaginary: " + oneValue.Imaginary + "\n");
         // Debug.Log("Real: "+oneValue.Real + "\n");
 
-        PrintBlochSettings conditions;
+    //     PrintBlochSettings conditions;
 
-        if(printingSettings==null)
-            conditions = this.printSettings;
-        else
-            conditions = printingSettings;
+    //     if(printingSettings==null)
+    //         conditions = this.printSettings;
+    //     else
+    //         conditions = printingSettings;
 
-        string decimalCondition = "";
-        if(conditions.endingZeros == true){
-            decimalCondition = "N"+conditions.decimalSpaces.ToString();
-        }
+    //     string decimalCondition = "";
+    //     if(conditions.endingZeros == true){
+    //         decimalCondition = "N"+conditions.decimalSpaces.ToString();
+    //     }
             
-       double real_number = Math.Round(oneValue.Real,conditions.decimalSpaces);
-       double imaginary_number = Math.Round(oneValue.Imaginary,conditions.decimalSpaces);
+    //    double real_number = Math.Round(oneValue.Real,conditions.decimalSpaces);
+    //    double imaginary_number = Math.Round(oneValue.Imaginary,conditions.decimalSpaces);
 
-        // Debug.Log("Theta: " + this.thetaAngle + "\n");
-        // Debug.Log("Phi: " + this.phiAngle + "\n");
+    //     // Debug.Log("Theta: " + this.thetaAngle + "\n");
+    //     // Debug.Log("Phi: " + this.phiAngle + "\n");
         
-        // Debug.Log("Real rounded: " + real_number+"\n");
-        // Debug.Log("Imaginary numer: " + imaginary_number+"\n");
+    //     // Debug.Log("Real rounded: " + real_number+"\n");
+    //     // Debug.Log("Imaginary numer: " + imaginary_number+"\n");
 
-        if(real_number==0){
-            if(imaginary_number==0){
-                // print only Real
+    //     if(real_number==0){
+    //         if(imaginary_number==0){
+    //             // print only Real
 
-                if(leadingPlus){
-                    result += "+ ";
-                }
+    //             if(leadingPlus){
+    //                 result += "+ ";
+    //             }
 
-                result += real_number.ToString(decimalCondition);  
-            }
-            else
-            {
-                // print only imaginary
-                if(leadingPlus && imaginary_number >= 0)
-                    result += "+ ";
+    //             result += real_number.ToString(decimalCondition);  
+    //         }
+    //         else
+    //         {
+    //             // print only imaginary
+    //             if(leadingPlus && imaginary_number >= 0)
+    //                 result += "+ ";
 
-                if(imaginary_number<0)
-                     result += "- ";   
+    //             if(imaginary_number<0)
+    //                  result += "- ";   
                 
-                if(Math.Abs(imaginary_number)!=1)
-                    result += Math.Abs(imaginary_number).ToString(decimalCondition);
+    //             if(Math.Abs(imaginary_number)!=1)
+    //                 result += Math.Abs(imaginary_number).ToString(decimalCondition);
 
-                result += conditions.imaginaryUnit.ToString();
-            }
-        }
-        else{
-            if(imaginary_number==0){
-                // only Real
-                if(leadingPlus && real_number >= 0){
-                    result += "+ ";
-                }
+    //             result += conditions.imaginaryUnit.ToString();
+    //         }
+    //     }
+    //     else{
+    //         if(imaginary_number==0){
+    //             // only Real
+    //             if(leadingPlus && real_number >= 0){
+    //                 result += "+ ";
+    //             }
                 
-                if(real_number<0) 
-                    result += "- ";
+    //             if(real_number<0) 
+    //                 result += "- ";
 
-                result += Math.Abs(real_number).ToString(decimalCondition);
-            }
-            else
-            {
-                // real AND imaginary
-                if(leadingPlus && real_number>=0){
-                    result += "+ ";
-                }
+    //             result += Math.Abs(real_number).ToString(decimalCondition);
+    //         }
+    //         else
+    //         {
+    //             // real AND imaginary
+    //             if(leadingPlus && real_number>=0){
+    //                 result += "+ ";
+    //             }
                 
-                if(real_number<0)
-                {
-                    result += "- ";
-                }
-                result += Math.Abs(real_number).ToString(decimalCondition);
+    //             if(real_number<0)
+    //             {
+    //                 result += "- ";
+    //             }
+    //             result += Math.Abs(real_number).ToString(decimalCondition);
                 
-                result += " ";
+    //             result += " ";
 
-                if(imaginary_number > 0){
-                    result += "+ ";
-                }
-                else if(imaginary_number < 0 ){
-                    result += "- ";
-                }
+    //             if(imaginary_number > 0){
+    //                 result += "+ ";
+    //             }
+    //             else if(imaginary_number < 0 ){
+    //                 result += "- ";
+    //             }
 
-                result += Math.Abs(imaginary_number).ToString(decimalCondition);
+    //             result += Math.Abs(imaginary_number).ToString(decimalCondition);
 
-                result += conditions.imaginaryUnit.ToString();
-            }
-        }
+    //             result += conditions.imaginaryUnit.ToString();
+    //         }
+    //     }
 
-        if(conditions.decimalSeparator == DecimalSeparator.comma)
-            result = result.Replace(".",",");
+    //     if(conditions.decimalSeparator == DecimalSeparator.comma)
+    //         result = result.Replace(".",",");
 
-        if(conditions.printSpaces==false){
-            result = result.Replace(" ", string.Empty);
-        }
+    //     if(conditions.printSpaces==false){
+    //         result = result.Replace(" ", string.Empty);
+    //     }
 
-        return result;
+    //    return result;
     }
 }

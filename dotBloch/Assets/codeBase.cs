@@ -126,7 +126,7 @@ public class codeBase : MonoBehaviour {
 
 			//valueOfQuantumZero();
 			quantumZeroLabel.text = this.quantumBit.printZeroValue();
-			quantumOneLabel.text = this.quantumBit.printOneValue(false);
+			quantumOneLabel.text = this.quantumBit.printOneValue();
 
 			qubitLabel.text = this.quantumBit.printBlochVector();
 		} else if (bitValue) { 
