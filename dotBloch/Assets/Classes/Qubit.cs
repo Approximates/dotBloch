@@ -185,21 +185,13 @@ public class Qubit
     private string print(Complex number,PrintBlochSettings printingSettings = null){
         string result = "";
         PrintBlochSettings printing_rules = set_printing_rules(ref printingSettings);
-        //string decimalSpaces = this.setRounding(conditions);
 
-        //method roundRealNumber
         double real_number = Math.Round(number.Real,printing_rules.decimalSpaces);
         double imaginary_number = Math.Round(number.Imaginary,printing_rules.decimalSpaces);
 
-        // if(real_number==0 && imaginary_number==0) //
-        //     result += real_number.ToString(decimalSpaces);  
-    //result += Math.Abs(imaginary_number).ToString(decimalCondition);
-        
-        // remove spaces
-
         if(number_not_zero(real_number)){
             if(number_not_zero(imaginary_number)){
-                result += print_number(real_number,printing_rules) + printDecimalCharacter(imaginary_number,printing_rules) + print_number(imaginary_number,printing_rules);
+                result += print_number(real_number,printing_rules) + print_decimal_character(imaginary_number,printing_rules) + print_number(imaginary_number,printing_rules);
                 // print real and imaginary
                 result += add_imaginary_unit(printing_rules.imaginaryUnit);
             }
@@ -221,9 +213,7 @@ public class Qubit
             }
         }
 
-        Debug.Log("result: " + result + " przed usuwaniem spacji");
         result = remove_spaces_if_needed(result,printing_rules.printSpaces);
-        Debug.Log("result: " + result + " po usunieciu spacji");
         result = set_decimal_separator(result,printing_rules.decimalSeparator);
 
         return result;
@@ -263,12 +253,18 @@ public class Qubit
     }
 
     private string print_number(double number,PrintBlochSettings printingSettings = null){
+        string result = string.Empty;
         PrintBlochSettings printing_rules = set_printing_rules(ref printingSettings);
         string decimalSpaces = this.set_number_rounding(printing_rules);
 
-        double result = Math.Round(number,printing_rules.decimalSpaces);
+        double rounded_number = Math.Round(number,printing_rules.decimalSpaces);
 
-        return result.ToString(decimalSpaces);
+        if(rounded_number<0)
+            result += "- ";
+        
+        result += Math.Abs(rounded_number).ToString(decimalSpaces);
+
+        return result;
     }
 
     // private string printImaginary(Complex number,PrintBlochSettings printingSettings = null){
@@ -287,7 +283,7 @@ public class Qubit
             return String.Empty;
     }
 
-    private string printDecimalCharacter(double number,PrintBlochSettings printingSettings = null){
+    private string print_decimal_character(double number,PrintBlochSettings printingSettings = null){
         string result = "";
         if(number >= 0)
             result += " + ";
