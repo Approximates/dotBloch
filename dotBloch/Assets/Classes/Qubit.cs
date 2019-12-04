@@ -152,32 +152,41 @@ public class Qubit
         double imaginary_number = Math.Round(number.Imaginary,printing_rules.decimalSpaces);
 
         if(number_not_zero(real_number)){
-            if(number_not_zero(imaginary_number)){
-                result += print_number(real_number,printing_rules) + print_decimal_character(imaginary_number,printing_rules) + print_number(imaginary_number,printing_rules);
-                // print real and imaginary
-                result += add_imaginary_unit(printing_rules.imaginaryUnit);
-            }
-            else{
-                //imaginary zero
-                result += print_number(real_number,printing_rules);
-            }
+            if(number_not_zero(imaginary_number))
+                result += print_real_and_imaginary_numers(real_number,imaginary_number,printing_rules);
+            else
+                result += print_only_real_number(real_number,printing_rules);
         }
         else{
-            if(imaginary_number==0){
-                // print only real, 0
-                result += print_number(real_number,printing_rules);
-
-            }
-            else{
-                //print only imaginary
-                result += print_number(imaginary_number,printing_rules);
-                result += add_imaginary_unit(printing_rules.imaginaryUnit);
-            }
+            if(imaginary_number==0)
+                result += print_only_real_number(real_number,printing_rules);
+            else
+                result += print_only_imaginary_number(imaginary_number,printing_rules);
         }
 
         result = remove_spaces_if_needed(result,printing_rules.printSpaces);
         result = set_decimal_separator(result,printing_rules.decimalSeparator);
 
+        return result;
+    }
+
+    private string print_only_real_number(double real_number, PrintBlochSettings printing_rules){
+        string result = string.Empty;
+        result += print_number(real_number,printing_rules);
+        return result;
+    }
+
+    private string print_only_imaginary_number(double imaginary_number, PrintBlochSettings printing_rules){
+        string result = string.Empty;
+        result += print_number(imaginary_number,printing_rules);
+        result += add_imaginary_unit(printing_rules.imaginaryUnit);
+        return result;
+    }
+
+    private string print_real_and_imaginary_numers(double real_number, double imaginary_number, PrintBlochSettings printing_rules){
+        string result = string.Empty;
+        result += print_number(real_number,printing_rules) + print_decimal_character(imaginary_number,printing_rules) + print_number(imaginary_number,printing_rules);
+        result += add_imaginary_unit(printing_rules.imaginaryUnit);
         return result;
     }
 
