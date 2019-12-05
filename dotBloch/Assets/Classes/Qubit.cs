@@ -104,24 +104,50 @@ public class Qubit
 #endregion
     public string print_bloch_vector(PrintBlochSettings printingSettings = null) 
     {
-        string result = "";
+        string result = string.Empty;
         PrintBlochSettings conditions;
 
         Debug.Log("|0>: " + this.zeroValue + "\n");
         Debug.Log("|1>: " + this.oneValue + "\n");
 
-        if(printingSettings==null)
+        if(custom_settings_added(printingSettings))
             conditions = this.printSettings;
         else
             conditions = printingSettings;
 
-        result += "|" + "\u03A8".ToString() + "> = " + this.print_zero_value(conditions) + " |0> " + this.print_one_value(conditions) + " |1>";
+        result += "|" + "\u03A8".ToString() + "> = " + this.print_zero_value(conditions) + " |0> " + this.print_one_for_bloch_vector(conditions);
 
         if(conditions.printSpaces==false){
             result = result.Replace(" ", string.Empty);
         }
         
         return result;
+    }
+
+    private string print_one_for_bloch_vector(PrintBlochSettings conditions){
+        string result = string.Empty;
+
+        result += this.print_one_value(conditions); 
+
+        if(plus_is_needed_for_(result)) {
+            add_plus(ref result);
+        }
+
+        result += " |1>";
+
+        return result;
+    }
+
+    private bool plus_is_needed_for_(string argument){
+        if(!argument[0].ToString().Equals("-"))
+            return true;
+        else
+            return false;
+    }
+
+    private void add_plus(ref string argument){
+        string result = "+ " + argument;
+        argument = result;
     }
 
     public string print_zero_value(PrintBlochSettings printingSettings = null) 
