@@ -1,10 +1,4 @@
-﻿using System;
-using System.Collections;
-using System.Collections.Generic;
-using NUnit.Framework;
-using UnityEngine;
-using UnityEngine.TestTools;
-using static PrintBlochSettings;
+﻿using NUnit.Framework;
 
 namespace Tests
 {
