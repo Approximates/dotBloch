@@ -23,6 +23,14 @@ namespace Tests
         }
 
         [Test]
+        public void theta_180_phi_270_Tests(){
+            quantumBit = new Qubit(0,0);
+            quantumBit.thetaAngle = 180;
+            quantumBit.phiAngle = 270;
+            Assert.AreEqual("- i", quantumBit.print_one_value());
+        }
+
+        [Test]
         public void theta_180_phi_0_Test(){
             quantumBit = new Qubit(0,0);
             quantumBit.thetaAngle = 180;

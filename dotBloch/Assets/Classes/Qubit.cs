@@ -204,15 +204,13 @@ public class Qubit
 
     private string print_only_imaginary_number(double imaginary_number, PrintBlochSettings printing_rules){
         string result = string.Empty;
-        result += print_number(imaginary_number,printing_rules);
-        result += add_imaginary_unit(printing_rules.imaginaryUnit);
+        result += print_imaginary_number(imaginary_number,printing_rules);
         return result;
     }
 
     private string print_real_and_imaginary_numers(double real_number, double imaginary_number, PrintBlochSettings printing_rules){
         string result = string.Empty;
-        result += print_number(real_number,printing_rules) + print_decimal_character(imaginary_number,printing_rules) + print_number(imaginary_number,printing_rules);
-        result += add_imaginary_unit(printing_rules.imaginaryUnit);
+        result += print_number(real_number,printing_rules) + print_decimal_character(imaginary_number,printing_rules) + print_imaginary_number(imaginary_number,printing_rules);
         return result;
     }
 
@@ -256,10 +254,35 @@ public class Qubit
         double rounded_number = Math.Round(number,printing_rules.decimalSpaces);
 
         if(rounded_number<0)
-            result += "- "; //add_minus_to_result
+            add_minus_to_(ref result); 
         
         result += Math.Abs(rounded_number).ToString(decimalSpaces);
 
+        return result;
+    }
+
+    private void add_minus_to_(ref string argument){
+        string result = "- " + argument;
+        argument = result;
+    }
+
+    private string print_imaginary_number(double number,PrintBlochSettings printingSettings = null){
+        string result = string.Empty;
+        PrintBlochSettings printing_rules = set_printing_rules(ref printingSettings);
+        string decimalSpaces = this.set_number_rounding(printing_rules);
+
+        double rounded_number = Math.Round(number,printing_rules.decimalSpaces);
+
+        if(rounded_number<0)
+            add_minus_to_(ref result); 
+        
+        Debug.Log("Liczba: " + rounded_number + "\n");
+
+        if(!(rounded_number==1 || rounded_number==-1)){
+            result += Math.Abs(rounded_number).ToString(decimalSpaces);
+        }
+
+        result += add_imaginary_unit(printing_rules.imaginaryUnit);
         return result;
     }
 
