@@ -7,8 +7,10 @@ public class Qubit
 {
     private double _phiAngle;
     private double _thetaAngle;
-    private Complex zeroValue;
-    private Complex oneValue;
+
+    private Complex[] quantumValue = new Complex[2];
+    //private Complex zeroValue;
+    //private Complex oneValue;
 
     public PrintBlochSettings printSettings;
 
@@ -87,7 +89,7 @@ public class Qubit
     }
 
     private void update_quantum_zero_value(){
-        this.zeroValue = new Complex(Math.Cos(degree_to_radian(this.thetaAngle)/2),0);
+        this.quantumValue[0] = new Complex(Math.Cos(degree_to_radian(this.thetaAngle)/2),0);
     }
 
     private void update_quantum_one_value(){
@@ -95,7 +97,7 @@ public class Qubit
         double sin_theta_div_2_ = Math.Sin(degree_to_radian(this.thetaAngle)/2);
         double sin_phi = Math.Sin(degree_to_radian(this.phiAngle));
 
-        this.oneValue = new Complex(cos_phi_*sin_theta_div_2_,sin_phi*sin_theta_div_2_);
+        this.quantumValue[1] = new Complex(cos_phi_*sin_theta_div_2_,sin_phi*sin_theta_div_2_);
     }
 
     private double degree_to_radian(double angle, int? decimalSpaces = null){
@@ -107,8 +109,8 @@ public class Qubit
         string result = string.Empty;
         PrintBlochSettings conditions;
 
-        Debug.Log("|0>: " + this.zeroValue + "\n");
-        Debug.Log("|1>: " + this.oneValue + "\n");
+        Debug.Log("|0>: " + this.quantumValue[0] + "\n");
+        Debug.Log("|1>: " + this.quantumValue[1] + "\n");
 
         if(custom_settings_added(printingSettings))
             conditions = this.printSettings;
@@ -152,11 +154,11 @@ public class Qubit
 
     public string print_zero_value(PrintBlochSettings printingSettings = null) 
     {
-        return print(zeroValue,printingSettings);
+        return print(quantumValue[0],printingSettings);
     }
 
     public string print_one_value(PrintBlochSettings printingSettings = null) {
-        return print(oneValue,printingSettings);
+        return print(quantumValue[1],printingSettings);
     }
 
     private PrintBlochSettings set_printing_rules(ref PrintBlochSettings printingSettings){
