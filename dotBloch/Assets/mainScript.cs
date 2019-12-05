@@ -2,7 +2,7 @@
 using UnityEngine.UI;
 using System;
 
-public class codeBase : MonoBehaviour {
+public class mainScript : MonoBehaviour {
 
 	Qubit quantumBit;
 	public bool bitValue;

@@ -1817,7 +1817,7 @@ GameObject:
   - component: {fileID: 801406424}
   - component: {fileID: 801406426}
   m_Layer: 0
-  m_Name: coreEngine
+  m_Name: mainObject
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

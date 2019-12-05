@@ -9,8 +9,6 @@ public class Qubit
     private double _thetaAngle;
 
     private Complex[] quantumValue = new Complex[2];
-    //private Complex zeroValue;
-    //private Complex oneValue;
 
     public PrintBlochSettings printSettings;
 
