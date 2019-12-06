@@ -10,8 +10,6 @@ public class Qubit
 
     private Complex[] quantumValue = new Complex[2];
 
-    public PrintBlochSettings printSettings;
-
     public Qubit(double thetaAngle, double phiAngle)
     {
         if(angles_are_valid(thetaAngle,phiAngle)){
@@ -20,8 +18,6 @@ public class Qubit
 
             this.update_quantum_zero_value();
             this.update_quantum_one_value();
-        
-            printSettings = new PrintBlochSettings(true,false,3,PrintBlochSettings.DecimalSeparator.comma,PrintBlochSettings.ImaginaryUnit.i);
         }
         else
         {
@@ -110,8 +106,8 @@ public class Qubit
         Debug.Log("|0>: " + this.quantumValue[0] + "\n");
         Debug.Log("|1>: " + this.quantumValue[1] + "\n");
 
-        if(custom_settings_added(printingSettings))
-            conditions = this.printSettings;
+        if(not_added(printingSettings))
+            conditions = default_settings.printing_blochspere();
         else
             conditions = printingSettings;
 
@@ -159,14 +155,14 @@ public class Qubit
         return print(quantumValue[1],printingSettings);
     }
 
-    private PrintBlochSettings set_printing_rules(ref PrintBlochSettings printingSettings){
-        if(custom_settings_added(printingSettings)) 
-            return this.printSettings; 
+    private PrintBlochSettings set_printing_rules(ref PrintBlochSettings custom_settings){
+        if(not_added(custom_settings)) 
+            return default_settings.printing_blochspere(); 
         else
-            return printingSettings;
+            return custom_settings;
     }
 
-    private bool custom_settings_added(PrintBlochSettings settings){
+    private bool not_added(PrintBlochSettings settings){
         return settings == null ? true : false;
     }
 

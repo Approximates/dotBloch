@@ -4,5 +4,7 @@ using UnityEngine;
 
 public class PrintQubit
 {
-    
+    public PrintQubit(){
+        
+    }
 }
