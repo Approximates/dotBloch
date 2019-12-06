@@ -12,7 +12,7 @@ public class Qubit
 
     public Qubit(double thetaAngle, double phiAngle)
     {
-        if(angles_are_valid(thetaAngle,phiAngle)){
+        if(validate.angles(thetaAngle,phiAngle)){
             this._thetaAngle = thetaAngle;
             this._phiAngle = phiAngle;
 
@@ -26,27 +26,6 @@ public class Qubit
         }
     }
 
-    private bool angles_are_valid(double thetaAngle, double phiAngle){
-        if(theta_is_valid(thetaAngle) && phi_angle_is_valid(phiAngle))
-            return true;
-        else 
-            return false;
-    }
-
-    private bool phi_angle_is_valid(double angle){
-        if(angle >=0 && angle<=360)
-            return true;
-        else
-            return false;
-    }
-
-    private bool theta_is_valid(double angle){
-        if(angle >=0 && angle<=180)
-            return true;
-        else
-            return false;
-    }
-
 #region geters_and_setters
     public double phiAngle
     {
@@ -56,7 +35,8 @@ public class Qubit
         }
         set
         {
-            if(phi_angle_is_valid(value)){
+            if(validate.phi_angle(value))
+            {
                 _phiAngle = value;
                 this.update_quantum_one_value();
             }
@@ -74,7 +54,7 @@ public class Qubit
         }
         set
         {
-            if(theta_is_valid(value)){
+            if(validate.theta_angle(value)){
                 _thetaAngle = value;
                 this.update_quantum_zero_value();
                 this.update_quantum_one_value();
