@@ -3,15 +3,16 @@ using System.Collections;
 using System.Collections.Generic;
 using System.Numerics;
 using UnityEngine;
+using static PrintBlochSettings;
 
 public class PrintQubit
 {
     public PrintQubit(){
     }
-    private string print_one_for_bloch_vector(PrintBlochSettings conditions){
+    private string print_one_for_bloch_vector(Complex[] quantumValue, PrintBlochSettings conditions){
         string result = string.Empty;
 
-        result += this.print_one_value(conditions); 
+        result += this.quantum_value(quantumValue[1],conditions); 
 
         if(plus_is_needed_for_(result)) {
             add_plus(ref result);
@@ -34,26 +35,27 @@ public class PrintQubit
             return custom_settings;
     }
 
-    public string print_bloch_vector(PrintBlochSettings printingSettings = null) 
+    public string bloch_vector(Complex[] quantumValue,PrintBlochSettings printingSettings = null) 
     {
         string result = string.Empty;
         PrintBlochSettings conditions;
-
-        Debug.Log("|0>: " + this.quantumValue[0] + "\n");
-        Debug.Log("|1>: " + this.quantumValue[1] + "\n");
 
         if(not_added(printingSettings))
             conditions = default_settings.printing_blochspere();
         else
             conditions = printingSettings;
 
-        result += "|" + "\u03A8".ToString() + "> = " + this.print_zero_value(conditions) + " |0> " + this.print_one_for_bloch_vector(conditions);
+        result += "|" + "\u03A8".ToString() + "> = " + this.quantum_value(quantumValue[0],conditions) + " |0> " + this.print_one_for_bloch_vector(quantumValue, conditions);
 
         if(conditions.printSpaces==false){
             result = result.Replace(" ", string.Empty);
         }
         
         return result;
+    }
+
+    private bool not_added(PrintBlochSettings settings){
+        return settings == null ? true : false;
     }
 
     public string quantum_value(Complex number,PrintBlochSettings printingSettings = null){

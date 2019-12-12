@@ -21,7 +21,7 @@ public class Qubit
             this.update_quantum_zero_value();
             this.update_quantum_one_value();
 
-            print = new PrintQubit();
+            this.print = new PrintQubit();
         }
         else
         {
@@ -65,7 +65,9 @@ public class Qubit
             }
         }
     }
+    #endregion
 
+#region value_updates
     private void update_quantum_zero_value(){
         this.quantumValue[0] = new Complex(Math.Cos(degree_to_radian(this.thetaAngle)/2),0);
     }
@@ -78,19 +80,23 @@ public class Qubit
         this.quantumValue[1] = new Complex(cos_phi_*sin_theta_div_2_,sin_phi*sin_theta_div_2_);
     }
 
-    
 #endregion
 
     private double degree_to_radian(double angle, int? decimalSpaces = null){
         return Math.PI * angle / 180.0;
     }
+
+#region printing
+    public string print_bloch_vector(PrintBlochSettings printingSettings = null){
+        return print.bloch_vector(this.quantumValue,printingSettings);
+    }
     
-    public string print_zero_value(PrintBlochSettings printingSettings = null) 
-    {
+    public string print_zero_value(PrintBlochSettings printingSettings = null) {
         return print.quantum_value(quantumValue[0],printingSettings);
     }
 
     public string print_one_value(PrintBlochSettings printingSettings = null) {
         return print.quantum_value(quantumValue[1],printingSettings);
     }
+#endregion
 }
