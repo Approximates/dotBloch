@@ -14,6 +14,10 @@ class Constants
         
     }
 
+    public static class error{
+        public const string angle_is_wrong = "Value of theta or phi angle is wrong";
+    }
+
     public static class character{
         public const string space = " ";
         public const string dot = ".";

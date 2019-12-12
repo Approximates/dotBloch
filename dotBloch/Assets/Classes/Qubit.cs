@@ -23,8 +23,8 @@ public class Qubit
         }
         else
         {
-            Debug.Log("Value of theta or phi angle is wrong");
-            throw new ArgumentException("Value of theta or phi angle is wrong");      
+            Debug.Log(Constants.error.angle_is_wrong);
+            throw new ArgumentException(Constants.error.angle_is_wrong);      
         }
     }
 
@@ -79,8 +79,6 @@ public class Qubit
     }
 
 #endregion
-
-    
 
 #region printing
     public string print_bloch_vector(PrintBlochSettings printingSettings = null){
