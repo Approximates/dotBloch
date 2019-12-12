@@ -1,8 +1,4 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
-
-public class PrintBlochSettings 
+﻿public class PrintBlochSettings 
 {
     private bool _printSpaces;
 

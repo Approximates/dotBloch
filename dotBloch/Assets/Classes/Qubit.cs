@@ -43,7 +43,7 @@ public class Qubit
                 this.update_quantum_one_value();
             }
             else{
-                Debug.Log("Value of theta or phi angle is wrong");
+                Debug.Log(Constants.error.angle_is_wrong);
             }
         }
     }
