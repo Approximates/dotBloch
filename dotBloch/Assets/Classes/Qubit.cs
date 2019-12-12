@@ -1,8 +1,6 @@
 ﻿using UnityEngine;
 using System.Numerics;
 using System;
-using static PrintBlochSettings;
-
 public class Qubit 
 {
     private double _phiAngle;
@@ -69,22 +67,20 @@ public class Qubit
 
 #region value_updates
     private void update_quantum_zero_value(){
-        this.quantumValue[0] = new Complex(Math.Cos(degree_to_radian(this.thetaAngle)/2),0);
+        this.quantumValue[0] = new Complex(Math.Cos(Methods.degree_to_radian(this.thetaAngle)/2),0);
     }
 
     private void update_quantum_one_value(){
-        double cos_phi_ = Math.Cos(degree_to_radian(this.phiAngle));
-        double sin_theta_div_2_ = Math.Sin(degree_to_radian(this.thetaAngle)/2);
-        double sin_phi = Math.Sin(degree_to_radian(this.phiAngle));
+        double cos_phi_ = Math.Cos(Methods.degree_to_radian(this.phiAngle));
+        double sin_theta_div_2_ = Math.Sin(Methods.degree_to_radian(this.thetaAngle)/2);
+        double sin_phi = Math.Sin(Methods.degree_to_radian(this.phiAngle));
 
         this.quantumValue[1] = new Complex(cos_phi_*sin_theta_div_2_,sin_phi*sin_theta_div_2_);
     }
 
 #endregion
 
-    private double degree_to_radian(double angle, int? decimalSpaces = null){
-        return Math.PI * angle / 180.0;
-    }
+    
 
 #region printing
     public string print_bloch_vector(PrintBlochSettings printingSettings = null){
