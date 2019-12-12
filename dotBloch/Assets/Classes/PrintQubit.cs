@@ -4,8 +4,6 @@ using static PrintBlochSettings;
 
 public class PrintQubit
 {
-    public PrintQubit(){
-    }
     private string print_one_for_bloch_vector(Complex[] quantumValue, PrintBlochSettings conditions){
         string result = string.Empty;
 
