@@ -18,13 +18,13 @@ public class PrintQubit
             add_plus(ref result);
         }
 
-        result += " |1>";
+        result += Constants.symbol.quantum_one;
 
         return result;
     }    
 
     private void add_plus(ref string argument){
-        string result = "+ " + argument;
+        string result = Constants.math.plus_with_space + argument;
         argument = result;
     }
 
@@ -45,7 +45,7 @@ public class PrintQubit
         else
             conditions = printingSettings;
 
-        result += "|" + "\u03A8".ToString() + "> = " + this.quantum_value(quantumValue[0],conditions) + " |0> " + this.print_one_for_bloch_vector(quantumValue, conditions);
+        result += Constants.symbol.bloch_symbol + this.quantum_value(quantumValue[0],conditions) + Constants.symbol.quantum_zero + this.print_one_for_bloch_vector(quantumValue, conditions);
 
         if(conditions.printSpaces==false){
             result = result.Replace(" ", string.Empty);
@@ -59,7 +59,7 @@ public class PrintQubit
     }
 
     public string quantum_value(Complex number,PrintBlochSettings printingSettings = null){
-        string result = "";
+        string result = String.Empty;
         PrintBlochSettings printing_rules = set_printing_rules(ref printingSettings);
 
         double real_number = Math.Round(number.Real,printing_rules.decimalSpaces);
