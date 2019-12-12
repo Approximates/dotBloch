@@ -25,8 +25,8 @@ public class Qubit
         }
         else
         {
-            throw new ArgumentException("Value of theta or phi angle is wrong");
             Debug.Log("Value of theta or phi angle is wrong");
+            throw new ArgumentException("Value of theta or phi angle is wrong");      
         }
     }
 
