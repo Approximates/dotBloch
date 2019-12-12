@@ -14,9 +14,8 @@ public class PrintQubit
 
         result += this.quantum_value(quantumValue[1],conditions); 
 
-        if(plus_is_needed_for_(result)) {
+        if(plus_is_needed_for_(result)) 
             add_plus(ref result);
-        }
 
         result += Constants.symbol.quantum_one;
 
@@ -45,11 +44,10 @@ public class PrintQubit
         else
             conditions = printingSettings;
 
-        result += Constants.symbol.bloch_symbol + this.quantum_value(quantumValue[0],conditions) + Constants.symbol.quantum_zero + this.print_one_for_bloch_vector(quantumValue, conditions);
+        result += Constants.symbol.bloch_sphere + this.quantum_value(quantumValue[0],conditions) + Constants.symbol.quantum_zero + this.print_one_for_bloch_vector(quantumValue, conditions);
 
-        if(conditions.printSpaces==false){
-            result = result.Replace(" ", string.Empty);
-        }
+        if(conditions.printSpaces==false)
+            result = result.Replace(Constants.character.space, string.Empty);
         
         return result;
     }
@@ -108,7 +106,7 @@ public class PrintQubit
 
     private string set_decimal_separator(string argument, DecimalSeparator separator){
         if(separator == DecimalSeparator.comma)
-            argument = argument.Replace(".",",");
+            argument = argument.Replace(Constants.character.dot,Constants.character.comma);
             
         return argument;
     }
@@ -121,7 +119,7 @@ public class PrintQubit
     }
 
     private string remove_spaces(string argument){
-        return argument.Replace(" ", string.Empty);
+        return argument.Replace(Constants.character.space, string.Empty);
     }
 
     private bool number_is_zero(double number){
@@ -150,7 +148,7 @@ public class PrintQubit
     }
 
     private void add_minus_to_(ref string argument){
-        string result = "- " + argument;
+        string result = Constants.math.minus_with_space + argument;
         argument = result;
     }
 
@@ -163,8 +161,6 @@ public class PrintQubit
 
         if(rounded_number<0)
             add_minus_to_(ref result); 
-        
-        Debug.Log("Liczba: " + rounded_number + "\n");
 
         if(!(rounded_number==1 || rounded_number==-1)){
             result += Math.Abs(rounded_number).ToString(decimalSpaces);
@@ -176,20 +172,20 @@ public class PrintQubit
 
     private string set_number_rounding(PrintBlochSettings settings){
         if(settings.endingZeros == true)
-            return "N"+settings.decimalSpaces.ToString();
+            return Constants.character.rounding_header+settings.decimalSpaces.ToString();
         else
             return String.Empty;
     }
 
     private string print_decimal_character(double number,PrintBlochSettings printingSettings = null){
-        string result = " ";
+        string result = Constants.character.space;
         if(number >= 0)
-            result += "+ ";
+            result += Constants.math.plus_with_space;
 
         return result;
     }
     private bool plus_is_needed_for_(string argument){
-        if(!argument[0].ToString().Equals("-"))
+        if(!argument[0].ToString().Equals(Constants.math.minus))
             return true;
         else
             return false;
