@@ -4,7 +4,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using static PrintBlochSettings;
 
-class Methods
+class StaticMethods
 {
     
     public static double degree_to_radian(double angle, int? decimalSpaces = null){

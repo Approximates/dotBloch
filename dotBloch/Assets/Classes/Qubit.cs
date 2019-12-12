@@ -67,13 +67,13 @@ public class Qubit
 
 #region value_updates
     private void update_quantum_zero_value(){
-        this.quantumValue[0] = new Complex(Math.Cos(Methods.degree_to_radian(this.thetaAngle)/2),0);
+        this.quantumValue[0] = new Complex(Math.Cos(StaticMethods.degree_to_radian(this.thetaAngle)/2),0);
     }
 
     private void update_quantum_one_value(){
-        double cos_phi_ = Math.Cos(Methods.degree_to_radian(this.phiAngle));
-        double sin_theta_div_2_ = Math.Sin(Methods.degree_to_radian(this.thetaAngle)/2);
-        double sin_phi = Math.Sin(Methods.degree_to_radian(this.phiAngle));
+        double cos_phi_ = Math.Cos(StaticMethods.degree_to_radian(this.phiAngle));
+        double sin_theta_div_2_ = Math.Sin(StaticMethods.degree_to_radian(this.thetaAngle)/2);
+        double sin_phi = Math.Sin(StaticMethods.degree_to_radian(this.phiAngle));
 
         this.quantumValue[1] = new Complex(cos_phi_*sin_theta_div_2_,sin_phi*sin_theta_div_2_);
     }
