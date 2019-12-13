@@ -104,6 +104,7 @@ public class PrintQubit
             if(argument.Contains(","));
                 argument = argument.Replace(Constants.character.comma,Constants.character.dot);
         }
+        else if(separator==DecimalSeparator.comma){
             if(argument.Contains("."));
                 argument = argument.Replace(Constants.character.dot,Constants.character.comma);
         }
