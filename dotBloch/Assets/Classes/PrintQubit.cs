@@ -101,14 +101,14 @@ public class PrintQubit
 
     private string set_decimal_separator(string argument, DecimalSeparator separator){
         if(separator == DecimalSeparator.dot){
-            if(argument.Contains(","));
+            if(argument.Contains(Constants.character.comma))
                 argument = argument.Replace(Constants.character.comma,Constants.character.dot);
         }
         else if(separator==DecimalSeparator.comma){
-            if(argument.Contains("."));
+            if(argument.Contains(Constants.character.dot))
                 argument = argument.Replace(Constants.character.dot,Constants.character.comma);
         }
-           
+
         return argument;
     }
 
