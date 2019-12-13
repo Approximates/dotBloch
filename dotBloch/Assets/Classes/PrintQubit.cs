@@ -102,14 +102,23 @@ public class PrintQubit
     private string set_decimal_separator(string argument, DecimalSeparator separator){
         if(separator == DecimalSeparator.dot){
             if(argument.Contains(Constants.character.comma))
-                argument = argument.Replace(Constants.character.comma,Constants.character.dot);
+                replace_comma_with_dot(ref argument);
         }
-        else if(separator==DecimalSeparator.comma){
+        else {
             if(argument.Contains(Constants.character.dot))
-                argument = argument.Replace(Constants.character.dot,Constants.character.comma);
+                replace_dot_with_comma(ref argument);
         }
-
         return argument;
+    }
+
+    private void replace_dot_with_comma(ref string argument){
+        string result = argument.Replace(Constants.character.dot,Constants.character.comma);
+        argument = result;
+    }
+
+    private void replace_comma_with_dot(ref string argument){
+        string result = argument.Replace(Constants.character.comma,Constants.character.dot);
+        argument = result;
     }
 
     private string remove_spaces_if_needed(string argument, bool keepSpaces){
