@@ -43,7 +43,7 @@ public class mainScript : MonoBehaviour {
 		phiInputField.characterLimit = 6;
 
 		enableQuantumBit ();
-		setBitsValues (true, 45, 0);
+		setBitsValues (true);
 		setPointers ();
 
 		thetaSlider.onValueChanged.AddListener(delegate {thetaSliderChanged(); });
@@ -136,7 +136,7 @@ public class mainScript : MonoBehaviour {
 			
 	}
 
-	public void setBitsValues(bool bitValue, float thetaValue, float phiValue){
+	public void setBitsValues(bool bitValue){
 		this.bitValue = bitValue;
 	}
 
