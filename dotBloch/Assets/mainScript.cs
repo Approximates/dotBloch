@@ -38,20 +38,12 @@ public class mainScript : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
-        /*quantumBit = new Qubit(5);
-        Debug.Log("Phi angle:" + quantumBit.phiAngle);
-        Debug.Log("Complex example:" + quantumBit.zero);
-        Debug.Log("Real number of complex:" + quantumBit.zero.Real);
-        Debug.Log("Imaginary numer of complex:" + quantumBit.zero.Imaginary);
-        Debug.Log("Adding complex: " + quantumBit.add);
-        Debug.Log("Multiplying complex: " + quantumBit.mul);*/
 		quantumBit = new Qubit(45,0);
         thetaInputField.characterLimit = 6;
 		phiInputField.characterLimit = 6;
 
 		enableQuantumBit ();
 		setBitsValues (true, 45, 0);
-		//setBitsValues (true, 60, 280);
 		setPointers ();
 
 		thetaSlider.onValueChanged.AddListener(delegate {thetaSliderChanged(); });
@@ -146,8 +138,6 @@ public class mainScript : MonoBehaviour {
 
 	public void setBitsValues(bool bitValue, float thetaValue, float phiValue){
 		this.bitValue = bitValue;
-		//this.phiValue = phiValue;
-		//this.thetaValue = thetaValue;
 	}
 
 	public void enableClassicalBit(){
@@ -205,27 +195,6 @@ public class mainScript : MonoBehaviour {
 		phiInputField.text = "";
 
 	}
-
-	// public String valueOfQuantumZero(){
-	// 	//Debug.Log (Math.Round(Math.Cos(this.thetaValue/2*Math.PI/180),3).ToString());
-	// 	return Math.Round(Math.Cos(this.thetaValue/2*Math.PI/180),3).ToString();
-	// }
-
-	// public String valueOfQuantumOne(){
-		
-	// 	String result = "";
-
-	// 	result += Math.Round (Math.Cos (this.phiValue * Math.PI / 180) * Math.Sin (this.thetaValue / 2 * Math.PI / 180), 3).ToString ();
-	// 	result += " + " + Math.Round (Math.Sin (this.phiValue * Math.PI / 180) * Math.Sin (this.thetaValue / 2 * Math.PI / 180), 3).ToString () + "i"; 
-
-	// 	return result;
-	// }
-
-	//qubitLabel
-	// public String valueOfQubit(){
-	// 	return "|" + "\u03A8".ToString () + "> = " + valueOfQuantumZero () + " |0> + " + valueOfQuantumOne () + " |1>";
-			
-	// }
 	void Update()
 	{
 		framesPerSecond(ref FPSmilliseconds, ref framesCount);
