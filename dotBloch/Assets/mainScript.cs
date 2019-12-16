@@ -112,9 +112,9 @@ public class mainScript : MonoBehaviour {
 
 			quantumBitArrow.transform.rotation = Quaternion.Euler((float)this.quantumBit.thetaAngle-90, (float)this.quantumBit.phiAngle, 0);
 
-			//valueOfQuantumZero();
 			quantumZeroLabel.text = this.quantumBit.print_zero_value();
-			quantumOneLabel.text = this.quantumBit.print_one_value();
+			PrintBlochSettings with_custom_settings = new PrintBlochSettings(false,false,3,PrintBlochSettings.DecimalSeparator.comma,PrintBlochSettings.ImaginaryUnit.i);
+			quantumOneLabel.text = this.quantumBit.print_one_value(with_custom_settings);
 
 			qubitLabel.text = this.quantumBit.print_bloch_vector();
 		} else if (bitValue) { 
