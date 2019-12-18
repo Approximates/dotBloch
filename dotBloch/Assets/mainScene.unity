@@ -2709,7 +2709,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: "\u03B8\xB0"
+  m_Text: "<color=yellow>\u03B8</color><color=white>\xB0</color>"
 --- !u!222 &1403806360
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -3229,7 +3229,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: "\u03A6\xB0"
+  m_Text: "<color=red>\u03A6</color><color=white>\xB0</color>"
 --- !u!222 &1535396592
 CanvasRenderer:
   m_ObjectHideFlags: 0
