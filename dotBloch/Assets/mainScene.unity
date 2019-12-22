@@ -1205,12 +1205,12 @@ RectTransform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1525429979}
-  m_RootOrder: 1
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 110, y: 25}
-  m_SizeDelta: {x: 138.02, y: 26.23}
+  m_AnchoredPosition: {x: 128.7, y: 25}
+  m_SizeDelta: {x: 124.15, y: 19.83}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &490397308
 MonoBehaviour:
@@ -2325,12 +2325,12 @@ RectTransform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1525429979}
-  m_RootOrder: 0
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 110, y: -29.1}
-  m_SizeDelta: {x: 138.02, y: 26.23}
+  m_AnchoredPosition: {x: 129.7, y: -29.1}
+  m_SizeDelta: {x: 124.15, y: 19.83}
   m_Pivot: {x: 0.5, y: 0.50000006}
 --- !u!114 &1011817718
 MonoBehaviour:
@@ -3098,7 +3098,7 @@ GameObject:
   - component: {fileID: 1525429981}
   - component: {fileID: 1525429980}
   m_Layer: 5
-  m_Name: trigonometry_Results
+  m_Name: quantum_equation
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -3115,8 +3115,8 @@ RectTransform:
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 0.90693, y: 0.90693, z: 0.90693}
   m_Children:
-  - {fileID: 1011817717}
   - {fileID: 490397307}
+  - {fileID: 1011817717}
   m_Father: {fileID: 2050224645}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -3925,7 +3925,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: "|\u03A8> ="
+  m_Text: "|\u03A8> = ?,??? |0> + ?,??? + ?,???i |1>"
 --- !u!1 &2050224641
 GameObject:
   m_ObjectHideFlags: 0
