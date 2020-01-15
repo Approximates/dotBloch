@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class exitConfirmation : MonoBehaviour
+public class Interface : MonoBehaviour
 {
     public GameObject ExitPanel;
 
