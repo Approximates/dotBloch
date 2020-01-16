@@ -196,6 +196,13 @@ public class mainScript : MonoBehaviour {
 		phiInputField.text = "";
 
 	}
+
+	public void set_theta_angle(){
+		this.quantumBit.thetaAngle = 120;
+		setPointers();
+		Debug.Log("Ustawilem");
+	}
+
 	void Update()
 	{
 		framesPerSecond(ref FPSmilliseconds, ref framesCount);
