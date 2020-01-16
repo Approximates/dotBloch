@@ -236,8 +236,12 @@ public class mainScript : MonoBehaviour {
 
 		if (Input.GetKey(KeyCode.Escape))
 		{
-			ExitPanel.SetActive(true);
-			ExitText.text = Constants.message.exit_question;
+			open_exit_panel();
 		}
+	}
+
+	private void open_exit_panel(){
+		ExitPanel.SetActive(true);
+		ExitText.text = Constants.message.exit_question;
 	}
 }
