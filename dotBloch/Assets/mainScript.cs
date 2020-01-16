@@ -200,13 +200,11 @@ public class mainScript : MonoBehaviour {
 	public void set_theta_angle(double sended_theta_angle){
 		this.quantumBit.thetaAngle = sended_theta_angle;
 		setPointers();
-		Debug.Log("Ustawilem + " + sended_theta_angle);
 	}
 
 	public void set_phi_angle(double sended_phi_angle){
 		this.quantumBit.phiAngle = sended_phi_angle;
 		setPointers();
-		Debug.Log("Ustawilem + " + sended_phi_angle);
 	}
 
 	void Update()
