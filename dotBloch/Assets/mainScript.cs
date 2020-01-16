@@ -203,6 +203,12 @@ public class mainScript : MonoBehaviour {
 		Debug.Log("Ustawilem + " + sended_theta_angle);
 	}
 
+	public void set_phi_angle(double sended_phi_angle){
+		this.quantumBit.phiAngle = sended_phi_angle;
+		setPointers();
+		Debug.Log("Ustawilem + " + sended_phi_angle);
+	}
+
 	void Update()
 	{
 		framesPerSecond(ref FPSmilliseconds, ref framesCount);
