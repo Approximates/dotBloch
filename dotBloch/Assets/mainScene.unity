@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.012706963, g: 0.08683192, b: 0.21945411, a: 1}
+  m_IndirectSpecularColor: {r: 0.012707002, g: 0.086832024, b: 0.21945423, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -2744,6 +2744,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 2399759873438722718, guid: d1ebc397c7bc946d8852655442d619b4,
+        type: 3}
+      propertyPath: m_Name
+      value: sphere
+      objectReference: {fileID: 0}
     - target: {fileID: 146056160222444439, guid: d1ebc397c7bc946d8852655442d619b4,
         type: 3}
       propertyPath: m_LocalPosition.y
@@ -2809,15 +2814,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 2399759873438722718, guid: d1ebc397c7bc946d8852655442d619b4,
-        type: 3}
-      propertyPath: m_Name
-      value: sphere
-      objectReference: {fileID: 0}
     - target: {fileID: 5750419321234840414, guid: d1ebc397c7bc946d8852655442d619b4,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: -1.75
+      value: -1.427
       objectReference: {fileID: 0}
     - target: {fileID: 5750419321234840414, guid: d1ebc397c7bc946d8852655442d619b4,
         type: 3}
@@ -2828,6 +2828,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Enabled
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8914322832669048618, guid: d1ebc397c7bc946d8852655442d619b4,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 1.489446
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d1ebc397c7bc946d8852655442d619b4, type: 3}
