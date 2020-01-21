@@ -260,7 +260,7 @@ PlayerSettings:
   AndroidTargetArchitectures: 5
   AndroidSplashScreenScale: 0
   androidSplashScreen: {fileID: 0}
-  AndroidKeystoreName: D:/Projekty/dotBloch ketstore/dotBloch- key.keystore
+  AndroidKeystoreName: C:/Users/Adam/Downloads/Klucz aplikacji/dotBloch- key.keystore
   AndroidKeyaliasName: dotbloch - key
   AndroidBuildApkPerCpuArchitecture: 0
   AndroidTVCompatibility: 1

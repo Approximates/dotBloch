@@ -1,4 +1,4 @@
-﻿class Constants
+﻿public class Constants
 {
     public static class symbol{
 
@@ -23,6 +23,10 @@
         public const string minus = "-";
         public const string plus_with_space = "+ ";
         public const string minus_with_space = "- ";
+    }
+
+    public static class message{
+        public const string exit_question = "Do you want to close the app?";
     }
 }
 

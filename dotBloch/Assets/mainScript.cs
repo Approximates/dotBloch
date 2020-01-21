@@ -1,12 +1,13 @@
 ﻿using UnityEngine;
 using UnityEngine.UI;
 using System;
+using UnityEditor;
 
 public class mainScript : MonoBehaviour {
 
 	Qubit quantumBit;
 	public bool bitValue;
-
+	
 	public GameObject classicalOne;
 	public GameObject classicalZero;
 	public GameObject classicalBitArrow; 
@@ -17,6 +18,9 @@ public class mainScript : MonoBehaviour {
 	public GameObject quantumBitOne;
 	public GameObject quantumBitZero;
 	public GameObject quantumBitArrow;
+
+	public GameObject ExitPanel;
+	public Text ExitText;
 
 	public Slider thetaSlider;
 	public Slider phiSlider;
@@ -232,7 +236,12 @@ public class mainScript : MonoBehaviour {
 
 		if (Input.GetKey(KeyCode.Escape))
 		{
-			 Application.Quit();
+			open_exit_panel();
 		}
+	}
+
+	private void open_exit_panel(){
+		ExitPanel.SetActive(true);
+		ExitText.text = Constants.message.exit_question;
 	}
 }
