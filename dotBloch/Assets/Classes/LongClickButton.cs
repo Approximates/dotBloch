@@ -40,7 +40,6 @@ public class LongClickButton : MonoBehaviour, IPointerDownHandler, IPointerUpHan
 
 				Reset();
 			}
-			//fillImage.fillAmount = pointerDownTimer / requiredHoldTime;
 		}
 	}
 
@@ -48,7 +47,6 @@ public class LongClickButton : MonoBehaviour, IPointerDownHandler, IPointerUpHan
 	{
 		pointerDown = false;
 		pointerDownTimer = 0;
-		//fillImage.fillAmount = pointerDownTimer / requiredHoldTime;
 	}
 
 }
