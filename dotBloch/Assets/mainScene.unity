@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.012706963, g: 0.08683192, b: 0.21945411, a: 1}
+  m_IndirectSpecularColor: {r: 0.013815655, g: 0.08614918, b: 0.21944878, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -96,6 +96,7 @@ LightmapSettings:
     m_PVRFilteringAtrousPositionSigmaAO: 1
     m_ExportTrainingData: 0
     m_TrainingDataDestination: TrainingData
+    m_LightProbeSampleCountMultiplier: 4
   m_LightingDataAsset: {fileID: 0}
   m_UseShadowmask: 1
 --- !u!196 &4
@@ -490,8 +491,9 @@ Light:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 282840810}
   m_Enabled: 1
-  serializedVersion: 9
+  serializedVersion: 10
   m_Type: 1
+  m_Shape: 0
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_Intensity: 1.37
   m_Range: 10
@@ -1222,7 +1224,7 @@ GameObject:
   - component: {fileID: 759571353}
   - component: {fileID: 759571354}
   m_Layer: 5
-  m_Name: sound
+  m_Name: speaker_icon
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1246,7 +1248,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 1.5, y: 186.6}
+  m_AnchoredPosition: {x: -46, y: 186.6}
   m_SizeDelta: {x: 30, y: 30}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &759571354
@@ -2186,7 +2188,7 @@ GameObject:
   - component: {fileID: 1396781286}
   - component: {fileID: 1396781285}
   m_Layer: 5
-  m_Name: unmute
+  m_Name: unmute_music
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -3194,7 +3196,7 @@ GameObject:
   - component: {fileID: 2049118094}
   - component: {fileID: 2049118093}
   m_Layer: 5
-  m_Name: mute
+  m_Name: mute_music
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
