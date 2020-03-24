@@ -841,6 +841,8 @@ GameObject:
   - component: {fileID: 490397307}
   - component: {fileID: 490397309}
   - component: {fileID: 490397308}
+  - component: {fileID: 490397310}
+  - component: {fileID: 490397311}
   m_Layer: 5
   m_Name: quantumZero
   m_TagString: Untagged
@@ -907,6 +909,47 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 490397306}
   m_CullTransparentMesh: 0
+--- !u!114 &490397310
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 490397306}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 15dd31fec81edef44986a26bcedc46d3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  requiredHoldTime: 0.5
+  onLongClick:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 490397311}
+        m_MethodName: CopyTextToClipboard
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 1
+  fillImage: {fileID: 0}
+--- !u!114 &490397311
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 490397306}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ae75e31bbec05d743af9ffc424e82426, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  text: {fileID: 490397306}
 --- !u!1 &513572076
 GameObject:
   m_ObjectHideFlags: 0
@@ -1843,6 +1886,8 @@ GameObject:
   - component: {fileID: 1011817717}
   - component: {fileID: 1011817719}
   - component: {fileID: 1011817718}
+  - component: {fileID: 1011817721}
+  - component: {fileID: 1011817720}
   m_Layer: 5
   m_Name: quantumOne
   m_TagString: Untagged
@@ -1909,6 +1954,47 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1011817716}
   m_CullTransparentMesh: 0
+--- !u!114 &1011817720
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1011817716}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ae75e31bbec05d743af9ffc424e82426, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  text: {fileID: 1011817716}
+--- !u!114 &1011817721
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1011817716}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 15dd31fec81edef44986a26bcedc46d3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  requiredHoldTime: 0.5
+  onLongClick:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 1011817720}
+        m_MethodName: CopyTextToClipboard
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 1
+  fillImage: {fileID: 0}
 --- !u!1 &1017500178
 GameObject:
   m_ObjectHideFlags: 0
