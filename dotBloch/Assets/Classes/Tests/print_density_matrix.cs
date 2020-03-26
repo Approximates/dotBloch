@@ -12,14 +12,15 @@ namespace Tests
         {
             Assert.AreEqual(true, true);
             Assert.AreEqual(null, null);
-        }
-        
+        }    
+
+        #region theta_0
         [Test]
         public void theta_0_phi_0_Test(){
             quantumBit = new Qubit(0,0);
             quantumBit.thetaAngle = 0;
             quantumBit.phiAngle = 0;
-            Assert.AreEqual("0", quantumBit.printDensityMatrix(0,0));
+            Assert.AreEqual("1", quantumBit.printDensityMatrix(0,0));
             Assert.AreEqual("0", quantumBit.printDensityMatrix(0,1));
             Assert.AreEqual("0", quantumBit.printDensityMatrix(1,0));
             Assert.AreEqual("0", quantumBit.printDensityMatrix(1,1));
@@ -28,7 +29,7 @@ namespace Tests
         [Test]
         public void theta_0_phi_45_Tests(){
             quantumBit = new Qubit(0,45);
-            Assert.AreEqual("0", quantumBit.printDensityMatrix(0,0));
+            Assert.AreEqual("1", quantumBit.printDensityMatrix(0,0));
             Assert.AreEqual("0", quantumBit.printDensityMatrix(0,1));
             Assert.AreEqual("0", quantumBit.printDensityMatrix(1,0));
             Assert.AreEqual("0", quantumBit.printDensityMatrix(1,1));
@@ -39,7 +40,7 @@ namespace Tests
             quantumBit = new Qubit(0,0);
             quantumBit.thetaAngle = 0;
             quantumBit.phiAngle = 90;
-            Assert.AreEqual("0", quantumBit.printDensityMatrix(0,0));
+            Assert.AreEqual("1", quantumBit.printDensityMatrix(0,0));
             Assert.AreEqual("0", quantumBit.printDensityMatrix(0,1));
             Assert.AreEqual("0", quantumBit.printDensityMatrix(1,0));
             Assert.AreEqual("0", quantumBit.printDensityMatrix(1,1));
@@ -48,7 +49,7 @@ namespace Tests
         [Test]
         public void theta_0_phi_180_Tests(){
             quantumBit = new Qubit(0,180);
-            Assert.AreEqual("0", quantumBit.printDensityMatrix(0,0));
+            Assert.AreEqual("1", quantumBit.printDensityMatrix(0,0));
             Assert.AreEqual("0", quantumBit.printDensityMatrix(0,1));
             Assert.AreEqual("0", quantumBit.printDensityMatrix(1,0));
             Assert.AreEqual("0", quantumBit.printDensityMatrix(1,1));
@@ -59,7 +60,7 @@ namespace Tests
             quantumBit = new Qubit(0,0);
             quantumBit.thetaAngle = 0;
             quantumBit.phiAngle = 270;
-            Assert.AreEqual("0", quantumBit.printDensityMatrix(0,0));
+            Assert.AreEqual("1", quantumBit.printDensityMatrix(0,0));
             Assert.AreEqual("0", quantumBit.printDensityMatrix(0,1));
             Assert.AreEqual("0", quantumBit.printDensityMatrix(1,0));
             Assert.AreEqual("0", quantumBit.printDensityMatrix(1,1));
@@ -68,43 +69,43 @@ namespace Tests
         [Test]
         public void theta_0_phi_359_Tests(){
             quantumBit = new Qubit(0,359);
-            Assert.AreEqual("0", quantumBit.printDensityMatrix(0,0));
-            Assert.AreEqual("0", quantumBit.printDensityMatrix(0,1));
-            Assert.AreEqual("0", quantumBit.printDensityMatrix(1,0));
-            Assert.AreEqual("0", quantumBit.printDensityMatrix(1,1));
-        }
-
-        [Test]
-        public void theta_0_phi_360_Test(){
-            quantumBit = new Qubit(0,0);
-            quantumBit.thetaAngle = 0;
-            quantumBit.phiAngle = 360;
-            Assert.AreEqual("0", quantumBit.printDensityMatrix(0,0));
+            Assert.AreEqual("1", quantumBit.printDensityMatrix(0,0));
             Assert.AreEqual("0", quantumBit.printDensityMatrix(0,1));
             Assert.AreEqual("0", quantumBit.printDensityMatrix(1,0));
             Assert.AreEqual("0", quantumBit.printDensityMatrix(1,1));
         }
         
+        [Test]
+        public void theta_0_phi_360_Test(){
+            quantumBit = new Qubit(0,0);
+            quantumBit.thetaAngle = 0;
+            quantumBit.phiAngle = 360;
+            Assert.AreEqual("1", quantumBit.printDensityMatrix(0,0));
+            Assert.AreEqual("0", quantumBit.printDensityMatrix(0,1));
+            Assert.AreEqual("0", quantumBit.printDensityMatrix(1,0));
+            Assert.AreEqual("0", quantumBit.printDensityMatrix(1,1));
+        }
+        #endregion
 
-
+        #region theta_30
         [Test]
         public void theta_30_phi_0_Test(){
             quantumBit = new Qubit(0,0);
             quantumBit.thetaAngle = 30;
             quantumBit.phiAngle = 0;
-            Assert.AreEqual("0", quantumBit.printDensityMatrix(0,0));
+            Assert.AreEqual("0.933", quantumBit.printDensityMatrix(0,0));
             Assert.AreEqual("0", quantumBit.printDensityMatrix(0,1));
             Assert.AreEqual("0", quantumBit.printDensityMatrix(1,0));
-            Assert.AreEqual("0", quantumBit.printDensityMatrix(1,1));
+            Assert.AreEqual("0.06699", quantumBit.printDensityMatrix(1,1));
         }
 
         [Test]
         public void theta_30_phi_45_Tests(){
             quantumBit = new Qubit(30,45);
-            Assert.AreEqual("0", quantumBit.printDensityMatrix(0,0));
-            Assert.AreEqual("0", quantumBit.printDensityMatrix(0,1));
-            Assert.AreEqual("0", quantumBit.printDensityMatrix(1,0));
-            Assert.AreEqual("0", quantumBit.printDensityMatrix(1,1));
+            Assert.AreEqual("0.933", quantumBit.printDensityMatrix(0,0));
+            Assert.AreEqual("0.1768", quantumBit.printDensityMatrix(0,1));
+            Assert.AreEqual("0.1768 + 0.1768i", quantumBit.printDensityMatrix(1,0));
+            Assert.AreEqual("0.06699", quantumBit.printDensityMatrix(1,1));
         }
 
         [Test]
@@ -157,9 +158,9 @@ namespace Tests
             Assert.AreEqual("0", quantumBit.printDensityMatrix(1,0));
             Assert.AreEqual("0", quantumBit.printDensityMatrix(1,1));
         }
+        #endregion
 
-
-
+        #region theeta_45
         [Test]
         public void theta_45_phi_0_Test(){
             quantumBit = new Qubit(0,0);
@@ -230,10 +231,9 @@ namespace Tests
             Assert.AreEqual("0", quantumBit.printDensityMatrix(1,0));
             Assert.AreEqual("0", quantumBit.printDensityMatrix(1,1));
         }
+        #endregion
 
-
-
-
+        #region theta_60
         [Test]
         public void theta_60_phi_0_Test(){
             quantumBit = new Qubit(0,0);
@@ -304,9 +304,9 @@ namespace Tests
             Assert.AreEqual("0", quantumBit.printDensityMatrix(1,0));
             Assert.AreEqual("0", quantumBit.printDensityMatrix(1,1));
         }
+        #endregion
 
-
-
+        #region theta_90
         [Test]
         public void theta_90_phi_0_Test(){
             quantumBit = new Qubit(0,0);
@@ -377,10 +377,9 @@ namespace Tests
             Assert.AreEqual("0", quantumBit.printDensityMatrix(1,0));
             Assert.AreEqual("0", quantumBit.printDensityMatrix(1,1));
         }
+        #endregion
 
-
-
-
+        #region theta_120
         [Test]
         public void theta_120_phi_0_Test(){
             quantumBit = new Qubit(0,0);
@@ -451,9 +450,9 @@ namespace Tests
             Assert.AreEqual("0", quantumBit.printDensityMatrix(1,0));
             Assert.AreEqual("0", quantumBit.printDensityMatrix(1,1));
         }
+        #endregion
 
-
-
+        #region theta_180
         [Test]
         public void theta_180_phi_0_Test(){
             quantumBit = new Qubit(0,0);
@@ -524,5 +523,6 @@ namespace Tests
             Assert.AreEqual("0", quantumBit.printDensityMatrix(1,0));
             Assert.AreEqual("0", quantumBit.printDensityMatrix(1,1));
         }
+        #endregion
     }
 }

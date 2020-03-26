@@ -101,7 +101,7 @@ public class Qubit
         return print.quantum_value(quantumValue[1],printingSettings);
     }
 
-    public string print_density_matrix(int row, int column, PrintBlochSettings printingSettings = null){
+    public string printDensityMatrix(int row, int column, PrintBlochSettings printingSettings = null){
         throw new NotImplementedException();
     }
 #endregion
