@@ -461,7 +461,7 @@ namespace Tests
             Assert.AreEqual("0", quantumBit.printDensityMatrix(0,0));
             Assert.AreEqual("0", quantumBit.printDensityMatrix(0,1));
             Assert.AreEqual("0", quantumBit.printDensityMatrix(1,0));
-            Assert.AreEqual("0", quantumBit.printDensityMatrix(1,1));
+            Assert.AreEqual("1", quantumBit.printDensityMatrix(1,1));
         }
 
         [Test]
@@ -470,7 +470,7 @@ namespace Tests
             Assert.AreEqual("0", quantumBit.printDensityMatrix(0,0));
             Assert.AreEqual("0", quantumBit.printDensityMatrix(0,1));
             Assert.AreEqual("0", quantumBit.printDensityMatrix(1,0));
-            Assert.AreEqual("0", quantumBit.printDensityMatrix(1,1));
+            Assert.AreEqual("1", quantumBit.printDensityMatrix(1,1));
         }
 
         [Test]
@@ -481,7 +481,7 @@ namespace Tests
             Assert.AreEqual("0", quantumBit.printDensityMatrix(0,0));
             Assert.AreEqual("0", quantumBit.printDensityMatrix(0,1));
             Assert.AreEqual("0", quantumBit.printDensityMatrix(1,0));
-            Assert.AreEqual("0", quantumBit.printDensityMatrix(1,1));
+            Assert.AreEqual("1", quantumBit.printDensityMatrix(1,1));
         }
 
         [Test]
@@ -490,7 +490,7 @@ namespace Tests
             Assert.AreEqual("0", quantumBit.printDensityMatrix(0,0));
             Assert.AreEqual("0", quantumBit.printDensityMatrix(0,1));
             Assert.AreEqual("0", quantumBit.printDensityMatrix(1,0));
-            Assert.AreEqual("0", quantumBit.printDensityMatrix(1,1));
+            Assert.AreEqual("1", quantumBit.printDensityMatrix(1,1));
         }
 
         [Test]
@@ -501,7 +501,7 @@ namespace Tests
             Assert.AreEqual("0", quantumBit.printDensityMatrix(0,0));
             Assert.AreEqual("0", quantumBit.printDensityMatrix(0,1));
             Assert.AreEqual("0", quantumBit.printDensityMatrix(1,0));
-            Assert.AreEqual("0", quantumBit.printDensityMatrix(1,1));
+            Assert.AreEqual("1", quantumBit.printDensityMatrix(1,1));
         }
 
         [Test]
@@ -510,7 +510,7 @@ namespace Tests
             Assert.AreEqual("0", quantumBit.printDensityMatrix(0,0));
             Assert.AreEqual("0", quantumBit.printDensityMatrix(0,1));
             Assert.AreEqual("0", quantumBit.printDensityMatrix(1,0));
-            Assert.AreEqual("0", quantumBit.printDensityMatrix(1,1));
+            Assert.AreEqual("1", quantumBit.printDensityMatrix(1,1));
         }
 
         [Test]
@@ -521,7 +521,7 @@ namespace Tests
             Assert.AreEqual("0", quantumBit.printDensityMatrix(0,0));
             Assert.AreEqual("0", quantumBit.printDensityMatrix(0,1));
             Assert.AreEqual("0", quantumBit.printDensityMatrix(1,0));
-            Assert.AreEqual("0", quantumBit.printDensityMatrix(1,1));
+            Assert.AreEqual("1", quantumBit.printDensityMatrix(1,1));
         }
         #endregion
     }
