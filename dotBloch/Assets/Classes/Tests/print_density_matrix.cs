@@ -1,4 +1,5 @@
-﻿using NUnit.Framework;
+﻿using System.Diagnostics;
+using NUnit.Framework;
 using static PrintBlochSettings;
 
 namespace Tests
@@ -93,10 +94,11 @@ namespace Tests
             quantumBit = new Qubit(0,0);
             quantumBit.thetaAngle = 30;
             quantumBit.phiAngle = 0;
+            
             Assert.AreEqual("0,933", quantumBit.printDensityMatrix(0,0));
             Assert.AreEqual("0,25", quantumBit.printDensityMatrix(0,1));
             Assert.AreEqual("0,25", quantumBit.printDensityMatrix(1,0));
-            Assert.AreEqual("0.06699", quantumBit.printDensityMatrix(1,1));
+            Assert.AreEqual("0.067", quantumBit.printDensityMatrix(1,1));
         }
 
         [Test]
