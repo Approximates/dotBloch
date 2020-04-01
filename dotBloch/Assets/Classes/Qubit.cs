@@ -83,7 +83,10 @@ public class Qubit
     }
 
     private void update_density_matrix(){
-        throw new NotImplementedException();
+        density_matrix[0,0] = new Complex(Math.Pow(Math.Cos(this.thetaAngle/2),2),0);
+        density_matrix[0,1] = new Complex(Math.Cos(-this.phiAngle)*Math.Cos(this.thetaAngle/2)*Math.Sin(this.thetaAngle/2),Math.Sin(-this.phiAngle)*Math.Cos(this.thetaAngle/2)*Math.Sin(this.thetaAngle/2));
+        density_matrix[1,0] = new Complex(Math.Cos(this.phiAngle)*Math.Cos(this.thetaAngle/2)*Math.Sin(this.thetaAngle/2),Math.Sin(this.phiAngle)*Math.Cos(this.thetaAngle/2)*Math.Sin(this.thetaAngle/2));
+        density_matrix[1,1] = new Complex(Math.Pow(Math.Sin(this._thetaAngle/2),2),0);
     }
 
 #endregion
