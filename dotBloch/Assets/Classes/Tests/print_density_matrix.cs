@@ -437,7 +437,7 @@ namespace Tests
         public void theta_120_phi_359_Tests(){
             quantumBit = new Qubit(120,359);
             Assert.AreEqual("0,25", quantumBit.printDensityMatrix(0,0));
-            Assert.AreEqual("0,433", quantumBit.printDensityMatrix(0,1));
+            Assert.AreEqual("0,433 + 0,008i", quantumBit.printDensityMatrix(0,1));
             Assert.AreEqual("0,433 - 0,008i", quantumBit.printDensityMatrix(1,0));
             Assert.AreEqual("0,75", quantumBit.printDensityMatrix(1,1));
         }
