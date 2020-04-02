@@ -417,8 +417,8 @@ namespace Tests
         public void theta_120_phi_180_Tests(){
             quantumBit = new Qubit(120,180);
             Assert.AreEqual("0,25", quantumBit.printDensityMatrix(0,0));
-            Assert.AreEqual("-0,433", quantumBit.printDensityMatrix(0,1));
-            Assert.AreEqual("-0,433", quantumBit.printDensityMatrix(1,0));
+            Assert.AreEqual("- 0,433", quantumBit.printDensityMatrix(0,1));
+            Assert.AreEqual("- 0,433", quantumBit.printDensityMatrix(1,0));
             Assert.AreEqual("0,75", quantumBit.printDensityMatrix(1,1));
         }
 
@@ -428,8 +428,8 @@ namespace Tests
             quantumBit.thetaAngle = 120;
             quantumBit.phiAngle = 270;
             Assert.AreEqual("0,25", quantumBit.printDensityMatrix(0,0));
-            Assert.AreEqual("0,354", quantumBit.printDensityMatrix(0,1));
-            Assert.AreEqual("- 0,354", quantumBit.printDensityMatrix(1,0));
+            Assert.AreEqual("0,433i", quantumBit.printDensityMatrix(0,1));
+            Assert.AreEqual("- 0,433i", quantumBit.printDensityMatrix(1,0));
             Assert.AreEqual("0,75", quantumBit.printDensityMatrix(1,1));
         }
 
