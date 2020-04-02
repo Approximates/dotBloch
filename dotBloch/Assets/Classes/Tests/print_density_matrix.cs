@@ -408,8 +408,8 @@ namespace Tests
             quantumBit.thetaAngle = 120;
             quantumBit.phiAngle = 90;
             Assert.AreEqual("0,25", quantumBit.printDensityMatrix(0,0));
-            Assert.AreEqual("- 0,357i", quantumBit.printDensityMatrix(0,1));
-            Assert.AreEqual("0,357i", quantumBit.printDensityMatrix(1,0));
+            Assert.AreEqual("- 0,433i", quantumBit.printDensityMatrix(0,1));
+            Assert.AreEqual("0,433i", quantumBit.printDensityMatrix(1,0));
             Assert.AreEqual("0,75", quantumBit.printDensityMatrix(1,1));
         }
 
