@@ -137,7 +137,7 @@ namespace Tests
             quantumBit.phiAngle = 270;
             Assert.AreEqual("0,933", quantumBit.printDensityMatrix(0,0));
             Assert.AreEqual("0,25i", quantumBit.printDensityMatrix(0,1));
-            Assert.AreEqual("0,25i", quantumBit.printDensityMatrix(1,0));
+            Assert.AreEqual("- 0,25i", quantumBit.printDensityMatrix(1,0));
             Assert.AreEqual("0,067", quantumBit.printDensityMatrix(1,1));
         }
 
