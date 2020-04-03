@@ -9,6 +9,7 @@ public class Qubit
     private PrintQubit print;
 
     private Complex[] quantumValue = new Complex[2];
+    private Complex[,] density_matrix = new Complex[2,2];
 
     public Qubit(double thetaAngle, double phiAngle)
     {
@@ -18,6 +19,7 @@ public class Qubit
 
             this.update_quantum_zero_value();
             this.update_quantum_one_value();
+            this.update_density_matrix();
 
             this.print = new PrintQubit();
         }
@@ -41,6 +43,7 @@ public class Qubit
             {
                 _phiAngle = value;
                 this.update_quantum_one_value();
+                this.update_density_matrix();
             }
             else{
                 Debug.Log(Constants.error.angle_is_wrong);
@@ -60,6 +63,7 @@ public class Qubit
                 _thetaAngle = value;
                 this.update_quantum_zero_value();
                 this.update_quantum_one_value();
+                this.update_density_matrix();
             }
         }
     }
@@ -78,6 +82,13 @@ public class Qubit
         this.quantumValue[1] = new Complex(cos_phi_*sin_theta_div_2_,sin_phi*sin_theta_div_2_);
     }
 
+    private void update_density_matrix(){
+        density_matrix[0,0] = new Complex(Math.Pow(Math.Cos(StaticMethods.degree_to_radian(this.thetaAngle)/2),2),0);
+        density_matrix[0,1] = new Complex(Math.Cos(-StaticMethods.degree_to_radian(this.phiAngle))*Math.Cos(StaticMethods.degree_to_radian(this.thetaAngle)/2)*Math.Sin(StaticMethods.degree_to_radian(this.thetaAngle)/2),Math.Sin(-StaticMethods.degree_to_radian(this.phiAngle))*Math.Cos(StaticMethods.degree_to_radian(this.thetaAngle)/2)*Math.Sin(StaticMethods.degree_to_radian(this.thetaAngle)/2));
+        density_matrix[1,0] = new Complex(Math.Cos(StaticMethods.degree_to_radian(this.phiAngle))*Math.Cos(StaticMethods.degree_to_radian(this.thetaAngle)/2)*Math.Sin(StaticMethods.degree_to_radian(this.thetaAngle)/2),Math.Sin(StaticMethods.degree_to_radian(this.phiAngle))*Math.Cos(StaticMethods.degree_to_radian(this.thetaAngle)/2)*Math.Sin(StaticMethods.degree_to_radian(this.thetaAngle)/2));
+        density_matrix[1,1] = new Complex(Math.Pow(Math.Sin(StaticMethods.degree_to_radian(this._thetaAngle)/2),2),0);
+    }
+
 #endregion
 
 #region printing
@@ -91,6 +102,10 @@ public class Qubit
 
     public string print_one_value(PrintBlochSettings printingSettings = null) {
         return print.quantum_value(quantumValue[1],printingSettings);
+    }
+
+    public string printDensityMatrix(int row, int column, PrintBlochSettings printingSettings = null){
+        return print.quantum_value(density_matrix[row,column],printingSettings);
     }
 #endregion
 }
