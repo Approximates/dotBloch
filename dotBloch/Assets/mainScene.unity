@@ -475,7 +475,7 @@ MonoBehaviour:
     m_BestFit: 1
     m_MinSize: 10
     m_MaxSize: 40
-    m_Alignment: 0
+    m_Alignment: 4
     m_AlignByGeometry: 0
     m_RichText: 1
     m_HorizontalOverflow: 0
@@ -1240,7 +1240,7 @@ MonoBehaviour:
     m_BestFit: 1
     m_MinSize: 10
     m_MaxSize: 40
-    m_Alignment: 0
+    m_Alignment: 4
     m_AlignByGeometry: 0
     m_RichText: 1
     m_HorizontalOverflow: 0
@@ -1474,7 +1474,7 @@ MonoBehaviour:
     m_BestFit: 1
     m_MinSize: 10
     m_MaxSize: 40
-    m_Alignment: 0
+    m_Alignment: 4
     m_AlignByGeometry: 0
     m_RichText: 1
     m_HorizontalOverflow: 0
@@ -1853,6 +1853,10 @@ MonoBehaviour:
   qubitLabel: {fileID: 2043265321}
   FPSCounter: {fileID: 513572078}
   millisecondsSinceLastFrame: {fileID: 1764753869}
+  densityMatrix_0_0: {fileID: 558223253}
+  densityMatrix_0_1: {fileID: 250339609}
+  densityMatrix_1_0: {fileID: 1404200692}
+  densityMatrix_1_1: {fileID: 723384834}
   thetaInputField: {fileID: 960357263}
   phiInputField: {fileID: 1726077919}
   isQuantumBitSelected: 0
@@ -2817,7 +2821,7 @@ MonoBehaviour:
     m_BestFit: 1
     m_MinSize: 10
     m_MaxSize: 40
-    m_Alignment: 0
+    m_Alignment: 7
     m_AlignByGeometry: 0
     m_RichText: 1
     m_HorizontalOverflow: 0

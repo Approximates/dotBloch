@@ -35,6 +35,12 @@ public class mainScript : MonoBehaviour {
 	public Text FPSCounter;
 	public Text millisecondsSinceLastFrame;
 
+	public Text densityMatrix_0_0;
+	public Text densityMatrix_0_1;
+	public Text densityMatrix_1_0;
+	public Text densityMatrix_1_1;
+
+
 	public InputField thetaInputField;
 	public InputField phiInputField;
 
@@ -116,6 +122,11 @@ public class mainScript : MonoBehaviour {
 
 			quantumZeroLabel.text = this.quantumBit.print_zero_value();
 			quantumOneLabel.text = this.quantumBit.print_one_value();
+
+			densityMatrix_0_0.text = this.quantumBit.printDensityMatrix(0,0);
+			densityMatrix_0_1.text = this.quantumBit.printDensityMatrix(0,1);
+			densityMatrix_1_0.text = this.quantumBit.printDensityMatrix(1,0);
+			densityMatrix_1_1.text = this.quantumBit.printDensityMatrix(1,1);
 
 			qubitLabel.text = this.quantumBit.print_bloch_vector();
 		} else if (bitValue) { 
