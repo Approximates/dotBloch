@@ -3469,7 +3469,7 @@ GameObject:
   - component: {fileID: 2043265320}
   - component: {fileID: 2043265321}
   m_Layer: 5
-  m_Name: qubitValue
+  m_Name: blochVector
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -3491,8 +3491,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -15.997467, y: 125.99999}
-  m_SizeDelta: {x: 352.75, y: 28}
+  m_AnchoredPosition: {x: 1.2938, y: 125.99999}
+  m_SizeDelta: {x: 387.17, y: 28}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &2043265320
 CanvasRenderer:
@@ -3522,10 +3522,10 @@ MonoBehaviour:
       m_Calls: []
   m_FontData:
     m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
-    m_FontSize: 14
-    m_FontStyle: 0
-    m_BestFit: 1
-    m_MinSize: 10
+    m_FontSize: 23
+    m_FontStyle: 1
+    m_BestFit: 0
+    m_MinSize: 2
     m_MaxSize: 40
     m_Alignment: 0
     m_AlignByGeometry: 0
@@ -3533,7 +3533,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: "|\u03A8> ="
+  m_Text: "|\u03A8> = ?,??? |0> + ?,??? + ?,???i |1>"
 --- !u!1 &2049118091
 GameObject:
   m_ObjectHideFlags: 0
