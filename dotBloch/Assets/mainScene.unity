@@ -1034,6 +1034,7 @@ GameObject:
   - component: {fileID: 486047883}
   - component: {fileID: 486047882}
   - component: {fileID: 486047881}
+  - component: {fileID: 486047884}
   - component: {fileID: 486047880}
   m_Layer: 5
   m_Name: setThetaTo90Degrees
@@ -1059,7 +1060,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -65.61, y: -5.68}
+  m_AnchoredPosition: {x: 76.2, y: -130}
   m_SizeDelta: {x: 28.79, y: 18.65}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &486047880
@@ -1071,11 +1072,40 @@ MonoBehaviour:
   m_GameObject: {fileID: 486047878}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7090e100ba9fc4a578ca075be0d11cac, type: 3}
+  m_Script: {fileID: 11500000, guid: d0b148fe25e99eb48b9724523833bab1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  recesiver: {fileID: 801406423}
-  angle_to_send: 90
+  m_Delegates:
+  - eventID: 2
+    callback:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 486047884}
+          m_MethodName: highlightLabel
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+  - eventID: 3
+    callback:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 486047884}
+          m_MethodName: unhighligthLabel
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
 --- !u!114 &486047881
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1119,7 +1149,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 486047880}
+      - m_Target: {fileID: 486047884}
         m_MethodName: send_angle
         m_Mode: 1
         m_Arguments:
@@ -1166,6 +1196,22 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 486047878}
   m_CullTransparentMesh: 0
+--- !u!114 &486047884
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 486047878}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e336e345be15346229c1385ba4814f69, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  recesiver: {fileID: 801406423}
+  angle_to_send: 90
+  label: {fileID: 503157773}
+  method_to_update: set_theta_angle
 --- !u!1 &490397306
 GameObject:
   m_ObjectHideFlags: 0
