@@ -158,7 +158,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 39, y: -18.000021}
+  m_AnchoredPosition: {x: 39, y: -19}
   m_SizeDelta: {x: 60, y: 35}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &25576365
@@ -241,7 +241,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 0.03529412, g: 0.7019608, b: 0.16078432, a: 1}
   m_RaycastTarget: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
@@ -351,7 +351,7 @@ GameObject:
   - component: {fileID: 101057264}
   - component: {fileID: 101057266}
   - component: {fileID: 101057265}
-  m_Layer: 5
+  m_Layer: 0
   m_Name: Fill
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -424,7 +424,7 @@ GameObject:
   - component: {fileID: 112096671}
   - component: {fileID: 112096673}
   - component: {fileID: 112096672}
-  m_Layer: 5
+  m_Layer: 0
   m_Name: Text
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -662,7 +662,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 293728539}
-  m_Layer: 5
+  m_Layer: 0
   m_Name: user_panel
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -690,7 +690,7 @@ RectTransform:
   - {fileID: 1885052209}
   - {fileID: 1811274966}
   m_Father: {fileID: 2050224645}
-  m_RootOrder: 2
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -711,7 +711,7 @@ GameObject:
   - component: {fileID: 297399399}
   - component: {fileID: 297399398}
   - component: {fileID: 297399397}
-  m_Layer: 5
+  m_Layer: 0
   m_Name: setThetaTo60Degrees
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -901,7 +901,7 @@ GameObject:
   - component: {fileID: 313965335}
   - component: {fileID: 313965334}
   - component: {fileID: 313965333}
-  m_Layer: 5
+  m_Layer: 0
   m_Name: setThetaTo30Degrees
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1088,7 +1088,7 @@ GameObject:
   - component: {fileID: 329184934}
   - component: {fileID: 329184936}
   - component: {fileID: 329184935}
-  m_Layer: 5
+  m_Layer: 0
   m_Name: Text
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1346,7 +1346,7 @@ GameObject:
   - component: {fileID: 411567442}
   - component: {fileID: 411567444}
   - component: {fileID: 411567443}
-  m_Layer: 5
+  m_Layer: 0
   m_Name: Text
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1423,7 +1423,7 @@ GameObject:
   - component: {fileID: 414084577}
   - component: {fileID: 414084579}
   - component: {fileID: 414084578}
-  m_Layer: 5
+  m_Layer: 0
   m_Name: blochSpherePanel
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1496,7 +1496,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 423499533}
-  m_Layer: 5
+  m_Layer: 0
   m_Name: Handle Slide Area
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1549,7 +1549,7 @@ GameObject:
   - component: {fileID: 486047881}
   - component: {fileID: 486047884}
   - component: {fileID: 486047880}
-  m_Layer: 5
+  m_Layer: 0
   m_Name: setThetaTo90Degrees
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1738,7 +1738,7 @@ GameObject:
   - component: {fileID: 490397308}
   - component: {fileID: 490397310}
   - component: {fileID: 490397311}
-  m_Layer: 5
+  m_Layer: 0
   m_Name: quantumZero
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1856,7 +1856,7 @@ GameObject:
   - component: {fileID: 503157772}
   - component: {fileID: 503157774}
   - component: {fileID: 503157773}
-  m_Layer: 5
+  m_Layer: 0
   m_Name: Text
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1933,7 +1933,7 @@ GameObject:
   - component: {fileID: 513572077}
   - component: {fileID: 513572079}
   - component: {fileID: 513572078}
-  m_Layer: 5
+  m_Layer: 0
   m_Name: framesPerSecond
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2008,7 +2008,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 540388275}
-  m_Layer: 5
+  m_Layer: 0
   m_Name: Handle Slide Area
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2078,7 +2078,7 @@ RectTransform:
   m_Children:
   - {fileID: 84924484}
   m_Father: {fileID: 2050224645}
-  m_RootOrder: 1
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
@@ -2135,7 +2135,7 @@ GameObject:
   - component: {fileID: 614766237}
   - component: {fileID: 614766236}
   - component: {fileID: 614766235}
-  m_Layer: 5
+  m_Layer: 0
   m_Name: setThetaTo0Degrees
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2325,7 +2325,7 @@ GameObject:
   - component: {fileID: 619142300}
   - component: {fileID: 619142299}
   - component: {fileID: 619142298}
-  m_Layer: 5
+  m_Layer: 0
   m_Name: setPhiTo300Degrees
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2512,7 +2512,7 @@ GameObject:
   - component: {fileID: 678322309}
   - component: {fileID: 678322311}
   - component: {fileID: 678322310}
-  m_Layer: 5
+  m_Layer: 0
   m_Name: Placeholder
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2589,7 +2589,7 @@ GameObject:
   - component: {fileID: 679249293}
   - component: {fileID: 679249295}
   - component: {fileID: 679249294}
-  m_Layer: 5
+  m_Layer: 0
   m_Name: Text
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2666,7 +2666,7 @@ GameObject:
   - component: {fileID: 705848436}
   - component: {fileID: 705848438}
   - component: {fileID: 705848437}
-  m_Layer: 5
+  m_Layer: 0
   m_Name: Text
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2747,7 +2747,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 716912266}
-  m_Layer: 5
+  m_Layer: 0
   m_Name: phiPanel
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2794,7 +2794,7 @@ GameObject:
   - component: {fileID: 751551092}
   - component: {fileID: 751551094}
   - component: {fileID: 751551093}
-  m_Layer: 5
+  m_Layer: 0
   m_Name: Text
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2870,7 +2870,7 @@ GameObject:
   m_Component:
   - component: {fileID: 759571353}
   - component: {fileID: 759571354}
-  m_Layer: 5
+  m_Layer: 0
   m_Name: speaker_icon
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2965,7 +2965,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 770908183}
-  m_Layer: 5
+  m_Layer: 0
   m_Name: Fill Area
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3003,7 +3003,7 @@ GameObject:
   - component: {fileID: 771322166}
   - component: {fileID: 771322168}
   - component: {fileID: 771322167}
-  m_Layer: 5
+  m_Layer: 0
   m_Name: Handle
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3072,6 +3072,21 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 293728539}
     m_Modifications:
+    - target: {fileID: 2665461486463641265, guid: 244b56337713b4c36b86c485a00dd7f6,
+        type: 3}
+      propertyPath: m_Layer
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2665461486534202655, guid: 244b56337713b4c36b86c485a00dd7f6,
+        type: 3}
+      propertyPath: m_Layer
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2665461486659569528, guid: 244b56337713b4c36b86c485a00dd7f6,
+        type: 3}
+      propertyPath: m_Layer
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 2665461486805155026, guid: 244b56337713b4c36b86c485a00dd7f6,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -3197,6 +3212,31 @@ PrefabInstance:
       propertyPath: m_Name
       value: density_matrix
       objectReference: {fileID: 0}
+    - target: {fileID: 2665461486805155053, guid: 244b56337713b4c36b86c485a00dd7f6,
+        type: 3}
+      propertyPath: m_Layer
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2665461487493527832, guid: 244b56337713b4c36b86c485a00dd7f6,
+        type: 3}
+      propertyPath: m_Layer
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2665461487992516439, guid: 244b56337713b4c36b86c485a00dd7f6,
+        type: 3}
+      propertyPath: m_Layer
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2665461488170985772, guid: 244b56337713b4c36b86c485a00dd7f6,
+        type: 3}
+      propertyPath: m_Layer
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2665461488267528672, guid: 244b56337713b4c36b86c485a00dd7f6,
+        type: 3}
+      propertyPath: m_Layer
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 244b56337713b4c36b86c485a00dd7f6, type: 3}
 --- !u!224 &777452120 stripped
@@ -3301,7 +3341,7 @@ GameObject:
   m_Component:
   - component: {fileID: 837200551}
   - component: {fileID: 837200552}
-  m_Layer: 5
+  m_Layer: 0
   m_Name: ThetaSlider
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3391,7 +3431,7 @@ GameObject:
   - component: {fileID: 840912165}
   - component: {fileID: 840912167}
   - component: {fileID: 840912166}
-  m_Layer: 5
+  m_Layer: 0
   m_Name: Text
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3535,7 +3575,7 @@ GameObject:
   - component: {fileID: 960357265}
   - component: {fileID: 960357264}
   - component: {fileID: 960357263}
-  m_Layer: 5
+  m_Layer: 0
   m_Name: ThetaValue
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3675,7 +3715,7 @@ GameObject:
   - component: {fileID: 1011817718}
   - component: {fileID: 1011817721}
   - component: {fileID: 1011817720}
-  m_Layer: 5
+  m_Layer: 0
   m_Name: quantumOne
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3832,17 +3872,17 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0.19607843, g: 0.19607843, b: 0.19607843, a: 1}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_RaycastTarget: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
   m_FontData:
     m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
-    m_FontSize: 14
-    m_FontStyle: 0
+    m_FontSize: 15
+    m_FontStyle: 1
     m_BestFit: 0
-    m_MinSize: 10
+    m_MinSize: 1
     m_MaxSize: 40
     m_Alignment: 4
     m_AlignByGeometry: 0
@@ -3868,7 +3908,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1042280164}
-  m_Layer: 5
+  m_Layer: 0
   m_Name: Fill Area
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3906,7 +3946,7 @@ GameObject:
   - component: {fileID: 1049829503}
   - component: {fileID: 1049829505}
   - component: {fileID: 1049829504}
-  m_Layer: 5
+  m_Layer: 0
   m_Name: Image
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3979,7 +4019,7 @@ GameObject:
   - component: {fileID: 1054707666}
   - component: {fileID: 1054707668}
   - component: {fileID: 1054707667}
-  m_Layer: 5
+  m_Layer: 0
   m_Name: Text
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4052,6 +4092,26 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 293728539}
     m_Modifications:
+    - target: {fileID: 7332300868208293065, guid: fcc23280d0a16447284aca3ac69ac7ef,
+        type: 3}
+      propertyPath: m_Layer
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7332300868348899846, guid: fcc23280d0a16447284aca3ac69ac7ef,
+        type: 3}
+      propertyPath: m_Layer
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7332300868423908865, guid: fcc23280d0a16447284aca3ac69ac7ef,
+        type: 3}
+      propertyPath: m_Layer
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7332300868434157714, guid: fcc23280d0a16447284aca3ac69ac7ef,
+        type: 3}
+      propertyPath: m_Layer
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 7332300869211952330, guid: fcc23280d0a16447284aca3ac69ac7ef,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -4182,6 +4242,11 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 7332300869211952331, guid: fcc23280d0a16447284aca3ac69ac7ef,
+        type: 3}
+      propertyPath: m_Layer
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: fcc23280d0a16447284aca3ac69ac7ef, type: 3}
 --- !u!1 &1149859812
@@ -4198,7 +4263,7 @@ GameObject:
   - component: {fileID: 1149859816}
   - component: {fileID: 1149859814}
   - component: {fileID: 1149859815}
-  m_Layer: 5
+  m_Layer: 0
   m_Name: setPhiTo60Degrees
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4424,17 +4489,17 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0.19607843, g: 0.19607843, b: 0.19607843, a: 1}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_RaycastTarget: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
   m_FontData:
     m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
-    m_FontSize: 14
-    m_FontStyle: 0
+    m_FontSize: 20
+    m_FontStyle: 1
     m_BestFit: 0
-    m_MinSize: 10
+    m_MinSize: 2
     m_MaxSize: 40
     m_Alignment: 4
     m_AlignByGeometry: 0
@@ -4462,7 +4527,7 @@ GameObject:
   - component: {fileID: 1330263690}
   - component: {fileID: 1330263692}
   - component: {fileID: 1330263691}
-  m_Layer: 5
+  m_Layer: 0
   m_Name: Text
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4539,7 +4604,7 @@ GameObject:
   - component: {fileID: 1353766704}
   - component: {fileID: 1353766706}
   - component: {fileID: 1353766705}
-  m_Layer: 5
+  m_Layer: 0
   m_Name: Text
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4614,7 +4679,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1377531110}
-  m_Layer: 5
+  m_Layer: 0
   m_Name: thetaPanel
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4661,7 +4726,7 @@ GameObject:
   - component: {fileID: 1396781284}
   - component: {fileID: 1396781286}
   - component: {fileID: 1396781285}
-  m_Layer: 5
+  m_Layer: 0
   m_Name: unmute_music
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4734,7 +4799,7 @@ GameObject:
   - component: {fileID: 1403806358}
   - component: {fileID: 1403806360}
   - component: {fileID: 1403806359}
-  m_Layer: 5
+  m_Layer: 0
   m_Name: thetaLabel
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4817,7 +4882,7 @@ GameObject:
   - component: {fileID: 1425251506}
   - component: {fileID: 1425251508}
   - component: {fileID: 1425251507}
-  m_Layer: 5
+  m_Layer: 0
   m_Name: FPSCounter
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4892,7 +4957,7 @@ GameObject:
   - component: {fileID: 1461381494}
   - component: {fileID: 1461381496}
   - component: {fileID: 1461381495}
-  m_Layer: 5
+  m_Layer: 0
   m_Name: Text
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4969,7 +5034,7 @@ GameObject:
   - component: {fileID: 1485394125}
   - component: {fileID: 1485394127}
   - component: {fileID: 1485394126}
-  m_Layer: 5
+  m_Layer: 0
   m_Name: Background
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -5042,7 +5107,7 @@ GameObject:
   - component: {fileID: 1525429979}
   - component: {fileID: 1525429981}
   - component: {fileID: 1525429980}
-  m_Layer: 5
+  m_Layer: 0
   m_Name: trigonometry_Results
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -5117,7 +5182,7 @@ GameObject:
   - component: {fileID: 1535396590}
   - component: {fileID: 1535396592}
   - component: {fileID: 1535396591}
-  m_Layer: 5
+  m_Layer: 0
   m_Name: phiLabel
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -5194,7 +5259,7 @@ GameObject:
   - component: {fileID: 1584338580}
   - component: {fileID: 1584338582}
   - component: {fileID: 1584338581}
-  m_Layer: 5
+  m_Layer: 0
   m_Name: Text
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -5283,7 +5348,7 @@ GameObject:
   - component: {fileID: 1648236273}
   - component: {fileID: 1648236275}
   - component: {fileID: 1648236274}
-  m_Layer: 5
+  m_Layer: 0
   m_Name: Text
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -5361,7 +5426,7 @@ GameObject:
   - component: {fileID: 1726077921}
   - component: {fileID: 1726077920}
   - component: {fileID: 1726077919}
-  m_Layer: 5
+  m_Layer: 0
   m_Name: PhiValue
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -5499,7 +5564,7 @@ GameObject:
   - component: {fileID: 1745063365}
   - component: {fileID: 1745063367}
   - component: {fileID: 1745063366}
-  m_Layer: 5
+  m_Layer: 0
   m_Name: Text
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -5579,7 +5644,7 @@ GameObject:
   - component: {fileID: 1745097370}
   - component: {fileID: 1745097368}
   - component: {fileID: 1745097369}
-  m_Layer: 5
+  m_Layer: 0
   m_Name: setPhiTo0Degrees
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -5766,7 +5831,7 @@ GameObject:
   - component: {fileID: 1764498942}
   - component: {fileID: 1764498944}
   - component: {fileID: 1764498943}
-  m_Layer: 5
+  m_Layer: 0
   m_Name: Placeholder
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -5843,7 +5908,7 @@ GameObject:
   - component: {fileID: 1764753868}
   - component: {fileID: 1764753870}
   - component: {fileID: 1764753869}
-  m_Layer: 5
+  m_Layer: 0
   m_Name: sinceLastFrame
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -5923,7 +5988,7 @@ GameObject:
   - component: {fileID: 1773593416}
   - component: {fileID: 1773593415}
   - component: {fileID: 1773593414}
-  m_Layer: 5
+  m_Layer: 0
   m_Name: setPhiTo240Degrees
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -6110,7 +6175,7 @@ GameObject:
   - component: {fileID: 1777478822}
   - component: {fileID: 1777478824}
   - component: {fileID: 1777478823}
-  m_Layer: 5
+  m_Layer: 0
   m_Name: Text
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -6194,7 +6259,7 @@ GameObject:
   - component: {fileID: 1811274969}
   - component: {fileID: 1811274968}
   - component: {fileID: 1811274967}
-  m_Layer: 5
+  m_Layer: 0
   m_Name: QuantumBit
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -6314,7 +6379,7 @@ GameObject:
   - component: {fileID: 1821072375}
   - component: {fileID: 1821072374}
   - component: {fileID: 1821072373}
-  m_Layer: 5
+  m_Layer: 0
   m_Name: setPhiTo120Degrees
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -6508,7 +6573,7 @@ GameObject:
   - component: {fileID: 1885052212}
   - component: {fileID: 1885052211}
   - component: {fileID: 1885052210}
-  m_Layer: 5
+  m_Layer: 0
   m_Name: ClassicalBit
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -6628,7 +6693,7 @@ GameObject:
   - component: {fileID: 1895567719}
   - component: {fileID: 1895567718}
   - component: {fileID: 1895567717}
-  m_Layer: 5
+  m_Layer: 0
   m_Name: setThetaTo180Degrees
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -6818,7 +6883,7 @@ GameObject:
   - component: {fileID: 1903704203}
   - component: {fileID: 1903704202}
   - component: {fileID: 1903704201}
-  m_Layer: 5
+  m_Layer: 0
   m_Name: setPhiTo360Degrees
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -7004,7 +7069,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1921602834}
   - component: {fileID: 1921602835}
-  m_Layer: 5
+  m_Layer: 0
   m_Name: PhiSlider
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -7094,7 +7159,7 @@ GameObject:
   - component: {fileID: 1925447997}
   - component: {fileID: 1925447999}
   - component: {fileID: 1925447998}
-  m_Layer: 5
+  m_Layer: 0
   m_Name: Handle
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -7167,7 +7232,7 @@ GameObject:
   - component: {fileID: 1951055359}
   - component: {fileID: 1951055361}
   - component: {fileID: 1951055360}
-  m_Layer: 5
+  m_Layer: 0
   m_Name: Text
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -7247,7 +7312,7 @@ GameObject:
   - component: {fileID: 1977429395}
   - component: {fileID: 1977429394}
   - component: {fileID: 1977429393}
-  m_Layer: 5
+  m_Layer: 0
   m_Name: setThetaTo120Degrees
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -7469,8 +7534,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: 7}
-  m_SizeDelta: {x: 300, y: 60}
+  m_AnchoredPosition: {x: -0.1, y: 20}
+  m_SizeDelta: {x: 284.3, y: 33.15}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &2031207308
 MonoBehaviour:
@@ -7492,18 +7557,18 @@ MonoBehaviour:
       m_Calls: []
   m_FontData:
     m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
-    m_FontSize: 22
+    m_FontSize: 20
     m_FontStyle: 0
     m_BestFit: 0
-    m_MinSize: 10
+    m_MinSize: 2
     m_MaxSize: 41
-    m_Alignment: 1
+    m_Alignment: 3
     m_AlignByGeometry: 0
     m_RichText: 1
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: 
+  m_Text: Do you want to close the app?
 --- !u!222 &2031207309
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -7523,7 +7588,7 @@ GameObject:
   - component: {fileID: 2043265319}
   - component: {fileID: 2043265320}
   - component: {fileID: 2043265321}
-  m_Layer: 5
+  m_Layer: 0
   m_Name: blochVector
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -7600,7 +7665,7 @@ GameObject:
   - component: {fileID: 2049118092}
   - component: {fileID: 2049118094}
   - component: {fileID: 2049118093}
-  m_Layer: 5
+  m_Layer: 0
   m_Name: mute_music
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -7753,8 +7818,8 @@ RectTransform:
   m_LocalScale: {x: 0, y: 0, z: 0}
   m_Children:
   - {fileID: 414084577}
-  - {fileID: 575199194}
   - {fileID: 293728539}
+  - {fileID: 575199194}
   m_Father: {fileID: 0}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -7774,7 +7839,7 @@ GameObject:
   - component: {fileID: 2054083387}
   - component: {fileID: 2054083389}
   - component: {fileID: 2054083388}
-  m_Layer: 5
+  m_Layer: 0
   m_Name: Text
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -7851,7 +7916,7 @@ GameObject:
   - component: {fileID: 2063893873}
   - component: {fileID: 2063893875}
   - component: {fileID: 2063893874}
-  m_Layer: 5
+  m_Layer: 0
   m_Name: Fill
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -7927,7 +7992,7 @@ GameObject:
   - component: {fileID: 2077415871}
   - component: {fileID: 2077415870}
   - component: {fileID: 2077415869}
-  m_Layer: 5
+  m_Layer: 0
   m_Name: setThetaTo150Degrees
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -8152,7 +8217,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 112, y: -18}
+  m_AnchoredPosition: {x: 112, y: -19}
   m_SizeDelta: {x: 60, y: 35}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &2133097362
@@ -8235,7 +8300,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 0.9960785, g: 0.24705884, b: 0.37254903, a: 1}
   m_RaycastTarget: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
@@ -8378,7 +8443,7 @@ GameObject:
   - component: {fileID: 2137790838}
   - component: {fileID: 2137790840}
   - component: {fileID: 2137790839}
-  m_Layer: 5
+  m_Layer: 0
   m_Name: Background
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -8454,7 +8519,7 @@ GameObject:
   - component: {fileID: 2142876351}
   - component: {fileID: 2142876350}
   - component: {fileID: 2142876354}
-  m_Layer: 5
+  m_Layer: 0
   m_Name: setPhiTo180Degrees
   m_TagString: Untagged
   m_Icon: {fileID: 0}
