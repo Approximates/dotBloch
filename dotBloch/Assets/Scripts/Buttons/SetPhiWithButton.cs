@@ -16,13 +16,11 @@ public class SetPhiWithButton : MonoBehaviour
 
     public void highlightLabel()
     {
-        Debug.Log("Podświetlenie");
-        this.label.color = Color.red;
+        this.label.color = Color.green;
     }
 
     public void unhighligthLabel()
     {
-        Debug.Log("Gaszenie");
         this.label.color = Color.white;
     }
 }
