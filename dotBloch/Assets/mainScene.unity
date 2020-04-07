@@ -1726,6 +1726,7 @@ MonoBehaviour:
   recesiver: {fileID: 801406423}
   angle_to_send: 300
   label: {fileID: 1951055360}
+  method_to_update: set_phi_angle
 --- !u!114 &619142300
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3242,8 +3243,8 @@ GameObject:
   - component: {fileID: 1149859818}
   - component: {fileID: 1149859817}
   - component: {fileID: 1149859816}
-  - component: {fileID: 1149859815}
   - component: {fileID: 1149859814}
+  - component: {fileID: 1149859815}
   m_Layer: 5
   m_Name: setPhiTo60Degrees
   m_TagString: Untagged
@@ -3329,6 +3330,7 @@ MonoBehaviour:
   recesiver: {fileID: 801406423}
   angle_to_send: 60
   label: {fileID: 1777478823}
+  method_to_update: set_phi_angle
 --- !u!114 &1149859816
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4350,8 +4352,8 @@ GameObject:
   - component: {fileID: 1745097372}
   - component: {fileID: 1745097371}
   - component: {fileID: 1745097370}
-  - component: {fileID: 1745097369}
   - component: {fileID: 1745097368}
+  - component: {fileID: 1745097369}
   m_Layer: 5
   m_Name: setPhiTo0Degrees
   m_TagString: Untagged
@@ -4437,6 +4439,7 @@ MonoBehaviour:
   recesiver: {fileID: 801406423}
   angle_to_send: 0
   label: {fileID: 411567443}
+  method_to_update: set_phi_angle
 --- !u!114 &1745097370
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4780,6 +4783,7 @@ MonoBehaviour:
   recesiver: {fileID: 801406423}
   angle_to_send: 240
   label: {fileID: 1745063366}
+  method_to_update: set_phi_angle
 --- !u!114 &1773593416
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5052,6 +5056,7 @@ MonoBehaviour:
   recesiver: {fileID: 801406423}
   angle_to_send: 120
   label: {fileID: 2054083388}
+  method_to_update: set_phi_angle
 --- !u!114 &1821072375
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5247,6 +5252,7 @@ MonoBehaviour:
   recesiver: {fileID: 801406423}
   angle_to_send: 360
   label: {fileID: 1353766705}
+  method_to_update: set_phi_angle
 --- !u!114 &1903704203
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6521,6 +6527,7 @@ MonoBehaviour:
   recesiver: {fileID: 801406423}
   angle_to_send: 180
   label: {fileID: 705848437}
+  method_to_update: set_phi_angle
 --- !u!114 &2142876351
 MonoBehaviour:
   m_ObjectHideFlags: 0
