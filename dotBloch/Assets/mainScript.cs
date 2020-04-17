@@ -35,6 +35,12 @@ public class mainScript : MonoBehaviour {
 	public Text FPSCounter;
 	public Text millisecondsSinceLastFrame;
 
+	public Text densityMatrix_0_0;
+	public Text densityMatrix_0_1;
+	public Text densityMatrix_1_0;
+	public Text densityMatrix_1_1;
+
+
 	public InputField thetaInputField;
 	public InputField phiInputField;
 
@@ -42,20 +48,13 @@ public class mainScript : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
-        /*quantumBit = new Qubit(5);
-        Debug.Log("Phi angle:" + quantumBit.phiAngle);
-        Debug.Log("Complex example:" + quantumBit.zero);
-        Debug.Log("Real number of complex:" + quantumBit.zero.Real);
-        Debug.Log("Imaginary numer of complex:" + quantumBit.zero.Imaginary);
-        Debug.Log("Adding complex: " + quantumBit.add);
-        Debug.Log("Multiplying complex: " + quantumBit.mul);*/
+		Screen.SetResolution(1280,720,false);
 		quantumBit = new Qubit(45,0);
         thetaInputField.characterLimit = 6;
 		phiInputField.characterLimit = 6;
 
 		enableQuantumBit ();
 		setBitsValues (true, 45, 0);
-		//setBitsValues (true, 60, 280);
 		setPointers ();
 
 		thetaSlider.onValueChanged.AddListener(delegate {thetaSliderChanged(); });
@@ -92,8 +91,6 @@ public class mainScript : MonoBehaviour {
 
 		millisecondsSinceLastFrame.text = (Math.Round((double)Time.deltaTime*1000)).ToString() + " ms";
 
-
-
 		if (millisecondsLeft <= 0) {
 			FPSCounter.text = frames.ToString () + " FPS";
 
@@ -123,9 +120,13 @@ public class mainScript : MonoBehaviour {
 
 			quantumBitArrow.transform.rotation = Quaternion.Euler((float)this.quantumBit.thetaAngle-90, (float)this.quantumBit.phiAngle, 0);
 
-			//valueOfQuantumZero();
 			quantumZeroLabel.text = this.quantumBit.print_zero_value();
 			quantumOneLabel.text = this.quantumBit.print_one_value();
+
+			densityMatrix_0_0.text = this.quantumBit.printDensityMatrix(0,0);
+			densityMatrix_0_1.text = this.quantumBit.printDensityMatrix(0,1);
+			densityMatrix_1_0.text = this.quantumBit.printDensityMatrix(1,0);
+			densityMatrix_1_1.text = this.quantumBit.printDensityMatrix(1,1);
 
 			qubitLabel.text = this.quantumBit.print_bloch_vector();
 		} else if (bitValue) { 
@@ -144,14 +145,11 @@ public class mainScript : MonoBehaviour {
 			phiSlider.value = 0;
 
 			classicalBitArrow.transform.rotation = Quaternion.Euler(90, 0, 0);
-		}
-			
+		}		
 	}
 
 	public void setBitsValues(bool bitValue, float thetaValue, float phiValue){
 		this.bitValue = bitValue;
-		//this.phiValue = phiValue;
-		//this.thetaValue = thetaValue;
 	}
 
 	public void enableClassicalBit(){
@@ -166,7 +164,6 @@ public class mainScript : MonoBehaviour {
 		thetaSlider.maxValue = 1;
 		phiSlider.interactable = false;
 		thetaSlider.wholeNumbers = true;
-
 
 		setPointers ();
 	}
@@ -207,29 +204,7 @@ public class mainScript : MonoBehaviour {
 
 		phiInputField.interactable = false;
 		phiInputField.text = "";
-
 	}
-
-	// public String valueOfQuantumZero(){
-	// 	//Debug.Log (Math.Round(Math.Cos(this.thetaValue/2*Math.PI/180),3).ToString());
-	// 	return Math.Round(Math.Cos(this.thetaValue/2*Math.PI/180),3).ToString();
-	// }
-
-	// public String valueOfQuantumOne(){
-		
-	// 	String result = "";
-
-	// 	result += Math.Round (Math.Cos (this.phiValue * Math.PI / 180) * Math.Sin (this.thetaValue / 2 * Math.PI / 180), 3).ToString ();
-	// 	result += " + " + Math.Round (Math.Sin (this.phiValue * Math.PI / 180) * Math.Sin (this.thetaValue / 2 * Math.PI / 180), 3).ToString () + "i"; 
-
-	// 	return result;
-	// }
-
-	//qubitLabel
-	// public String valueOfQubit(){
-	// 	return "|" + "\u03A8".ToString () + "> = " + valueOfQuantumZero () + " |0> + " + valueOfQuantumOne () + " |1>";
-			
-	// }
 	void Update()
 	{
 		framesPerSecond(ref FPSmilliseconds, ref framesCount);
@@ -239,6 +214,17 @@ public class mainScript : MonoBehaviour {
 			open_exit_panel();
 		}
 	}
+
+	public void set_theta_angle(double sended_theta_angle){
+        this.quantumBit.thetaAngle = sended_theta_angle;
+        setPointers();
+    }
+
+    public void set_phi_angle(double sended_phi_angle){
+        this.quantumBit.phiAngle = sended_phi_angle;
+        setPointers();
+    }
+
 
 	private void open_exit_panel(){
 		ExitPanel.SetActive(true);
