@@ -22,12 +22,16 @@ namespace Tests
             quantumBit.thetaAngle = 0;
             quantumBit.phiAngle = 0;
             
+            Assert.AreEqual("P(|0>) = 100%", quantumBit.print_zero_probability());
+            Assert.AreEqual("P(|1>) = 0%", quantumBit.print_one_probability());
         }
 
         [Test]
         public void theta_0_phi_45_Tests(){
             quantumBit = new Qubit(0,45);
             
+            Assert.AreEqual("P(|0>) = 100%", quantumBit.print_zero_probability());
+            Assert.AreEqual("P(|1>) = 0%", quantumBit.print_one_probability());
         }
 
         [Test]
@@ -36,12 +40,16 @@ namespace Tests
             quantumBit.thetaAngle = 0;
             quantumBit.phiAngle = 90;
             
+            Assert.AreEqual("P(|0>) = 100%", quantumBit.print_zero_probability());
+            Assert.AreEqual("P(|1>) = 0%", quantumBit.print_one_probability());
         }
 
         [Test]
         public void theta_0_phi_180_Tests(){
             quantumBit = new Qubit(0,180);
-            
+
+            Assert.AreEqual("P(|0>) = 100%", quantumBit.print_zero_probability());
+            Assert.AreEqual("P(|1>) = 0%", quantumBit.print_one_probability());
         }
 
         [Test]
@@ -50,12 +58,16 @@ namespace Tests
             quantumBit.thetaAngle = 0;
             quantumBit.phiAngle = 270;
             
+            Assert.AreEqual("P(|0>) = 100%", quantumBit.print_zero_probability());
+            Assert.AreEqual("P(|1>) = 0%", quantumBit.print_one_probability());
         }
 
         [Test]
         public void theta_0_phi_359_Tests(){
             quantumBit = new Qubit(0,359);
             
+            Assert.AreEqual("P(|0>) = 100%", quantumBit.print_zero_probability());
+            Assert.AreEqual("P(|1>) = 0%", quantumBit.print_one_probability());
         }
         
         [Test]
@@ -64,6 +76,8 @@ namespace Tests
             quantumBit.thetaAngle = 0;
             quantumBit.phiAngle = 360;
             
+            Assert.AreEqual("P(|0>) = 100%", quantumBit.print_zero_probability());
+            Assert.AreEqual("P(|1>) = 0%", quantumBit.print_one_probability());
         }
         #endregion
 
@@ -74,12 +88,16 @@ namespace Tests
             quantumBit.thetaAngle = 30;
             quantumBit.phiAngle = 0;
             
+            Assert.AreEqual("P(|0>) = 93,301%", quantumBit.print_zero_probability());
+            Assert.AreEqual("P(|1>) = 6,699%", quantumBit.print_one_probability());
         }
 
         [Test]
         public void theta_30_phi_45_Tests(){
             quantumBit = new Qubit(30,45);
 
+            Assert.AreEqual("P(|0>) = 93,301%", quantumBit.print_zero_probability());
+            Assert.AreEqual("P(|1>) = 6,699%", quantumBit.print_one_probability());
         }
 
         [Test]
@@ -88,12 +106,16 @@ namespace Tests
             quantumBit.thetaAngle = 30;
             quantumBit.phiAngle = 90;
 
+            Assert.AreEqual("P(|0>) = 93,301%", quantumBit.print_zero_probability());
+            Assert.AreEqual("P(|1>) = 6,699%", quantumBit.print_one_probability());
         }
 
         [Test]
         public void theta_30_phi_180_Tests(){
             quantumBit = new Qubit(30,180);
 
+            Assert.AreEqual("P(|0>) = 93,301%", quantumBit.print_zero_probability());
+            Assert.AreEqual("P(|1>) = 6,699%", quantumBit.print_one_probability());
         }
 
         [Test]
@@ -102,12 +124,16 @@ namespace Tests
             quantumBit.thetaAngle = 30;
             quantumBit.phiAngle = 270;
 
+            Assert.AreEqual("P(|0>) = 93,301%", quantumBit.print_zero_probability());
+            Assert.AreEqual("P(|1>) = 6,699%", quantumBit.print_one_probability());
         }
 
         [Test]
         public void theta_30_phi_359_Tests(){
             quantumBit = new Qubit(30,359);
 
+            Assert.AreEqual("P(|0>) = 93,301%", quantumBit.print_zero_probability());
+            Assert.AreEqual("P(|1>) = 6,699%", quantumBit.print_one_probability());
         }
 
         [Test]
@@ -116,6 +142,8 @@ namespace Tests
             quantumBit.thetaAngle = 30;
             quantumBit.phiAngle = 360;
 
+            Assert.AreEqual("P(|0>) = 93,301%", quantumBit.print_zero_probability());
+            Assert.AreEqual("P(|1>) = 6,699%", quantumBit.print_one_probability());
         }
         #endregion
 
@@ -126,12 +154,16 @@ namespace Tests
             quantumBit.thetaAngle = 45;
             quantumBit.phiAngle = 0;
 
+            Assert.AreEqual("P(|0>) = 85,355%", quantumBit.print_zero_probability());
+            Assert.AreEqual("P(|1>) = 14,645%", quantumBit.print_one_probability());
         }
 
         [Test]
         public void theta_45_phi_45_Tests(){
             quantumBit = new Qubit(45,45);
-
+            
+            Assert.AreEqual("P(|0>) = 85,355%", quantumBit.print_zero_probability());
+            Assert.AreEqual("P(|1>) = 14,645%", quantumBit.print_one_probability());
         }
 
         [Test]
@@ -140,12 +172,16 @@ namespace Tests
             quantumBit.thetaAngle = 45;
             quantumBit.phiAngle = 90;
 
+            Assert.AreEqual("P(|0>) = 85,355%", quantumBit.print_zero_probability());
+            Assert.AreEqual("P(|1>) = 14,645%", quantumBit.print_one_probability());
         }
 
         [Test]
         public void theta_45_phi_180_Tests(){
             quantumBit = new Qubit(45,180);
-
+            
+            Assert.AreEqual("P(|0>) = 85,355%", quantumBit.print_zero_probability());
+            Assert.AreEqual("P(|1>) = 14,645%", quantumBit.print_one_probability());
         }
 
         [Test]
@@ -154,12 +190,16 @@ namespace Tests
             quantumBit.thetaAngle = 45;
             quantumBit.phiAngle = 270;
 
+            Assert.AreEqual("P(|0>) = 85,355%", quantumBit.print_zero_probability());
+            Assert.AreEqual("P(|1>) = 14,645%", quantumBit.print_one_probability());
         }
 
         [Test]
         public void theta_45_phi_359_Tests(){
             quantumBit = new Qubit(45,359);
 
+            Assert.AreEqual("P(|0>) = 85,355%", quantumBit.print_zero_probability());
+            Assert.AreEqual("P(|1>) = 14,645%", quantumBit.print_one_probability());
         }
 
         [Test]
@@ -167,7 +207,9 @@ namespace Tests
             quantumBit = new Qubit(0,0);
             quantumBit.thetaAngle = 45;
             quantumBit.phiAngle = 360;
-
+            
+            Assert.AreEqual("P(|0>) = 85,355%", quantumBit.print_zero_probability());
+            Assert.AreEqual("P(|1>) = 14,645%", quantumBit.print_one_probability());
         }
         #endregion
 
@@ -178,12 +220,16 @@ namespace Tests
             quantumBit.thetaAngle = 60;
             quantumBit.phiAngle = 0;
 
+            Assert.AreEqual("P(|0>) = 75%", quantumBit.print_zero_probability());
+            Assert.AreEqual("P(|1>) = 25%", quantumBit.print_one_probability());
         }
 
         [Test]
         public void theta_60_phi_45_Tests(){
             quantumBit = new Qubit(60,45);
-
+            
+            Assert.AreEqual("P(|0>) = 75%", quantumBit.print_zero_probability());
+            Assert.AreEqual("P(|1>) = 25%", quantumBit.print_one_probability());
         }
 
         [Test]
@@ -192,12 +238,16 @@ namespace Tests
             quantumBit.thetaAngle = 60;
             quantumBit.phiAngle = 90;
 
+            Assert.AreEqual("P(|0>) = 75%", quantumBit.print_zero_probability());
+            Assert.AreEqual("P(|1>) = 25%", quantumBit.print_one_probability());
         }
 
         [Test]
         public void theta_60_phi_180_Tests(){
             quantumBit = new Qubit(60,180);
 
+            Assert.AreEqual("P(|0>) = 75%", quantumBit.print_zero_probability());
+            Assert.AreEqual("P(|1>) = 25%", quantumBit.print_one_probability());
         }
 
         [Test]
@@ -205,13 +255,17 @@ namespace Tests
             quantumBit = new Qubit(0,0);
             quantumBit.thetaAngle = 60;
             quantumBit.phiAngle = 270;
-
-        }
+            
+            Assert.AreEqual("P(|0>) = 75%", quantumBit.print_zero_probability());
+            Assert.AreEqual("P(|1>) = 25%", quantumBit.print_one_probability());
+        }  
 
         [Test]
         public void theta_60_phi_359_Tests(){
             quantumBit = new Qubit(60,359);
 
+            Assert.AreEqual("P(|0>) = 75%", quantumBit.print_zero_probability());
+            Assert.AreEqual("P(|1>) = 25%", quantumBit.print_one_probability());
         }
 
         [Test]
@@ -220,6 +274,8 @@ namespace Tests
             quantumBit.thetaAngle = 60;
             quantumBit.phiAngle = 360;
 
+            Assert.AreEqual("P(|0>) = 75%", quantumBit.print_zero_probability());
+            Assert.AreEqual("P(|1>) = 25%", quantumBit.print_one_probability());
         }
         #endregion
 
@@ -230,12 +286,16 @@ namespace Tests
             quantumBit.thetaAngle = 90;
             quantumBit.phiAngle = 0;
 
+            Assert.AreEqual("P(|0>) = 50%", quantumBit.print_zero_probability());
+            Assert.AreEqual("P(|1>) = 50%", quantumBit.print_one_probability());
         }
 
         [Test]
         public void theta_90_phi_45_Tests(){
             quantumBit = new Qubit(90,45);
 
+            Assert.AreEqual("P(|0>) = 50%", quantumBit.print_zero_probability());
+            Assert.AreEqual("P(|1>) = 50%", quantumBit.print_one_probability());
         }
 
         [Test]
@@ -244,11 +304,15 @@ namespace Tests
             quantumBit.thetaAngle = 90;
             quantumBit.phiAngle = 90;
 
+            Assert.AreEqual("P(|0>) = 50%", quantumBit.print_zero_probability());
+            Assert.AreEqual("P(|1>) = 50%", quantumBit.print_one_probability());
         }
 
         [Test]
         public void theta_90_phi_180_Tests(){
             quantumBit = new Qubit(90,180);
+            Assert.AreEqual("P(|0>) = 50%", quantumBit.print_zero_probability());
+            Assert.AreEqual("P(|1>) = 50%", quantumBit.print_one_probability());
 
         }
 
@@ -258,12 +322,16 @@ namespace Tests
             quantumBit.thetaAngle = 90;
             quantumBit.phiAngle = 270;
 
+            Assert.AreEqual("P(|0>) = 50%", quantumBit.print_zero_probability());
+            Assert.AreEqual("P(|1>) = 50%", quantumBit.print_one_probability());
         }
 
         [Test]
         public void theta_90_phi_359_Tests(){
             quantumBit = new Qubit(90,359);
 
+            Assert.AreEqual("P(|0>) = 50%", quantumBit.print_zero_probability());
+            Assert.AreEqual("P(|1>) = 50%", quantumBit.print_one_probability());
         }
 
         [Test]
@@ -272,6 +340,8 @@ namespace Tests
             quantumBit.thetaAngle = 90;
             quantumBit.phiAngle = 360;
 
+            Assert.AreEqual("P(|0>) = 50%", quantumBit.print_zero_probability());
+            Assert.AreEqual("P(|1>) = 50%", quantumBit.print_one_probability());
         }
         #endregion
 
@@ -282,12 +352,16 @@ namespace Tests
             quantumBit.thetaAngle = 120;
             quantumBit.phiAngle = 0;
 
+            Assert.AreEqual("P(|0>) = 25%", quantumBit.print_zero_probability());
+            Assert.AreEqual("P(|1>) = 75%", quantumBit.print_one_probability());
         }
 
         [Test]
         public void theta_120_phi_45_Tests(){
             quantumBit = new Qubit(120,45);
 
+            Assert.AreEqual("P(|0>) = 25%", quantumBit.print_zero_probability());
+            Assert.AreEqual("P(|1>) = 75%", quantumBit.print_one_probability());
         }
 
         [Test]
@@ -296,12 +370,16 @@ namespace Tests
             quantumBit.thetaAngle = 120;
             quantumBit.phiAngle = 90;
 
+            Assert.AreEqual("P(|0>) = 25%", quantumBit.print_zero_probability());
+            Assert.AreEqual("P(|1>) = 75%", quantumBit.print_one_probability());
         }
 
         [Test]
         public void theta_120_phi_180_Tests(){
             quantumBit = new Qubit(120,180);
 
+            Assert.AreEqual("P(|0>) = 25%", quantumBit.print_zero_probability());
+            Assert.AreEqual("P(|1>) = 75%", quantumBit.print_one_probability());
         }
 
         [Test]
@@ -310,12 +388,16 @@ namespace Tests
             quantumBit.thetaAngle = 120;
             quantumBit.phiAngle = 270;
 
+            Assert.AreEqual("P(|0>) = 25%", quantumBit.print_zero_probability());
+            Assert.AreEqual("P(|1>) = 75%", quantumBit.print_one_probability());
         }
 
         [Test]
         public void theta_120_phi_359_Tests(){
             quantumBit = new Qubit(120,359);
 
+            Assert.AreEqual("P(|0>) = 25%", quantumBit.print_zero_probability());
+            Assert.AreEqual("P(|1>) = 75%", quantumBit.print_one_probability());
         }
 
         [Test]
@@ -324,6 +406,8 @@ namespace Tests
             quantumBit.thetaAngle = 120;
             quantumBit.phiAngle = 360;
 
+            Assert.AreEqual("P(|0>) = 25%", quantumBit.print_zero_probability());
+            Assert.AreEqual("P(|1>) = 75%", quantumBit.print_one_probability());
         }
         #endregion
 
@@ -334,12 +418,16 @@ namespace Tests
             quantumBit.thetaAngle = 180;
             quantumBit.phiAngle = 0;
 
+            Assert.AreEqual("P(|0>) = 0%", quantumBit.print_zero_probability());
+            Assert.AreEqual("P(|1>) = 100%", quantumBit.print_one_probability());
         }
 
         [Test]
         public void theta_180_phi_45_Tests(){
             quantumBit = new Qubit(180,45);
 
+            Assert.AreEqual("P(|0>) = 0%", quantumBit.print_zero_probability());
+            Assert.AreEqual("P(|1>) = 100%", quantumBit.print_one_probability());
         }
 
         [Test]
@@ -348,12 +436,16 @@ namespace Tests
             quantumBit.thetaAngle = 180;
             quantumBit.phiAngle = 90;
 
+            Assert.AreEqual("P(|0>) = 0%", quantumBit.print_zero_probability());
+            Assert.AreEqual("P(|1>) = 100%", quantumBit.print_one_probability());
         }
 
         [Test]
         public void theta_180_phi_180_Tests(){
             quantumBit = new Qubit(180,180);
 
+            Assert.AreEqual("P(|0>) = 0%", quantumBit.print_zero_probability());
+            Assert.AreEqual("P(|1>) = 100%", quantumBit.print_one_probability());
         }
 
         [Test]
@@ -362,12 +454,16 @@ namespace Tests
             quantumBit.thetaAngle = 180;
             quantumBit.phiAngle = 270;
 
+            Assert.AreEqual("P(|0>) = 0%", quantumBit.print_zero_probability());
+            Assert.AreEqual("P(|1>) = 100%", quantumBit.print_one_probability());
         }
 
         [Test]
         public void theta_180_phi_359_Tests(){
             quantumBit = new Qubit(180,359);
 
+            Assert.AreEqual("P(|0>) = 0%", quantumBit.print_zero_probability());
+            Assert.AreEqual("P(|1>) = 100%", quantumBit.print_one_probability());
         }
 
         [Test]
@@ -376,6 +472,8 @@ namespace Tests
             quantumBit.thetaAngle = 180;
             quantumBit.phiAngle = 360;
 
+            Assert.AreEqual("P(|0>) = 0%", quantumBit.print_zero_probability());
+            Assert.AreEqual("P(|1>) = 100%", quantumBit.print_one_probability());
         }
         #endregion
     }
