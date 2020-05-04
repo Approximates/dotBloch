@@ -10,7 +10,7 @@ public class Qubit
 
     private Complex[] quantumValue = new Complex[2];
     private Complex[,] density_matrix = new Complex[2,2];
-    private Complex[,] probability = new Complex[2,2];
+    private double[] probability = new double[2];
 
     public Qubit(double thetaAngle, double phiAngle)
     {
@@ -95,8 +95,25 @@ public class Qubit
 
     private void update_probability()
     {
+        double theta_angle = StaticMethods.degree_to_radian(this.thetaAngle);
+        double phi_angle = StaticMethods.degree_to_radian(this.phiAngle);
 
+        Complex alfa = new Complex(Math.Cos(phi_angle)*Math.Cos(theta_angle/2),Math.Sin(phi_angle)*Math.Cos(theta_angle/2));
+        Debug.Log("alfa: " + alfa);
+        Complex beta = new Complex(Math.Cos(theta_angle+phi_angle)*Math.Sin(theta_angle/2),Math.Sin(theta_angle+phi_angle)*Math.Sin(theta_angle/2));
+        Debug.Log("beta: " + beta);
+
+        alfa = Complex.Multiply(alfa,alfa);
+        Debug.Log("alfa^2: " + alfa);
+        beta = Complex.Multiply(beta,beta);
+        Debug.Log("beta^2: " + beta);
+
+        this.probability[0] = Convert.ToDouble(alfa.Magnitude/(alfa.Magnitude+beta.Magnitude));
+        Debug.Log("probability[0]: " + this.probability[0]);
+        this.probability[1] = Convert.ToDouble(beta.Magnitude/(alfa.Magnitude+beta.Magnitude));
+        Debug.Log("probability[1]: " + this.probability[1]);
     }
+
 
 #endregion
 
@@ -120,12 +137,12 @@ public class Qubit
 
     public string print_zero_probability(PrintBlochSettings printingSettings = null)
     {
-        throw new NotImplementedException();
+        return this.probability[0].ToString();
     }
 
     public string print_one_probability(PrintBlochSettings printingSettings = null)
     {
-        throw new NotImplementedException();
+        return this.probability[1].ToString();
     }
 #endregion
 }
