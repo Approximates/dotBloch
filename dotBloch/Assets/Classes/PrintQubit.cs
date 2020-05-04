@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Numerics;
+using UnityEngine;
 using static PrintBlochSettings;
 
 public class PrintQubit
@@ -50,6 +51,32 @@ public class PrintQubit
     private bool not_added(PrintBlochSettings settings){
         return settings == null ? true : false;
     }
+
+    public string percent_value(bool is_zero,double value, PrintBlochSettings printingSettings = null)
+    {
+        string result = String.Empty;
+        PrintBlochSettings printing_rules = set_printing_rules(ref printingSettings);
+
+        Debug.Log("Printing rules: " + printing_rules);
+
+        if(is_zero)
+            result += Constants.quantum_probability.zero_label;
+        else
+            result += Constants.quantum_probability.one_label;
+
+        value *= 100;
+        value = Math.Round(value,3);
+        result += value.ToString();
+
+        result += Constants.character.percent;
+
+        result = remove_spaces_if_needed(result,printing_rules.printSpaces);
+        Debug.Log("Decimal separator: " + printing_rules.decimalSeparator);
+        result = set_decimal_separator(result,printing_rules.decimalSeparator);
+        return result;
+    }
+
+
 
     public string quantum_value(Complex number,PrintBlochSettings printingSettings = null){
         string result = String.Empty;

@@ -137,35 +137,12 @@ public class Qubit
 
     public string print_zero_probability(PrintBlochSettings printingSettings = null)
     {
-        string result = "";
-
-        result += Constants.quantum_probability.zero_label;
-
-        double value = this.probability[0];
-        value *= 100;
-        value = Math.Round(value,3);
-
-        result += value.ToString();
-
-        result += Constants.character.percent;
-
-        return result;
+        return print.percent_value(true,probability[0],printingSettings);
     }
 
     public string print_one_probability(PrintBlochSettings printingSettings = null)
     {
-        string result = "";
-
-        result += Constants.quantum_probability.one_label;
-        double value = this.probability[1];
-        value *= 100;
-        value = Math.Round(value,3);
-
-        result += value.ToString();
-
-        result += Constants.character.percent;
-
-        return result;
+        return print.percent_value(false,probability[1],printingSettings);
     }
 #endregion
 }
