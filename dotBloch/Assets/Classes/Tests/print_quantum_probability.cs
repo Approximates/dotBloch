@@ -480,6 +480,16 @@ namespace Tests
         #region custom_printing
 
         [Test]
+        public void custom_settings_theta_90_phi_180_Test(){
+            quantumBit = new Qubit(0,0);
+            quantumBit.thetaAngle = 90;
+            quantumBit.phiAngle = 180;
+            PrintBlochSettings settings = new PrintBlochSettings(false,false,0,PrintBlochSettings.DecimalSeparator.comma,PrintBlochSettings.ImaginaryUnit.J);
+            Assert.AreEqual("P(|0>)=50%", quantumBit.print_zero_probability(settings));
+            Assert.AreEqual("P(|1>)=50%", quantumBit.print_one_probability(settings));
+        }
+
+        [Test]
         public void custom_settings_theta_45_phi_45_with_cutsom_settings_1_Test(){
             quantumBit = new Qubit(0,0);
             quantumBit.thetaAngle = 45;
@@ -497,6 +507,16 @@ namespace Tests
             PrintBlochSettings settings = new PrintBlochSettings(false,false,1,PrintBlochSettings.DecimalSeparator.comma,PrintBlochSettings.ImaginaryUnit.j); 
             Assert.AreEqual("P(|0>)=85,4%", quantumBit.print_zero_probability(settings));
             Assert.AreEqual("P(|1>)=14,6%", quantumBit.print_one_probability(settings));
+        }
+
+        [Test]
+        public void custom_settings_theta_45_phi_45_with_cutsom_settings_3_Test(){
+            quantumBit = new Qubit(0,0);
+            quantumBit.thetaAngle = 45;
+            quantumBit.phiAngle = 45;
+            PrintBlochSettings settings = new PrintBlochSettings(false,false,0,PrintBlochSettings.DecimalSeparator.comma,PrintBlochSettings.ImaginaryUnit.j); 
+            Assert.AreEqual("P(|0>)=85%", quantumBit.print_zero_probability(settings));
+            Assert.AreEqual("P(|1>)=15%", quantumBit.print_one_probability(settings));
         }
 
         #endregion
