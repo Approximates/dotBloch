@@ -65,7 +65,7 @@ public class PrintQubit
             result += Constants.quantum_probability.one_label;
 
         value *= 100;
-        value = Math.Round(value,3);
+        value = Math.Round(value,printing_rules.decimalSpaces);
         result += value.ToString();
 
         result += Constants.character.percent;
