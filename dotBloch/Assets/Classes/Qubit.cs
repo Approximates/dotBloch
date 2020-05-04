@@ -99,19 +99,13 @@ public class Qubit
         double phi_angle = StaticMethods.degree_to_radian(this.phiAngle);
 
         Complex alfa = new Complex(Math.Cos(phi_angle)*Math.Cos(theta_angle/2),Math.Sin(phi_angle)*Math.Cos(theta_angle/2));
-        Debug.Log("alfa: " + alfa);
         Complex beta = new Complex(Math.Cos(theta_angle+phi_angle)*Math.Sin(theta_angle/2),Math.Sin(theta_angle+phi_angle)*Math.Sin(theta_angle/2));
-        Debug.Log("beta: " + beta);
 
         alfa = Complex.Multiply(alfa,alfa);
-        Debug.Log("alfa^2: " + alfa);
         beta = Complex.Multiply(beta,beta);
-        Debug.Log("beta^2: " + beta);
 
         this.probability[0] = Convert.ToDouble(alfa.Magnitude/(alfa.Magnitude+beta.Magnitude));
-        Debug.Log("probability[0]: " + this.probability[0]);
         this.probability[1] = Convert.ToDouble(beta.Magnitude/(alfa.Magnitude+beta.Magnitude));
-        Debug.Log("probability[1]: " + this.probability[1]);
     }
 
 

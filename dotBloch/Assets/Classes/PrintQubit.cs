@@ -57,8 +57,6 @@ public class PrintQubit
         string result = String.Empty;
         PrintBlochSettings printing_rules = set_printing_rules(ref printingSettings);
 
-        Debug.Log("Printing rules: " + printing_rules);
-
         if(is_zero)
             result += Constants.quantum_probability.zero_label;
         else
@@ -71,7 +69,6 @@ public class PrintQubit
         result += Constants.character.percent;
 
         result = remove_spaces_if_needed(result,printing_rules.printSpaces);
-        Debug.Log("Decimal separator: " + printing_rules.decimalSeparator);
         result = set_decimal_separator(result,printing_rules.decimalSeparator);
         return result;
     }
