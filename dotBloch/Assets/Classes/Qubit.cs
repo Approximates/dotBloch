@@ -10,6 +10,7 @@ public class Qubit
 
     private Complex[] quantumValue = new Complex[2];
     private Complex[,] density_matrix = new Complex[2,2];
+    private double[] probability = new double[2];
 
     public Qubit(double thetaAngle, double phiAngle)
     {
@@ -20,6 +21,7 @@ public class Qubit
             this.update_quantum_zero_value();
             this.update_quantum_one_value();
             this.update_density_matrix();
+            this.update_probability();
 
             this.print = new PrintQubit();
         }
@@ -44,6 +46,7 @@ public class Qubit
                 _phiAngle = value;
                 this.update_quantum_one_value();
                 this.update_density_matrix();
+                this.update_probability();
             }
             else{
                 Debug.Log(Constants.error.angle_is_wrong);
@@ -64,6 +67,7 @@ public class Qubit
                 this.update_quantum_zero_value();
                 this.update_quantum_one_value();
                 this.update_density_matrix();
+                this.update_probability();
             }
         }
     }
@@ -89,10 +93,27 @@ public class Qubit
         density_matrix[1,1] = new Complex(Math.Pow(Math.Sin(StaticMethods.degree_to_radian(this._thetaAngle)/2),2),0);
     }
 
+    private void update_probability()
+    {
+        double theta_angle = StaticMethods.degree_to_radian(this.thetaAngle);
+        double phi_angle = StaticMethods.degree_to_radian(this.phiAngle);
+
+        Complex alfa = new Complex(Math.Cos(phi_angle)*Math.Cos(theta_angle/2),Math.Sin(phi_angle)*Math.Cos(theta_angle/2));
+        Complex beta = new Complex(Math.Cos(theta_angle+phi_angle)*Math.Sin(theta_angle/2),Math.Sin(theta_angle+phi_angle)*Math.Sin(theta_angle/2));
+
+        alfa = Complex.Multiply(alfa,alfa);
+        beta = Complex.Multiply(beta,beta);
+
+        this.probability[0] = Convert.ToDouble(alfa.Magnitude/(alfa.Magnitude+beta.Magnitude));
+        this.probability[1] = Convert.ToDouble(beta.Magnitude/(alfa.Magnitude+beta.Magnitude));
+    }
+
+
 #endregion
 
 #region printing
-    public string print_bloch_vector(PrintBlochSettings printingSettings = null){
+    public string print_bloch_vector(PrintBlochSettings printingSettings = null)
+    {
         return print.bloch_vector(this.quantumValue,printingSettings);
     }
     
@@ -106,6 +127,16 @@ public class Qubit
 
     public string printDensityMatrix(int row, int column, PrintBlochSettings printingSettings = null){
         return print.quantum_value(density_matrix[row,column],printingSettings);
+    }
+
+    public string print_zero_probability(PrintBlochSettings printingSettings = null)
+    {
+        return print.percent_value(true,probability[0],printingSettings);
+    }
+
+    public string print_one_probability(PrintBlochSettings printingSettings = null)
+    {
+        return print.percent_value(false,probability[1],printingSettings);
     }
 #endregion
 }
