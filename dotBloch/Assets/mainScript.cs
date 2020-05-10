@@ -40,6 +40,8 @@ public class mainScript : MonoBehaviour {
 	public Text densityMatrix_1_0;
 	public Text densityMatrix_1_1;
 
+	public Text propabilityZero;
+	public Text propabilityOne;
 
 	public InputField thetaInputField;
 	public InputField phiInputField;
@@ -127,6 +129,9 @@ public class mainScript : MonoBehaviour {
 			densityMatrix_0_1.text = this.quantumBit.printDensityMatrix(0,1);
 			densityMatrix_1_0.text = this.quantumBit.printDensityMatrix(1,0);
 			densityMatrix_1_1.text = this.quantumBit.printDensityMatrix(1,1);
+
+			propabilityOne.text = this.quantumBit.print_one_probability();
+			propabilityZero.text = this.quantumBit.print_zero_probability();
 
 			qubitLabel.text = this.quantumBit.print_bloch_vector();
 		} else if (bitValue) { 

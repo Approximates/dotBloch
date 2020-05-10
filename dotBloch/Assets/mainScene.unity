@@ -3172,7 +3172,7 @@ PrefabInstance:
     - target: {fileID: 2665461486805155026, guid: 244b56337713b4c36b86c485a00dd7f6,
         type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: -32
+      value: -43.6
       objectReference: {fileID: 0}
     - target: {fileID: 2665461486805155026, guid: 244b56337713b4c36b86c485a00dd7f6,
         type: 3}
@@ -3359,6 +3359,8 @@ MonoBehaviour:
   densityMatrix_0_1: {fileID: 134190154}
   densityMatrix_1_0: {fileID: 573232098}
   densityMatrix_1_1: {fileID: 2078772452}
+  propabilityZero: {fileID: 1592547097}
+  propabilityOne: {fileID: 1266171186}
   thetaInputField: {fileID: 960357263}
   phiInputField: {fileID: 1726077919}
   isQuantumBitSelected: 0
@@ -4210,12 +4212,22 @@ PrefabInstance:
         type: 3}
       propertyPath: m_FontData.m_Font
       value: 
-      objectReference: {fileID: 12800000, guid: f895926bf4a6f7841aed07080886fd66,
+      objectReference: {fileID: 12800000, guid: 6a8bd3f8e1794e34e8b32be1d7e0a336,
         type: 3}
     - target: {fileID: 7332300868423908867, guid: fcc23280d0a16447284aca3ac69ac7ef,
         type: 3}
       propertyPath: m_FontData.m_FontSize
       value: 16
+      objectReference: {fileID: 0}
+    - target: {fileID: 7332300868423908867, guid: fcc23280d0a16447284aca3ac69ac7ef,
+        type: 3}
+      propertyPath: m_FontData.m_BestFit
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7332300868423908867, guid: fcc23280d0a16447284aca3ac69ac7ef,
+        type: 3}
+      propertyPath: m_Text
+      value: P(|0>) = 75,YYY %
       objectReference: {fileID: 0}
     - target: {fileID: 7332300868434157714, guid: fcc23280d0a16447284aca3ac69ac7ef,
         type: 3}
@@ -4226,12 +4238,22 @@ PrefabInstance:
         type: 3}
       propertyPath: m_FontData.m_Font
       value: 
-      objectReference: {fileID: 12800000, guid: f895926bf4a6f7841aed07080886fd66,
+      objectReference: {fileID: 12800000, guid: 6a8bd3f8e1794e34e8b32be1d7e0a336,
         type: 3}
     - target: {fileID: 7332300868434157716, guid: fcc23280d0a16447284aca3ac69ac7ef,
         type: 3}
       propertyPath: m_FontData.m_FontSize
       value: 16
+      objectReference: {fileID: 0}
+    - target: {fileID: 7332300868434157716, guid: fcc23280d0a16447284aca3ac69ac7ef,
+        type: 3}
+      propertyPath: m_FontData.m_BestFit
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7332300868434157716, guid: fcc23280d0a16447284aca3ac69ac7ef,
+        type: 3}
+      propertyPath: m_Text
+      value: P(|1>) = 25,YYY %
       objectReference: {fileID: 0}
     - target: {fileID: 7332300869211952330, guid: fcc23280d0a16447284aca3ac69ac7ef,
         type: 3}
@@ -4296,7 +4318,7 @@ PrefabInstance:
     - target: {fileID: 7332300869211952330, guid: fcc23280d0a16447284aca3ac69ac7ef,
         type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: 140
+      value: 130.4
       objectReference: {fileID: 0}
     - target: {fileID: 7332300869211952330, guid: fcc23280d0a16447284aca3ac69ac7ef,
         type: 3}
@@ -4361,7 +4383,7 @@ PrefabInstance:
     - target: {fileID: 7332300869211952331, guid: fcc23280d0a16447284aca3ac69ac7ef,
         type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7332300869211952331, guid: fcc23280d0a16447284aca3ac69ac7ef,
         type: 3}
@@ -4560,6 +4582,18 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1149859812}
   m_CullTransparentMesh: 0
+--- !u!114 &1266171186 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 7332300868434157716, guid: fcc23280d0a16447284aca3ac69ac7ef,
+    type: 3}
+  m_PrefabInstance: {fileID: 1080029880}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5f7201a12d95ffc409449d95f23cf332, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1287476242
 GameObject:
   m_ObjectHideFlags: 0
@@ -5253,7 +5287,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -1, y: 77}
+  m_AnchoredPosition: {x: -1, y: 49.1}
   m_SizeDelta: {x: 390.37, y: 101.54}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1525429980
@@ -5446,6 +5480,18 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1584338579}
   m_CullTransparentMesh: 0
+--- !u!114 &1592547097 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 7332300868423908867, guid: fcc23280d0a16447284aca3ac69ac7ef,
+    type: 3}
+  m_PrefabInstance: {fileID: 1080029880}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5f7201a12d95ffc409449d95f23cf332, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1608110717 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 8082145149525807964, guid: d1ebc397c7bc946d8852655442d619b4,
