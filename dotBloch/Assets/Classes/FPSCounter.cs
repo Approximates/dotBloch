@@ -9,15 +9,10 @@ public class FPSCounter
     {
         Debug.Log("is working");
     }
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
+   public bool oneSecondLeft(float deltaTime)
+   {
+       Debug.Log(deltaTime);
+       return true;
+   }
 }

@@ -17,6 +17,11 @@ public class InterfaceManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if (fps.oneSecondLeft(Time.deltaTime))
+            updateFpsCounter();
+    }
+    void updateFpsCounter()
+    {
         
     }
 }
