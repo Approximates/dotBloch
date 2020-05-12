@@ -10,9 +10,14 @@ public class FPSCounter
         Debug.Log("is working");
     }
 
-   public bool oneSecondLeft(float deltaTime)
+   public string printMiliseconds()
    {
-       Debug.Log(deltaTime);
-       return true;
+
+       return "0";
+   }
+   public string printFrames()
+   {
+
+       return "1";  
    }
 }
