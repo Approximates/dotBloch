@@ -2132,7 +2132,7 @@ GameObject:
   - component: {fileID: 576913433}
   - component: {fileID: 576913432}
   m_Layer: 0
-  m_Name: sinceLastFrame
+  m_Name: oneFrameExecuteTime
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -3471,7 +3471,6 @@ GameObject:
   - component: {fileID: 801406425}
   - component: {fileID: 801406424}
   - component: {fileID: 801406426}
-  - component: {fileID: 801406427}
   m_Layer: 0
   m_Name: scriptHolder
   m_TagString: Untagged
@@ -3549,20 +3548,6 @@ MonoBehaviour:
   starsDefault: {fileID: 2100000, guid: e067f642713c3784e9b9560a0872a5a2, type: 2}
   starsLightBlue: {fileID: 2100000, guid: 98402c00806adb94bb32897e0cb94485, type: 2}
   starsRed: {fileID: 2100000, guid: 4568cfabf7421a342a1b99ef409030c3, type: 2}
---- !u!114 &801406427
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 801406423}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 40b80acaa39e1f4409ac8b3cd2e0ad37, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  milisecondsLabel: {fileID: 576913432}
-  fpsLabel: {fileID: 756070796}
 --- !u!1 &837200550
 GameObject:
   m_ObjectHideFlags: 0
@@ -7909,6 +7894,7 @@ GameObject:
   - component: {fileID: 1980071419}
   - component: {fileID: 1980071421}
   - component: {fileID: 1980071420}
+  - component: {fileID: 1980071422}
   m_Layer: 0
   m_Name: refactoredFPSCounter
   m_TagString: Untagged
@@ -7973,6 +7959,20 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1980071418}
   m_CullTransparentMesh: 0
+--- !u!114 &1980071422
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1980071418}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 712edfd52ee7d0540a0af77d864f79af, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  framesPerSecond: {fileID: 756070796}
+  oneFrameExecuteTime: {fileID: 576913432}
 --- !u!114 &1983109712 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 2665461487992516437, guid: 244b56337713b4c36b86c485a00dd7f6,
