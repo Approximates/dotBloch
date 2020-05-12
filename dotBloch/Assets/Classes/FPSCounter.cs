@@ -5,9 +5,9 @@ using UnityEditor;
 public class FPSCounter 
 {
 
-    public FPSCounter()
+    public void countValuesToDisplay(float oneFrameTimeExecution)
     {
-        Debug.Log("is working");
+        Debug.Log(oneFrameTimeExecution);
     }
 
    public string printMiliseconds()

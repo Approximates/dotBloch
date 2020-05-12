@@ -15,10 +15,10 @@ public class FPSDisplayer : MonoBehaviour
     void Start()
     {
         fps = new FPSCounter();
-        framesPerSecond.text = "Jacek";
-        framesPerSecond.color = new Color32(255,0,0,255);
-        oneFrameExecuteTime.text = "Marcin";
-         oneFrameExecuteTime.color = new Color32(255,255,0,255);
+        // framesPerSecond.text = "Jacek";
+        // framesPerSecond.color = new Color32(255,0,0,255);
+        // oneFrameExecuteTime.text = "Marcin";
+        //  oneFrameExecuteTime.color = new Color32(255,255,0,255);
 
 
     }
@@ -26,6 +26,6 @@ public class FPSDisplayer : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+        fps.countValuesToDisplay(Time.deltaTime);
     }
 }
