@@ -4,20 +4,19 @@ using System;
 using UnityEditor;
 public class FPSCounter 
 {
+    public FPSLabel framesPerSecond;
+    public FPSLabel oneFrameExecuteTime;
 
-    public void countValuesToDisplay(float oneFrameTimeExecution)
+    public FPSCounter()
     {
-        Debug.Log(oneFrameTimeExecution);
+        framesPerSecond = new FPSLabel();
+        oneFrameExecuteTime = new FPSLabel();
     }
 
-   public string printMiliseconds()
-   {
-
-       return "0";
-   }
-   public string printFrames()
-   {
-
-       return "1";  
-   }
+    public void countValuesToDisplay(float frameExecution)
+    {
+        float fps = 1; 
+        framesPerSecond.displayValue = (fps/frameExecution).ToString();
+        oneFrameExecuteTime.displayValue = frameExecution.ToString() + "ms";
+    }
 }

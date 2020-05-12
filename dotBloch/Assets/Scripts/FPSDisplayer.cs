@@ -27,5 +27,7 @@ public class FPSDisplayer : MonoBehaviour
     void Update()
     {
         fps.countValuesToDisplay(Time.deltaTime);
+        framesPerSecond.text = fps.framesPerSecond.displayValue;
+        oneFrameExecuteTime.text = fps.oneFrameExecuteTime.displayValue;
     }
 }
