@@ -16,7 +16,10 @@ public class FPSCounter
     public void countValuesToDisplay(float frameExecution)
     {
         float fps = 1; 
-        framesPerSecond.displayValue = (fps/frameExecution).ToString();
-        oneFrameExecuteTime.displayValue = frameExecution.ToString() + "ms";
+        framesPerSecond.displayValue = Math.Round((fps/frameExecution),0).ToString();
+        framesPerSecond.displayColor = new Color32(255,0,0,255); 
+        oneFrameExecuteTime.displayValue = Math.Round((frameExecution*1000),0).ToString() + "ms";
+        oneFrameExecuteTime.displayColor = new Color32(255,255,0,255); 
+
     }
 }

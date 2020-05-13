@@ -28,6 +28,9 @@ public class FPSDisplayer : MonoBehaviour
     {
         fps.countValuesToDisplay(Time.deltaTime);
         framesPerSecond.text = fps.framesPerSecond.displayValue;
+        framesPerSecond.color = fps.framesPerSecond.displayColor;
         oneFrameExecuteTime.text = fps.oneFrameExecuteTime.displayValue;
+        oneFrameExecuteTime.color = fps.oneFrameExecuteTime.displayColor;
+
     }
 }
