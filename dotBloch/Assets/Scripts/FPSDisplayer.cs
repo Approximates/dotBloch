@@ -11,26 +11,25 @@ public class FPSDisplayer : MonoBehaviour
     public Text framesPerSecond;
     [SerializeField]
     public Text oneFrameExecuteTime;
-    // Start is called before the first frame update
     void Start()
     {
         fps = new FPSCounter();
-        // framesPerSecond.text = "Jacek";
-        // framesPerSecond.color = new Color32(255,0,0,255);
-        // oneFrameExecuteTime.text = "Marcin";
-        //  oneFrameExecuteTime.color = new Color32(255,255,0,255);
-
-
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
         fps.countValuesToDisplay(Time.deltaTime);
+        updateLabels();
+    }
+    void Update()
+    {   
+        if(fps.oneSecondLeft(Time.deltaTime))
+        {
+           fps.countValuesToDisplay(Time.deltaTime);
+           updateLabels();
+        } 
+    }
+    void updateLabels()
+    {
         framesPerSecond.text = fps.framesPerSecond.displayValue;
         framesPerSecond.color = fps.framesPerSecond.displayColor;
         oneFrameExecuteTime.text = fps.oneFrameExecuteTime.displayValue;
         oneFrameExecuteTime.color = fps.oneFrameExecuteTime.displayColor;
-
     }
 }
