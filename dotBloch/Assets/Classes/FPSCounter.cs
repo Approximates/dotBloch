@@ -17,10 +17,28 @@ public class FPSCounter
     public void countValuesToDisplay(float deltaTime)
     {
         float fps = 1; 
-        framesPerSecond.displayValue = Math.Round((fps/deltaTime),0).ToString() + " FPS";
-        framesPerSecond.displayColor = new Color32(255,0,0,255); 
-        oneFrameExecuteTime.displayValue = Math.Round((deltaTime*1000),0).ToString() + "ms";
-        oneFrameExecuteTime.displayColor = new Color32(255,255,0,255); 
+        double fpsRatio = Math.Round((fps/deltaTime),0);
+        if (fpsRatio <=23)
+        {
+            framesPerSecond.displayColor = new Color32(204,51,0,255);
+        }else if (fpsRatio >=24 && fpsRatio <=30)
+        {
+            framesPerSecond.displayColor = new Color32(255,102,0,255);
+
+        }else if (fpsRatio >=31 && fpsRatio <=48)
+        {
+            framesPerSecond.displayColor = new Color32(255,255,0,255);
+        }else if (fpsRatio >=49 && fpsRatio <=60)
+        {
+            framesPerSecond.displayColor = new Color32(0,153,0,255);
+        }else
+        {
+            framesPerSecond.displayColor = new Color32(0,204,0,255);
+        }
+
+        framesPerSecond.displayValue = fpsRatio.ToString() + " FPS";
+        oneFrameExecuteTime.displayValue = Math.Round((deltaTime*1000),0).ToString() + " ms";
+        oneFrameExecuteTime.displayColor = new Color32(255,255,255,255); 
     }
 
    public bool oneSecondLeft(float deltaTime)

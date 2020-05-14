@@ -19,11 +19,11 @@ namespace Tests
             fps = new FPSCounter();
             fpsExpected = new FPSCounter();
 
-            fps.countValuesToDisplay(0.0435f);
+            fps.countValuesToDisplay(0.0434f);
 
             fpsExpected.framesPerSecond.displayValue = "23 FPS";
             fpsExpected.framesPerSecond.displayColor = new Color32(204,51,0,255);
-            fpsExpected.oneFrameExecuteTime.displayValue = "44 ms";
+            fpsExpected.oneFrameExecuteTime.displayValue = "43 ms";
 
             Assert.AreEqual(fpsExpected.framesPerSecond.displayValue,fps.framesPerSecond.displayValue);
             Assert.AreEqual(fpsExpected.framesPerSecond.displayColor,fps.framesPerSecond.displayColor);

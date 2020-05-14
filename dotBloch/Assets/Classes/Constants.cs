@@ -36,7 +36,5 @@ public class Constants
     public static class message{
         public const string exit_question = "Do you want to close the app?";
     }
-
-    public readonly Color32 colorRed = new Color32(204,51,0,255);
 }
 
