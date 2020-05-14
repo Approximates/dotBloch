@@ -85,33 +85,6 @@ public class mainScript : MonoBehaviour {
 		setPointers ();
 	}
 
-	void framesPerSecond(ref float millisecondsLeft, ref int frames){
-
-		millisecondsSinceLaunch += Time.deltaTime;
-		millisecondsLeft -= Time.deltaTime;
-		++frames;
-
-		millisecondsSinceLastFrame.text = (Math.Round((double)Time.deltaTime*1000)).ToString() + " ms";
-
-		if (millisecondsLeft <= 0) {
-			FPSCounter.text = frames.ToString () + " FPS";
-
-			if(frames<24) 
-				FPSCounter.color = new Color32(255,0,0,255);
-
-			if(frames>=24 || frames<58)
-				FPSCounter.color = new Color32(255,255,0,255);
-
-			if(frames>=58)
-				FPSCounter.color = new Color32(0,255,0,255);
-
-			millisecondsLeft = 1;
-			frames = 0;
-		}
-	}
-	
-
-
 	public void setPointers(){
 		if (isQuantumBitSelected) {
 			this.thetaInputField.text = this.quantumBit.thetaAngle.ToString ();
@@ -212,8 +185,6 @@ public class mainScript : MonoBehaviour {
 	}
 	void Update()
 	{
-		framesPerSecond(ref FPSmilliseconds, ref framesCount);
-
 		if (Input.GetKey(KeyCode.Escape))
 		{
 			open_exit_panel();
