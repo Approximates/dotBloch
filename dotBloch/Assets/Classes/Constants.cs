@@ -1,4 +1,5 @@
-﻿public class Constants
+﻿using UnityEngine;
+public class Constants
 {
     public static class symbol{
 
