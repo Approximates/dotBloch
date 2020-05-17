@@ -9,7 +9,6 @@ public class CameraScript : MonoBehaviour
     {
       double cameraAspectRatio =  gameObject.GetComponent<Camera>().aspect;
       cameraAspectRatio = Math.Round(cameraAspectRatio,2);
-      Debug.Log(cameraAspectRatio);
 
   if (cameraAspectRatio == 1.6) //16:10
     {
