@@ -50,7 +50,6 @@ public class mainScript : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
-		Screen.SetResolution(1280,720,false);
 		quantumBit = new Qubit(45,0);
         thetaInputField.characterLimit = 6;
 		phiInputField.characterLimit = 6;
