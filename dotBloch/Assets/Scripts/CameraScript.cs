@@ -25,6 +25,14 @@ public class CameraScript : MonoBehaviour
     {
         gameObject.GetComponent<Camera>().transform.Rotate(0,2,0);
         gameObject.GetComponent<Camera>().orthographicSize = 2.12f;
+    }else if(cameraAspectRatio == 2.11) //19:9
+    {
+        var fpsCounter = GameObject.Find("FPSCounter");
+        fpsCounter.transform.Translate(5,32,0);
+        gameObject.GetComponent<Camera>().transform.Rotate(0,4,0);
+    }else 
+    {
+        Screen.SetResolution(1920, 1080, true);
     }
 }
 
