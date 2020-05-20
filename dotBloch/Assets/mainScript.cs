@@ -29,9 +29,6 @@ public class mainScript : MonoBehaviour {
 	public Text quantumOneLabel;
 	public Text qubitLabel;
 
-	float FPSmilliseconds = 1;
-	float millisecondsSinceLaunch = 0;
-	int framesCount = 0;
 	public Text FPSCounter;
 	public Text millisecondsSinceLastFrame;
 
