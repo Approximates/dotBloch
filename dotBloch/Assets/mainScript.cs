@@ -29,9 +29,6 @@ public class mainScript : MonoBehaviour {
 	public Text quantumOneLabel;
 	public Text qubitLabel;
 
-	float FPSmilliseconds = 1;
-	float millisecondsSinceLaunch = 0;
-	int framesCount = 0;
 	public Text FPSCounter;
 	public Text millisecondsSinceLastFrame;
 
@@ -50,7 +47,6 @@ public class mainScript : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
-		Screen.SetResolution(1280,720,false);
 		quantumBit = new Qubit(45,0);
         thetaInputField.characterLimit = 6;
 		phiInputField.characterLimit = 6;
