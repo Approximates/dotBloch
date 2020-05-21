@@ -54,6 +54,14 @@ public class Qubit
         }
     }
 
+    public double this[int index]
+    {
+        get
+        {
+            return probability[index];
+        }
+    }
+
     public double thetaAngle
     {
         get
