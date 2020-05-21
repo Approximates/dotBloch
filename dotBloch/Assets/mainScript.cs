@@ -102,6 +102,8 @@ public class mainScript : MonoBehaviour {
 			propabilityOne.text = this.quantumBit.print_one_probability();
 			propabilityZero.text = this.quantumBit.print_zero_probability();
 
+			this.setTransparencyOfQuantumProbabilityLabels(quantumBit);
+
 			qubitLabel.text = this.quantumBit.print_bloch_vector();
 		} else if (bitValue) { 
 			this.thetaInputField.text = "1";
@@ -201,5 +203,12 @@ public class mainScript : MonoBehaviour {
 	private void open_exit_panel(){
 		ExitPanel.SetActive(true);
 		ExitText.text = Constants.message.exit_question;
+	}
+
+	private void setTransparencyOfQuantumProbabilityLabels(Qubit quantumBit)
+	{
+		propabilityZero.color = new Color32(255,255,255,200);
+		propabilityOne.color = new Color32(255,255,255,80);
+		//propabilityZero.text = this.quantumBit.print_zero_probability();
 	}
 }
