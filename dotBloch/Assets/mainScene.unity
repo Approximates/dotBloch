@@ -4165,6 +4165,11 @@ PrefabInstance:
       propertyPath: m_Text
       value: P(|0>) = 75,YYY %
       objectReference: {fileID: 0}
+    - target: {fileID: 7332300868423908867, guid: fcc23280d0a16447284aca3ac69ac7ef,
+        type: 3}
+      propertyPath: m_Color.a
+      value: 0.78431374
+      objectReference: {fileID: 0}
     - target: {fileID: 7332300868434157714, guid: fcc23280d0a16447284aca3ac69ac7ef,
         type: 3}
       propertyPath: m_Layer
@@ -4190,6 +4195,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Text
       value: P(|1>) = 25,YYY %
+      objectReference: {fileID: 0}
+    - target: {fileID: 7332300868434157716, guid: fcc23280d0a16447284aca3ac69ac7ef,
+        type: 3}
+      propertyPath: m_Color.a
+      value: 0.3137255
       objectReference: {fileID: 0}
     - target: {fileID: 7332300869211952330, guid: fcc23280d0a16447284aca3ac69ac7ef,
         type: 3}
