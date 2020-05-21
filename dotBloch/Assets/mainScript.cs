@@ -207,10 +207,16 @@ public class mainScript : MonoBehaviour {
 
 	private void setTransparencyOfQuantumProbabilityLabels(Qubit quantumBit)
 	{
-		Debug.Log("|0> = " + quantumBit[0] );
-		Debug.Log("|1> = " + quantumBit[1] );
-		propabilityZero.color = new Color32(255,255,255,200);
-		propabilityOne.color = new Color32(255,255,255,80);
-		//propabilityZero.text = this.quantumBit.print_zero_probability();
+		//Debug.Log("|0> = " + quantumBit[0] );
+		//Debug.Log("|1> = " + quantumBit[1] );
+
+		byte zeroTransparency =  Convert.ToByte(80 + Math.Round(quantumBit[0]*120));
+		byte oneTransparency = Convert.ToByte(80 + Math.Round(quantumBit[1]*120));
+
+		Debug.Log("|0 transparency> = " + zeroTransparency);
+		Debug.Log("|1 transparency> = " + oneTransparency);
+
+		propabilityZero.color = new Color32(255,255,255,zeroTransparency);
+		propabilityOne.color = new Color32(255,255,255,oneTransparency);
 	}
 }
