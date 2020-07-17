@@ -2841,7 +2841,7 @@ GameObject:
   - component: {fileID: 751551094}
   - component: {fileID: 751551093}
   m_Layer: 5
-  m_Name: Text
+  m_Name: phiDisplayValue
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -4158,7 +4158,7 @@ GameObject:
   - component: {fileID: 1054707668}
   - component: {fileID: 1054707667}
   m_Layer: 5
-  m_Name: Text
+  m_Name: thetaDisplayValue
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -5150,6 +5150,8 @@ GameObject:
   - component: {fileID: 1403806358}
   - component: {fileID: 1403806360}
   - component: {fileID: 1403806359}
+  - component: {fileID: 1403806362}
+  - component: {fileID: 1403806361}
   m_Layer: 5
   m_Name: thetaLabel
   m_TagString: Untagged
@@ -5217,6 +5219,46 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1403806357}
   m_CullTransparentMesh: 0
+--- !u!114 &1403806361
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1403806357}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 550352a4ffcb34b7592f63a1b93efcca, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &1403806362
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1403806357}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 15dd31fec81edef44986a26bcedc46d3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  requiredHoldTime: 0.5
+  onLongClick:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 1403806361}
+        m_MethodName: copyThetaAngle
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+  fillImage: {fileID: 0}
 --- !u!1 &1418761023 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 1254124197479180362, guid: d1ebc397c7bc946d8852655442d619b4,
@@ -5504,6 +5546,8 @@ GameObject:
   - component: {fileID: 1535396590}
   - component: {fileID: 1535396592}
   - component: {fileID: 1535396591}
+  - component: {fileID: 1535396594}
+  - component: {fileID: 1535396593}
   m_Layer: 5
   m_Name: phiLabel
   m_TagString: Untagged
@@ -5571,6 +5615,46 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1535396589}
   m_CullTransparentMesh: 0
+--- !u!114 &1535396593
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1535396589}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 15dd31fec81edef44986a26bcedc46d3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  requiredHoldTime: 0.5
+  onLongClick:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 1535396594}
+        m_MethodName: copyPhiAngle
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+  fillImage: {fileID: 0}
+--- !u!114 &1535396594
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1535396589}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 550352a4ffcb34b7592f63a1b93efcca, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1539449336 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 7332300868434157714, guid: fcc23280d0a16447284aca3ac69ac7ef,

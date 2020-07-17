@@ -105,4 +105,24 @@ public class LaTeX : MonoBehaviour
         StaticMethods.copyToClipboard(result);
         Debug.Log("copied: " + result);
     }
+
+    public void copyThetaAngle(){
+        result = string.Empty;
+        result += Constants.latex.theta;
+        result += Constants.math.space_equal;
+        result += GameObject.Find("thetaDisplayValue").GetComponent<Text>().text;
+        result += Constants.latex.degree;
+        StaticMethods.copyToClipboard(result);
+        Debug.Log("copied: " + result);
+    }
+
+    public void copyPhiAngle(){
+        result = string.Empty;
+        result += Constants.latex.phi;
+        result += Constants.math.space_equal;
+        result += GameObject.Find("phiDisplayValue").GetComponent<Text>().text;
+        result += Constants.latex.degree;
+        StaticMethods.copyToClipboard(result);
+        Debug.Log("copied: " + result);
+    }
 }

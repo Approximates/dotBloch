@@ -31,6 +31,7 @@ public class Constants
         public const string minus = "-";
         public const string plus_with_space = "+ ";
         public const string minus_with_space = "- ";
+        public const string space_equal = " = ";
     }
 
     public static class message{
@@ -52,6 +53,10 @@ public class Constants
         public const string densityMatrixWhole_3 = @"  \\";
         public const string densityMatrixWhole_4 = @" & ";
         public const string densityMatrixWhole_5 = @"\end{pmatrix}";
+
+        public const string theta = @"\theta";
+        public const string phi = @"\phi";
+        public const string degree = @"^{\circ}";
     }
 }
 
