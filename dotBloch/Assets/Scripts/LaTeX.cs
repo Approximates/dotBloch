@@ -1,13 +1,16 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
+
 
 public class LaTeX : MonoBehaviour
 {
-    // Start is called before the first frame update
     public void copyTheBlochVector()
     {
-        Debug.Log("Bloch vector is copied");
-        StaticMethods.copyToClipboard("Bloch vector");
+        
+        string result = GameObject.Find("blochVector").GetComponent<Text>().text;
+        StaticMethods.copyToClipboard(result);
+        Debug.Log("copied: " + result);
     }
 }
