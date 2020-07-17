@@ -46,7 +46,8 @@ public class Constants
 
         public const string densityMatrixValues = @"";
 
-        public const string densityMatrixWhole_1 = @"\rho = \begin{pmatrix}{\tiny \cos^2{\frac{\theta}{2}}} & e^{-i\phi}\cos{\frac{\theta}{2}}\sin{\frac{\theta}{2}}  \\e^{i\phi}\cos{\frac{\theta}{2}}\sin{\frac{\theta}{2}} &\sin^2{\frac{\theta}{2}} \end{pmatrix}=\begin{pmatrix}";
+        public const string densityMatrixWhole_0 = @"\rho = \begin{pmatrix}";
+        public const string densityMatrixWhole_1 = @"{\tiny \cos^2{\frac{\theta}{2}}} & e^{-i\phi}\cos{\frac{\theta}{2}}\sin{\frac{\theta}{2}}  \\e^{i\phi}\cos{\frac{\theta}{2}}\sin{\frac{\theta}{2}} &\sin^2{\frac{\theta}{2}} \end{pmatrix}=\begin{pmatrix}";
         public const string densityMatrixWhole_2 = @" & ";
         public const string densityMatrixWhole_3 = @"  \\";
         public const string densityMatrixWhole_4 = @" & ";

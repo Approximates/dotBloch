@@ -4974,6 +4974,52 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1353766703}
   m_CullTransparentMesh: 0
+--- !u!1 &1356945079 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 2665461488267528672, guid: 244b56337713b4c36b86c485a00dd7f6,
+    type: 3}
+  m_PrefabInstance: {fileID: 777452119}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1356945083
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1356945079}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 550352a4ffcb34b7592f63a1b93efcca, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &1356945084
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1356945079}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 15dd31fec81edef44986a26bcedc46d3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  requiredHoldTime: 0.5
+  onLongClick:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 1356945083}
+        m_MethodName: copyDensityMatrixValues
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+  fillImage: {fileID: 0}
 --- !u!1 &1377531109
 GameObject:
   m_ObjectHideFlags: 0
