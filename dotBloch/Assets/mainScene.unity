@@ -1889,7 +1889,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 490397311}
-        m_MethodName: CopyTextToClipboard
+        m_MethodName: copyQuantumZeroValue
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -1909,10 +1909,9 @@ MonoBehaviour:
   m_GameObject: {fileID: 490397306}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ae75e31bbec05d743af9ffc424e82426, type: 3}
+  m_Script: {fileID: 11500000, guid: 550352a4ffcb34b7592f63a1b93efcca, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  text: {fileID: 490397306}
 --- !u!1 &503157771
 GameObject:
   m_ObjectHideFlags: 0
@@ -3926,10 +3925,9 @@ MonoBehaviour:
   m_GameObject: {fileID: 1011817716}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ae75e31bbec05d743af9ffc424e82426, type: 3}
+  m_Script: {fileID: 11500000, guid: 550352a4ffcb34b7592f63a1b93efcca, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  text: {fileID: 1011817716}
 --- !u!114 &1011817721
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3947,7 +3945,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 1011817720}
-        m_MethodName: CopyTextToClipboard
+        m_MethodName: copyQuantumOneValue
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
