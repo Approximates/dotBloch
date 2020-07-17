@@ -1361,18 +1361,6 @@ GameObject:
     type: 3}
   m_PrefabInstance: {fileID: 777452119}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &400350079
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 400350078}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 550352a4ffcb34b7592f63a1b93efcca, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!114 &400350080
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1389,7 +1377,7 @@ MonoBehaviour:
   onLongClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 400350079}
+      - m_Target: {fileID: 400350081}
         m_MethodName: copyDensityMatrix00
         m_Mode: 1
         m_Arguments:
@@ -1401,6 +1389,18 @@ MonoBehaviour:
           m_BoolArgument: 0
         m_CallState: 2
   fillImage: {fileID: 0}
+--- !u!114 &400350081
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 400350078}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 550352a4ffcb34b7592f63a1b93efcca, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &411567441
 GameObject:
   m_ObjectHideFlags: 0
@@ -4642,18 +4642,6 @@ GameObject:
     type: 3}
   m_PrefabInstance: {fileID: 777452119}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &1192680518
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1192680517}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 550352a4ffcb34b7592f63a1b93efcca, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!114 &1192680519
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4670,7 +4658,7 @@ MonoBehaviour:
   onLongClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1192680518}
+      - m_Target: {fileID: 1192680520}
         m_MethodName: copyDensityMatrix11
         m_Mode: 1
         m_Arguments:
@@ -4682,6 +4670,18 @@ MonoBehaviour:
           m_BoolArgument: 0
         m_CallState: 2
   fillImage: {fileID: 0}
+--- !u!114 &1192680520
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1192680517}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 550352a4ffcb34b7592f63a1b93efcca, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &1266171186 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 7332300868434157716, guid: fcc23280d0a16447284aca3ac69ac7ef,
@@ -5294,6 +5294,8 @@ GameObject:
   - component: {fileID: 1525429979}
   - component: {fileID: 1525429981}
   - component: {fileID: 1525429980}
+  - component: {fileID: 1525429983}
+  - component: {fileID: 1525429982}
   m_Layer: 5
   m_Name: trigonometry_Results
   m_TagString: Untagged
@@ -5359,6 +5361,46 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1525429978}
   m_CullTransparentMesh: 0
+--- !u!114 &1525429982
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1525429978}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 550352a4ffcb34b7592f63a1b93efcca, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &1525429983
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1525429978}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 15dd31fec81edef44986a26bcedc46d3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  requiredHoldTime: 0.5
+  onLongClick:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 1525429982}
+        m_MethodName: copyZeroAndOneFormula
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+  fillImage: {fileID: 0}
 --- !u!1 &1535396589
 GameObject:
   m_ObjectHideFlags: 0
@@ -5743,18 +5785,6 @@ GameObject:
     type: 3}
   m_PrefabInstance: {fileID: 777452119}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &1675835129
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1675835128}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 550352a4ffcb34b7592f63a1b93efcca, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!114 &1675835130
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5771,7 +5801,7 @@ MonoBehaviour:
   onLongClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1675835129}
+      - m_Target: {fileID: 1675835131}
         m_MethodName: copyDensityMatrix10
         m_Mode: 1
         m_Arguments:
@@ -5783,6 +5813,18 @@ MonoBehaviour:
           m_BoolArgument: 0
         m_CallState: 2
   fillImage: {fileID: 0}
+--- !u!114 &1675835131
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1675835128}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 550352a4ffcb34b7592f63a1b93efcca, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1726077917
 GameObject:
   m_ObjectHideFlags: 0
@@ -8546,7 +8588,19 @@ GameObject:
     type: 3}
   m_PrefabInstance: {fileID: 777452119}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &2102807151
+--- !u!114 &2102807152
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2102807150}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 550352a4ffcb34b7592f63a1b93efcca, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &2102807153
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -8574,18 +8628,6 @@ MonoBehaviour:
           m_BoolArgument: 0
         m_CallState: 2
   fillImage: {fileID: 0}
---- !u!114 &2102807152
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2102807150}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 550352a4ffcb34b7592f63a1b93efcca, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &2133097360
 GameObject:
   m_ObjectHideFlags: 0

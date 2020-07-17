@@ -36,5 +36,11 @@ public class Constants
     public static class message{
         public const string exit_question = "Do you want to close the app?";
     }
+
+    public static class latex{
+        public const string zeroAndOneFormula_1 = @"\begin{bmatrix}\:|0>\:\\\:|1>\: \end{bmatrix}=\begin{bmatrix}\: \cos({\frac{\theta}{2}})\:\\\:e^{i\phi}*\sin({\frac{\theta}{2}})\: \end{bmatrix}=\begin{bmatrix}\:";
+        public const string zeroAndOneFormula_2 = @"\:\\\:";
+        public const string zeroAndOneFormula_3 = @"\:\end{bmatrix}";
+    }
 }
 

@@ -55,4 +55,17 @@ public class LaTeX : MonoBehaviour
         StaticMethods.copyToClipboard(result);
         Debug.Log("copied: " + result);
     }
+
+    public void copyZeroAndOneFormula()
+    {
+        result = string.Empty;
+        result = Constants.latex.zeroAndOneFormula_1;
+        result += GameObject.Find("quantumOne").GetComponent<Text>().text;
+        result += Constants.latex.zeroAndOneFormula_2;
+        result += GameObject.Find("quantumZero").GetComponent<Text>().text;
+        result += Constants.latex.zeroAndOneFormula_3;
+        
+        StaticMethods.copyToClipboard(result);
+        Debug.Log("copied: " + result);
+    }
 }
