@@ -68,4 +68,10 @@ public class LaTeX : MonoBehaviour
         StaticMethods.copyToClipboard(result);
         Debug.Log("copied: " + result);
     }
+
+    public void copyDensityMatrixFormulas(){
+        result = Constants.latex.densityMatrixFormula;
+        StaticMethods.copyToClipboard(result);
+        Debug.Log("copied: " + result);
+    }
 }

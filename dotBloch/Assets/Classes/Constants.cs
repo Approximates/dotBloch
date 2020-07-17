@@ -41,6 +41,8 @@ public class Constants
         public const string zeroAndOneFormula_1 = @"\begin{bmatrix}\:|0>\:\\\:|1>\: \end{bmatrix}=\begin{bmatrix}\: \cos({\frac{\theta}{2}})\:\\\:e^{i\phi}*\sin({\frac{\theta}{2}})\: \end{bmatrix}=\begin{bmatrix}\:";
         public const string zeroAndOneFormula_2 = @"\:\\\:";
         public const string zeroAndOneFormula_3 = @"\:\end{bmatrix}";
+
+        public const string densityMatrixFormula = @"\rho = \begin{pmatrix}{\tiny \cos^2{\frac{\theta}{2}}} & e^{-i\phi}\cos{\frac{\theta}{2}}\sin{\frac{\theta}{2}}  \\e^{i\phi}\cos{\frac{\theta}{2}}\sin{\frac{\theta}{2}} &\sin^2{\frac{\theta}{2}} \end{pmatrix}";
     }
 }
 
