@@ -12,7 +12,6 @@ public class StaticMethods
 
     public static void copyToClipboard(string toCopy)
     {
-
         TextEditor editor = new TextEditor
         {
             text = toCopy
