@@ -7,11 +7,16 @@ using UnityEngine.UI;
 public class LaTeX : MonoBehaviour
 {
     private string result;
+
+    private void showCopiedPrompt(){
+        GameObject.Find("CopyToClipboard").SendMessage("displayCopiedLabel");
+    }
     public void copyTheBlochVector()
     {
         result = GameObject.Find("blochVector").GetComponent<Text>().text;
         StaticMethods.copyToClipboard(result);
         Debug.Log("copied: " + result);
+        showCopiedPrompt();
     }
 
     public void copyZeroProbability()
@@ -19,6 +24,7 @@ public class LaTeX : MonoBehaviour
         result = GameObject.Find("text_zero_probability").GetComponent<Text>().text;
         StaticMethods.copyToClipboard(result);
         Debug.Log("copied: " + result);
+        showCopiedPrompt();
     }
 
     public void copyOneProbability()
@@ -26,6 +32,7 @@ public class LaTeX : MonoBehaviour
         result = GameObject.Find("text_one_probability").GetComponent<Text>().text;
         StaticMethods.copyToClipboard(result);
         Debug.Log("copied: " + result);
+        showCopiedPrompt();
     }
 
     public void copyDensityMatrix00()
@@ -33,6 +40,7 @@ public class LaTeX : MonoBehaviour
         result = GameObject.Find("Value[0][0]").GetComponent<Text>().text;
         StaticMethods.copyToClipboard(result);
         Debug.Log("copied: " + result);
+        showCopiedPrompt();
     }
 
     public void copyDensityMatrix01()
@@ -40,6 +48,7 @@ public class LaTeX : MonoBehaviour
         result = GameObject.Find("Value[0][1]").GetComponent<Text>().text;
         StaticMethods.copyToClipboard(result);
         Debug.Log("copied: " + result);
+        showCopiedPrompt();
     }
 
     public void copyDensityMatrix10()
@@ -47,6 +56,7 @@ public class LaTeX : MonoBehaviour
         result = GameObject.Find("Value[1][0]").GetComponent<Text>().text;
         StaticMethods.copyToClipboard(result);
         Debug.Log("copied: " + result);
+        showCopiedPrompt();
     }
 
     public void copyDensityMatrix11()
@@ -54,6 +64,7 @@ public class LaTeX : MonoBehaviour
         result = GameObject.Find("Value[1][1]").GetComponent<Text>().text;
         StaticMethods.copyToClipboard(result);
         Debug.Log("copied: " + result);
+        showCopiedPrompt();
     }
 
     public void copyZeroAndOneFormula()
@@ -67,12 +78,14 @@ public class LaTeX : MonoBehaviour
         
         StaticMethods.copyToClipboard(result);
         Debug.Log("copied: " + result);
+        showCopiedPrompt();
     }
 
     public void copyDensityMatrixFormulas(){
         result = Constants.latex.densityMatrixFormula;
         StaticMethods.copyToClipboard(result);
         Debug.Log("copied: " + result);
+        showCopiedPrompt();
     }
 
     public void copyDensityMatrixWhole(){
@@ -88,6 +101,7 @@ public class LaTeX : MonoBehaviour
         result += Constants.latex.densityMatrixWhole_5;
         StaticMethods.copyToClipboard(result);
         Debug.Log("copied: " + result);
+        showCopiedPrompt();
     }
 
     public void copyDensityMatrixValues(){
@@ -103,17 +117,20 @@ public class LaTeX : MonoBehaviour
         result += Constants.latex.densityMatrixWhole_5;
         StaticMethods.copyToClipboard(result);
         Debug.Log("copied: " + result);
+        showCopiedPrompt();
     }
 
     public void copyQuantumZeroValue(){
         result = GameObject.Find("quantumZero").GetComponent<Text>().text;
         StaticMethods.copyToClipboard(result);
         Debug.Log("copied: " + result);
+        showCopiedPrompt();
     }
     public void copyQuantumOneValue(){
         result = GameObject.Find("quantumOne").GetComponent<Text>().text;
         StaticMethods.copyToClipboard(result);
         Debug.Log("copied: " + result);
+        showCopiedPrompt();
     }
 
     public void copyThetaAngle(){
@@ -124,6 +141,7 @@ public class LaTeX : MonoBehaviour
         result += Constants.latex.degree;
         StaticMethods.copyToClipboard(result);
         Debug.Log("copied: " + result);
+        showCopiedPrompt();
     }
 
     public void copyPhiAngle(){
@@ -134,5 +152,6 @@ public class LaTeX : MonoBehaviour
         result += Constants.latex.degree;
         StaticMethods.copyToClipboard(result);
         Debug.Log("copied: " + result);
+        showCopiedPrompt();
     }
 }

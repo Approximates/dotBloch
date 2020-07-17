@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
@@ -8,6 +9,7 @@ public class copiedTextPrompt : MonoBehaviour
     private float timer;
     private Image sprite;
     private Text message;
+    private float timeOfFrameExecution;
 
     void Start(){
         sprite = GameObject.Find("CopyToClipboard").GetComponent<Image>();
@@ -16,21 +18,27 @@ public class copiedTextPrompt : MonoBehaviour
         Debug.Log("message: " + message);
         sprite.enabled = false;
         message.enabled = false;
-
     }
 
     void Update(){
-        sprite.enabled = true;
-        message.enabled = true;
+        //if(sprite.IsActive())
+            timeOfFrameExecution = Time.deltaTime;
     }
     public void displayCopiedLabel(){
         Debug.Log("Odebralem przesylke");
+
         timer = 1.0f;
+        sprite.enabled = true;
+        message.enabled = true;
 
-        gameObject.GetComponent("Image");
+        //while(timer>0){
+          //  timer -= timeOfFrameExecution;
+            //byte transparency = Convert.ToByte(255 * timer);
+            //sprite.color = new Color32(255,255,255,transparency);
+            //message.color = new Color32(255,255,255,transparency);
+        //}
 
-        while(timer>0){
-
-        }
+        //sprite.enabled = false;
+        //message.enabled = false;
     }
 }
