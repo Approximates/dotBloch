@@ -27,4 +27,32 @@ public class LaTeX : MonoBehaviour
         StaticMethods.copyToClipboard(result);
         Debug.Log("copied: " + result);
     }
+
+    public void copyDensityMatrix00()
+    {
+        result = GameObject.Find("Value[0][0]").GetComponent<Text>().text;
+        StaticMethods.copyToClipboard(result);
+        Debug.Log("copied: " + result);
+    }
+
+    public void copyDensityMatrix01()
+    {
+        result = GameObject.Find("Value[0][1]").GetComponent<Text>().text;
+        StaticMethods.copyToClipboard(result);
+        Debug.Log("copied: " + result);
+    }
+
+    public void copyDensityMatrix10()
+    {
+        result = GameObject.Find("Value[1][0]").GetComponent<Text>().text;
+        StaticMethods.copyToClipboard(result);
+        Debug.Log("copied: " + result);
+    }
+
+    public void copyDensityMatrix11()
+    {
+        result = GameObject.Find("Value[1][1]").GetComponent<Text>().text;
+        StaticMethods.copyToClipboard(result);
+        Debug.Log("copied: " + result);
+    }
 }
