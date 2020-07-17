@@ -5,14 +5,8 @@ using UnityEngine;
 public class LaTeX : MonoBehaviour
 {
     // Start is called before the first frame update
-    void Start()
+    public void copyTheBlochVector()
     {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
+        Debug.Log("Bloch vector is copied");
     }
 }

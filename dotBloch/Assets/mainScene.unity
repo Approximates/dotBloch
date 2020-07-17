@@ -7671,6 +7671,8 @@ GameObject:
   - component: {fileID: 2043265319}
   - component: {fileID: 2043265320}
   - component: {fileID: 2043265321}
+  - component: {fileID: 2043265323}
+  - component: {fileID: 2043265322}
   m_Layer: 5
   m_Name: blochVector
   m_TagString: Untagged
@@ -7738,6 +7740,47 @@ MonoBehaviour:
     m_VerticalOverflow: 0
     m_LineSpacing: 1
   m_Text: "|\u03A8> = ?,??? |0> + ?,??? + ?,???i |1>"
+--- !u!114 &2043265322
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2043265318}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 550352a4ffcb34b7592f63a1b93efcca, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  blochVector: {fileID: 0}
+--- !u!114 &2043265323
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2043265318}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 15dd31fec81edef44986a26bcedc46d3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  requiredHoldTime: 0.5
+  onLongClick:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 2043265322}
+        m_MethodName: copyTheBlochVector
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 1
+  fillImage: {fileID: 0}
 --- !u!1 &2049118091
 GameObject:
   m_ObjectHideFlags: 0
