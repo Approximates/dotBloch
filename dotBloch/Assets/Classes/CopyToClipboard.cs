@@ -7,7 +7,7 @@ using RDG;
 public class CopyToClipboard : MonoBehaviour
 {
     public GameObject text;
-    public void CopyTextToClipboard(string toClipboard)
+    public void CopyTextToClipboard()
     {
         
         string txt = text.GetComponentInChildren<Text>().text;
