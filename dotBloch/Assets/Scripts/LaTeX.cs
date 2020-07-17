@@ -8,5 +8,6 @@ public class LaTeX : MonoBehaviour
     public void copyTheBlochVector()
     {
         Debug.Log("Bloch vector is copied");
+        StaticMethods.copyToClipboard("Bloch vector");
     }
 }
