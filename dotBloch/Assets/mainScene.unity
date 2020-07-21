@@ -4698,6 +4698,25 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e636b43fcbe134f588d45ddcc1eaa246, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!95 &1225378291
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1225378287}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: eae55a728bbbd4273a8d7726d56283c2, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!114 &1266171186 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 7332300868434157716, guid: fcc23280d0a16447284aca3ac69ac7ef,
@@ -9415,6 +9434,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: copied_message
+      objectReference: {fileID: 0}
+    - target: {fileID: 2692733275714268750, guid: ddfd3207802f340ab8d0332778ebfc46,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 3701327391559572818, guid: ddfd3207802f340ab8d0332778ebfc46,
         type: 3}

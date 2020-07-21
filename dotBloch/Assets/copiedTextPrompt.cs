@@ -31,6 +31,10 @@ public class copiedTextPrompt : MonoBehaviour
         sprite.enabled = true;
         message.enabled = true;
 
+        byte transparency = 127;
+        sprite.color = new Color32(255,255,255,transparency);
+        message.color = new Color32(255,255,255,transparency);
+
         //while(timer>0){
           //  timer -= timeOfFrameExecution;
             //byte transparency = Convert.ToByte(255 * timer);
