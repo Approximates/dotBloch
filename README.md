@@ -5,8 +5,8 @@ The app is build by Approximates Team: Marcin Bogiel, Jacek Cieszyński and Adam
 
 dotbloch is avaiable for:
 <ul>
-  <li><a href="https://play.google.com/store/apps/details?id=com.nti.dotbloch">Web browsers supporting WebGL standard</a></li>
-  <li><a href="https://approximates.github.io/">Mobile devices with Android operating system</a></li>
+  <li><a href="https://play.google.com/store/apps/details?id=com.nti.dotbloch">Mobile devices with Android operating system</a></li>
+  <li><a href="https://approximates.github.io/">Web browsers supporting WebGL standard</a></li>
 </ul>
 
 Check our <a href="https://trello.com/b/NOuSED10/dotbloch-scrum-board">Trello board.</a>
