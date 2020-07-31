@@ -9,6 +9,7 @@ public class CopyToClipboard : MonoBehaviour
     public GameObject text;
     public void CopyTextToClipboard()
     {
+        
         string txt = text.GetComponentInChildren<Text>().text;
 
         TextEditor editor = new TextEditor
