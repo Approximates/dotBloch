@@ -9,7 +9,7 @@ public class LaTeX : MonoBehaviour
     private string result;
 
     private void showCopiedPrompt(){
-        GameObject.Find("CopyToClipboard").SendMessage("displayCopiedLabel");
+        GameObject.Find("copiedToClipboard").SendMessage("displayCopiedLabel");
     }
     public void copyTheBlochVector()
     {
