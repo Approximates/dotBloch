@@ -10,8 +10,7 @@ public class runCopiedToClipboardAnimation : MonoBehaviour
         Animator animation = gameObject.GetComponent<Animator>();
         Debug.Log("Stan animatora: " + animation);
 
-        bool isAnimationRunning = animation.GetBool("isOpened");
-        animation.SetBool("isOpened", !isAnimationRunning);
+        animation.Play("copyToClipboard");
         Debug.Log("Animacja zakonczona!");
     }
 }
