@@ -199,12 +199,16 @@ public class mainScript : MonoBehaviour {
         setPointers();
     }
 
-
 	private void open_exit_panel(){
 		if (Application.platform != RuntimePlatform.WebGLPlayer){
 			ExitPanel.SetActive(true);
 			ExitText.text = Constants.message.exit_question;
 		}
+	}
+
+	public void measureTheQubit()
+	{
+		Debug.Log("Here I will measure the qubit");
 	}
 
 	private void setTransparencyOfQuantumProbabilityLabels(Qubit quantumBit)
