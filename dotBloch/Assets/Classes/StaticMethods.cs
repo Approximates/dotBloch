@@ -20,5 +20,11 @@ public class StaticMethods
         editor.Copy();
         RDG.Vibration.Vibrate(50);
     }
+
+    public static void coptyToWebGLLogs(string toCopy)
+    {
+        if(Application.platform == RuntimePlatform.WebGLPlayer)
+            Debug.Log(toCopy);
+    }
 }
 

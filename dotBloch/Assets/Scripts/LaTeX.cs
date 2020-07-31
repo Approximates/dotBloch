@@ -11,11 +11,13 @@ public class LaTeX : MonoBehaviour
     private void showCopiedPrompt(){
         GameObject.Find("copiedToClipboard").SendMessage("displayCopiedLabel");
     }
+
+    
     public void copyTheBlochVector()
     {
         result = GameObject.Find("blochVector").GetComponent<Text>().text;
         StaticMethods.copyToClipboard(result);
-        Debug.Log("copied: " + result);
+        StaticMethods.coptyToWebGLLogs(result);
         showCopiedPrompt();
     }
 
@@ -23,7 +25,7 @@ public class LaTeX : MonoBehaviour
     {
         result = GameObject.Find("text_zero_probability").GetComponent<Text>().text;
         StaticMethods.copyToClipboard(result);
-        Debug.Log("copied: " + result);
+        StaticMethods.coptyToWebGLLogs(result);
         showCopiedPrompt();
     }
 
@@ -31,7 +33,7 @@ public class LaTeX : MonoBehaviour
     {
         result = GameObject.Find("text_one_probability").GetComponent<Text>().text;
         StaticMethods.copyToClipboard(result);
-        Debug.Log("copied: " + result);
+        StaticMethods.coptyToWebGLLogs(result);
         showCopiedPrompt();
     }
 
@@ -39,7 +41,7 @@ public class LaTeX : MonoBehaviour
     {
         result = GameObject.Find("Value[0][0]").GetComponent<Text>().text;
         StaticMethods.copyToClipboard(result);
-        Debug.Log("copied: " + result);
+        StaticMethods.coptyToWebGLLogs(result);
         showCopiedPrompt();
     }
 
@@ -47,7 +49,7 @@ public class LaTeX : MonoBehaviour
     {
         result = GameObject.Find("Value[0][1]").GetComponent<Text>().text;
         StaticMethods.copyToClipboard(result);
-        Debug.Log("copied: " + result);
+        StaticMethods.coptyToWebGLLogs(result);
         showCopiedPrompt();
     }
 
@@ -55,7 +57,7 @@ public class LaTeX : MonoBehaviour
     {
         result = GameObject.Find("Value[1][0]").GetComponent<Text>().text;
         StaticMethods.copyToClipboard(result);
-        Debug.Log("copied: " + result);
+        StaticMethods.coptyToWebGLLogs(result);
         showCopiedPrompt();
     }
 
@@ -63,7 +65,7 @@ public class LaTeX : MonoBehaviour
     {
         result = GameObject.Find("Value[1][1]").GetComponent<Text>().text;
         StaticMethods.copyToClipboard(result);
-        Debug.Log("copied: " + result);
+        StaticMethods.coptyToWebGLLogs(result);
         showCopiedPrompt();
     }
 
@@ -77,14 +79,14 @@ public class LaTeX : MonoBehaviour
         result += Constants.latex.zeroAndOneFormula_3;
         
         StaticMethods.copyToClipboard(result);
-        Debug.Log("copied: " + result);
+        StaticMethods.coptyToWebGLLogs(result);
         showCopiedPrompt();
     }
 
     public void copyDensityMatrixFormulas(){
         result = Constants.latex.densityMatrixFormula;
         StaticMethods.copyToClipboard(result);
-        Debug.Log("copied: " + result);
+        StaticMethods.coptyToWebGLLogs(result);
         showCopiedPrompt();
     }
 
@@ -100,7 +102,7 @@ public class LaTeX : MonoBehaviour
         result += GameObject.Find("Value[1][1]").GetComponent<Text>().text;
         result += Constants.latex.densityMatrixWhole_5;
         StaticMethods.copyToClipboard(result);
-        Debug.Log("copied: " + result);
+        StaticMethods.coptyToWebGLLogs(result);
         showCopiedPrompt();
     }
 
@@ -116,20 +118,20 @@ public class LaTeX : MonoBehaviour
         result += GameObject.Find("Value[1][1]").GetComponent<Text>().text;
         result += Constants.latex.densityMatrixWhole_5;
         StaticMethods.copyToClipboard(result);
-        Debug.Log("copied: " + result);
+        StaticMethods.coptyToWebGLLogs(result);
         showCopiedPrompt();
     }
 
     public void copyQuantumZeroValue(){
         result = GameObject.Find("quantumZero").GetComponent<Text>().text;
         StaticMethods.copyToClipboard(result);
-        Debug.Log("copied: " + result);
+        StaticMethods.coptyToWebGLLogs(result);
         showCopiedPrompt();
     }
     public void copyQuantumOneValue(){
         result = GameObject.Find("quantumOne").GetComponent<Text>().text;
         StaticMethods.copyToClipboard(result);
-        Debug.Log("copied: " + result);
+        StaticMethods.coptyToWebGLLogs(result);
         showCopiedPrompt();
     }
 
@@ -140,7 +142,7 @@ public class LaTeX : MonoBehaviour
         result += GameObject.Find("thetaDisplayValue").GetComponent<Text>().text;
         result += Constants.latex.degree;
         StaticMethods.copyToClipboard(result);
-        Debug.Log("copied: " + result);
+        StaticMethods.coptyToWebGLLogs(result);
         showCopiedPrompt();
     }
 
@@ -151,7 +153,7 @@ public class LaTeX : MonoBehaviour
         result += GameObject.Find("phiDisplayValue").GetComponent<Text>().text;
         result += Constants.latex.degree;
         StaticMethods.copyToClipboard(result);
-        Debug.Log("copied: " + result);
+        StaticMethods.coptyToWebGLLogs(result);
         showCopiedPrompt();
     }
 }
