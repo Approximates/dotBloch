@@ -1,7 +1,7 @@
 ﻿using UnityEngine;
 using UnityEngine.UI;
 using System;
-using UnityEditor;
+using Random=UnityEngine.Random;
 
 public class mainScript : MonoBehaviour {
 
@@ -207,8 +207,18 @@ public class mainScript : MonoBehaviour {
 	}
 
 	public void measureTheQubit()
-	{
-		Debug.Log("Here I will measure the qubit");
+	{	
+		//Debug.Log("Probability |0>: " + quantumBit[0]);
+
+		int zeroValue = Convert.ToInt32(Math.Round(quantumBit[0] * 10000));
+		int measurementValue = Convert.ToInt32(Random.Range(1, 10000));
+
+		//Debug.Log("Measurement value: " + measurementValue);
+
+		if(measurementValue >= zeroValue)
+			Debug.Log("One!");
+		else
+			Debug.Log("Zero!");
 	}
 
 	private void setTransparencyOfQuantumProbabilityLabels(Qubit quantumBit)
