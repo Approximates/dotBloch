@@ -4309,6 +4309,11 @@ PrefabInstance:
       propertyPath: m_Layer
       value: 5
       objectReference: {fileID: 0}
+    - target: {fileID: 7332300868208293067, guid: fcc23280d0a16447284aca3ac69ac7ef,
+        type: 3}
+      propertyPath: m_Text
+      value: 
+      objectReference: {fileID: 0}
     - target: {fileID: 7332300868348899846, guid: fcc23280d0a16447284aca3ac69ac7ef,
         type: 3}
       propertyPath: m_Layer
@@ -4348,6 +4353,22 @@ PrefabInstance:
         type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
       value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
+    - target: {fileID: 7332300868348899851, guid: fcc23280d0a16447284aca3ac69ac7ef,
+        type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 069c02bf994314ce79ff25c473062e88,
+        type: 3}
+    - target: {fileID: 7332300868348899851, guid: fcc23280d0a16447284aca3ac69ac7ef,
+        type: 3}
+      propertyPath: m_Type
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7332300868348899851, guid: fcc23280d0a16447284aca3ac69ac7ef,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7332300868423908865, guid: fcc23280d0a16447284aca3ac69ac7ef,
         type: 3}
