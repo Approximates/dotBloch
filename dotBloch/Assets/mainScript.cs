@@ -215,10 +215,17 @@ public class mainScript : MonoBehaviour {
 
 		//Debug.Log("Measurement value: " + measurementValue);
 
-		if(measurementValue >= zeroValue)
+		quantumBit.phiAngle = 0;
+
+		if(measurementValue >= zeroValue){
+			quantumBit.thetaAngle = 180;
 			Debug.Log("One!");
-		else
+		}		
+		else{
+			quantumBit.thetaAngle = 0;
 			Debug.Log("Zero!");
+		}
+		setPointers();
 	}
 
 	private void setTransparencyOfQuantumProbabilityLabels(Qubit quantumBit)
