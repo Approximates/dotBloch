@@ -1,7 +1,7 @@
 ﻿using UnityEngine;
 using UnityEngine.UI;
 using System;
-using UnityEditor;
+using Random=UnityEngine.Random;
 
 public class mainScript : MonoBehaviour {
 
@@ -199,12 +199,33 @@ public class mainScript : MonoBehaviour {
         setPointers();
     }
 
-
 	private void open_exit_panel(){
 		if (Application.platform != RuntimePlatform.WebGLPlayer){
 			ExitPanel.SetActive(true);
 			ExitText.text = Constants.message.exit_question;
 		}
+	}
+
+	public void measureTheQubit()
+	{	
+		//Debug.Log("Probability |0>: " + quantumBit[0]);
+
+		int zeroValue = Convert.ToInt32(Math.Round(quantumBit[0] * 10000));
+		int measurementValue = Convert.ToInt32(Random.Range(1, 10000));
+
+		//Debug.Log("Measurement value: " + measurementValue);
+
+		quantumBit.phiAngle = 0;
+
+		if(measurementValue >= zeroValue){
+			quantumBit.thetaAngle = 180;
+			Debug.Log("One!");
+		}		
+		else{
+			quantumBit.thetaAngle = 0;
+			Debug.Log("Zero!");
+		}
+		setPointers();
 	}
 
 	private void setTransparencyOfQuantumProbabilityLabels(Qubit quantumBit)
