@@ -7,6 +7,8 @@ public class mainScript : MonoBehaviour {
 
 	Qubit quantumBit;
 	Qubit classicalBit;
+
+	Qubit activeQubit;
 	
 	public GameObject classicalOne;
 	public GameObject classicalZero;
@@ -49,6 +51,7 @@ public class mainScript : MonoBehaviour {
 	void Start () {
 		quantumBit = new Qubit(45,0);
 		classicalBit = new Qubit(0,0);
+		activeQubit = new Qubit(0,0);
         thetaInputField.characterLimit = 6;
 		phiInputField.characterLimit = 6;
 
@@ -82,30 +85,34 @@ public class mainScript : MonoBehaviour {
 	}
 
 	public void setPointers(){
-		if (isQuantumBitSelected) {
-			this.thetaInputField.text = this.quantumBit.thetaAngle.ToString ();
-			this.phiInputField.text = this.quantumBit.phiAngle.ToString ();
+		if (isQuantumBitSelected)
+			activeQubit = quantumBit;
+		else
+			activeQubit = classicalBit;
+		
+			this.thetaInputField.text = this.activeQubit.thetaAngle.ToString ();
+			this.phiInputField.text = this.activeQubit.phiAngle.ToString ();
 
-			thetaSlider.value = (float)this.quantumBit.thetaAngle;
-			phiSlider.value = (float)this.quantumBit.phiAngle;
+			thetaSlider.value = (float)this.activeQubit.thetaAngle;
+			phiSlider.value = (float)this.activeQubit.phiAngle;
 
-			quantumBitArrow.transform.rotation = Quaternion.Euler((float)this.quantumBit.thetaAngle-90, (float)this.quantumBit.phiAngle, 0);
+			quantumBitArrow.transform.rotation = Quaternion.Euler((float)this.activeQubit.thetaAngle-90, (float)this.quantumBit.phiAngle, 0);
 
-			quantumZeroLabel.text = this.quantumBit.print_zero_value();
-			quantumOneLabel.text = this.quantumBit.print_one_value();
+			quantumZeroLabel.text = this.activeQubit.print_zero_value();
+			quantumOneLabel.text = this.activeQubit.print_one_value();
 
-			densityMatrix_0_0.text = this.quantumBit.printDensityMatrix(0,0);
-			densityMatrix_0_1.text = this.quantumBit.printDensityMatrix(0,1);
-			densityMatrix_1_0.text = this.quantumBit.printDensityMatrix(1,0);
-			densityMatrix_1_1.text = this.quantumBit.printDensityMatrix(1,1);
+			densityMatrix_0_0.text = this.activeQubit.printDensityMatrix(0,0);
+			densityMatrix_0_1.text = this.activeQubit.printDensityMatrix(0,1);
+			densityMatrix_1_0.text = this.activeQubit.printDensityMatrix(1,0);
+			densityMatrix_1_1.text = this.activeQubit.printDensityMatrix(1,1);
 
-			propabilityOne.text = this.quantumBit.print_one_probability();
-			propabilityZero.text = this.quantumBit.print_zero_probability();
+			propabilityOne.text = this.activeQubit.print_one_probability();
+			propabilityZero.text = this.activeQubit.print_zero_probability();
 
-			this.setTransparencyOfQuantumProbabilityLabels(quantumBit);
+			this.setTransparencyOfQuantumProbabilityLabels(activeQubit);
 
-			qubitLabel.text = this.quantumBit.print_bloch_vector();
-		} 
+			qubitLabel.text = this.activeQubit.print_bloch_vector();
+		 
 	}
 
 	public void enableClassicalBit(){
