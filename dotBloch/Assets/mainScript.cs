@@ -58,8 +58,17 @@ public class mainScript : MonoBehaviour {
 		enableQuantumBit ();
 		setPointers ();
 
+		setListenersForSliders();
+	}
+
+	private void setListenersForSliders(){
 		thetaSlider.onValueChanged.AddListener(delegate {thetaSliderChanged(); });
 		phiSlider.onValueChanged.AddListener(delegate {phiSliderChanged(); });
+	}
+
+	private void disableListenersForSliders(){
+		thetaSlider.onValueChanged.RemoveAllListeners();
+		phiSlider.onValueChanged.RemoveAllListeners();
 	}
 
 	void thetaSliderChanged(){
@@ -85,6 +94,8 @@ public class mainScript : MonoBehaviour {
 	}
 
 	public void setPointers(){
+		disableListenersForSliders();
+
 		if (isQuantumBitSelected)
 			activeQubit = quantumBit;
 		else
@@ -112,7 +123,10 @@ public class mainScript : MonoBehaviour {
 			this.setTransparencyOfQuantumProbabilityLabels(activeQubit);
 
 			qubitLabel.text = this.activeQubit.print_bloch_vector();
-		 
+			
+		 setListenersForSliders();
+
+		 Debug.Log("setPointers here!");
 	}
 
 	public void enableClassicalBit(){
@@ -221,7 +235,6 @@ public class mainScript : MonoBehaviour {
 			isQuantumBitSelected = false;
 			disableQuantumBit();
 			enableClassicalBit();
-			setPointers();
 			Debug.Log("Classical bit is selected");
 		}
 		else
@@ -229,9 +242,9 @@ public class mainScript : MonoBehaviour {
 			isQuantumBitSelected = true;
 			disableClassicalBit();
 			enableQuantumBit();
-			setPointers();
 			Debug.Log("Quantum bit is selected");
 		}
+		setPointers();
 	}
 
 	private void setTransparencyOfQuantumProbabilityLabels(Qubit quantumBit)
