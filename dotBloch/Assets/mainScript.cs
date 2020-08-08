@@ -6,7 +6,7 @@ using Random=UnityEngine.Random;
 public class mainScript : MonoBehaviour {
 
 	Qubit quantumBit;
-	public bool bitValue;
+	Qubit classicalBit;
 	
 	public GameObject classicalOne;
 	public GameObject classicalZero;
@@ -48,11 +48,11 @@ public class mainScript : MonoBehaviour {
 	// Use this for initialization
 	void Start () {
 		quantumBit = new Qubit(45,0);
+		classicalBit = new Qubit(0,0);
         thetaInputField.characterLimit = 6;
 		phiInputField.characterLimit = 6;
 
 		enableQuantumBit ();
-		setBitsValues (true, 45, 0);
 		setPointers ();
 
 		thetaSlider.onValueChanged.AddListener(delegate {thetaSliderChanged(); });
@@ -105,27 +105,7 @@ public class mainScript : MonoBehaviour {
 			this.setTransparencyOfQuantumProbabilityLabels(quantumBit);
 
 			qubitLabel.text = this.quantumBit.print_bloch_vector();
-		} else if (bitValue) { 
-			this.thetaInputField.text = "1";
-			this.phiInputField.text = "";
-
-			thetaSlider.value = 1;
-			phiSlider.value = 0;
-
-			classicalBitArrow.transform.rotation = Quaternion.Euler(-90, 0, 0);
-		} else {
-			this.thetaInputField.text = "0";
-			this.thetaInputField.text = "";
-
-			thetaSlider.value = 0;
-			phiSlider.value = 0;
-
-			classicalBitArrow.transform.rotation = Quaternion.Euler(90, 0, 0);
-		}		
-	}
-
-	public void setBitsValues(bool bitValue, float thetaValue, float phiValue){
-		this.bitValue = bitValue;
+		} 
 	}
 
 	public void enableClassicalBit(){
@@ -226,6 +206,25 @@ public class mainScript : MonoBehaviour {
 			Debug.Log("Zero!");
 		}
 		setPointers();
+	}
+
+	public void switchBit(){
+		if(isQuantumBitSelected)
+		{
+			isQuantumBitSelected = false;
+			disableQuantumBit();
+			enableClassicalBit();
+			setPointers();
+			Debug.Log("Classical bit is selected");
+		}
+		else
+		{
+			isQuantumBitSelected = true;
+			disableClassicalBit();
+			enableQuantumBit();
+			setPointers();
+			Debug.Log("Quantum bit is selected");
+		}
 	}
 
 	private void setTransparencyOfQuantumProbabilityLabels(Qubit quantumBit)
