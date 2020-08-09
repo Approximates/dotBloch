@@ -340,6 +340,12 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 25576363}
   m_CullTransparentMesh: 0
+--- !u!1 &83406086 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 2665461486805155053, guid: 244b56337713b4c36b86c485a00dd7f6,
+    type: 3}
+  m_PrefabInstance: {fileID: 777452119}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &84924483
 GameObject:
   m_ObjectHideFlags: 0
@@ -3480,6 +3486,7 @@ MonoBehaviour:
   phi300DegreeButton: {fileID: 619142296}
   phi360DegreeButton: {fileID: 1903704199}
   ExitPanel: {fileID: 84924483}
+  densityMatrix: {fileID: 83406086}
   ExitText: {fileID: 2031207308}
   thetaSlider: {fileID: 837200552}
   phiSlider: {fileID: 1921602835}

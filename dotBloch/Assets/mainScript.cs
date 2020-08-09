@@ -33,6 +33,8 @@ public class mainScript : MonoBehaviour {
 	public GameObject phi300DegreeButton;
 	public GameObject phi360DegreeButton;
 	public GameObject ExitPanel;
+
+	public GameObject densityMatrix;
 	public Text ExitText;
 
 	public Slider thetaSlider;
@@ -173,6 +175,7 @@ public class mainScript : MonoBehaviour {
 		phiSlider.interactable = false;
 		thetaSlider.wholeNumbers = true;
 
+		densityMatrix.SetActive(false);
 		setTransparencyOfClassicalProbability();
 	}
 
@@ -207,6 +210,7 @@ public class mainScript : MonoBehaviour {
 		phiSlider.interactable = true;
 		phiSlider.wholeNumbers = true;
 
+		densityMatrix.SetActive(true);
 		this.setTransparencyOfQuantumProbabilityLabels(quantumBit);
 	}
 
