@@ -21,7 +21,17 @@ public class mainScript : MonoBehaviour {
 	public GameObject quantumBitArrow;
 
 	public GameObject theta30DegreeButton;
-
+	public GameObject theta60DegreeButton;
+	public GameObject theta90DegreeButton;
+	public GameObject theta120DegreeButton;
+	public GameObject theta150DegreeButton;
+	public GameObject phi0DegreeButton;
+	public GameObject phi60DegreeButton;
+	public GameObject phi120DegreeButton;
+	public GameObject phi180DegreeButton;
+	public GameObject phi240DegreeButton;
+	public GameObject phi300DegreeButton;
+	public GameObject phi360DegreeButton;
 	public GameObject ExitPanel;
 	public Text ExitText;
 
@@ -148,6 +158,18 @@ public class mainScript : MonoBehaviour {
 		classicalBitArrow.SetActive(true);
 
 		theta30DegreeButton.SetActive(false);
+		theta60DegreeButton.SetActive(false);
+		theta90DegreeButton.SetActive(false);
+		theta120DegreeButton.SetActive(false);
+		theta150DegreeButton.SetActive(false);
+
+		phi0DegreeButton.SetActive(false);
+		phi60DegreeButton.SetActive(false);
+		phi120DegreeButton.SetActive(false);
+		phi180DegreeButton.SetActive(false);
+		phi240DegreeButton.SetActive(false);
+		phi300DegreeButton.SetActive(false);
+		phi360DegreeButton.SetActive(false);
 
 		thetaSlider.interactable = false;
 		phiSlider.interactable = false;
@@ -167,6 +189,18 @@ public class mainScript : MonoBehaviour {
 		quantumBitArrow.SetActive(true);
 
 		theta30DegreeButton.SetActive(true);
+		theta60DegreeButton.SetActive(true);
+		theta90DegreeButton.SetActive(true);
+		theta120DegreeButton.SetActive(true);
+		theta150DegreeButton.SetActive(true);
+
+		phi0DegreeButton.SetActive(true);
+		phi60DegreeButton.SetActive(true);
+		phi120DegreeButton.SetActive(true);
+		phi180DegreeButton.SetActive(true);
+		phi240DegreeButton.SetActive(true);
+		phi300DegreeButton.SetActive(true);
+		phi360DegreeButton.SetActive(true);
 
 		thetaSlider.interactable = true;
 

@@ -3468,6 +3468,10 @@ MonoBehaviour:
   quantumBitZero: {fileID: 475220153}
   quantumBitArrow: {fileID: 364871383}
   theta30DegreeButton: {fileID: 313965331}
+  theta60DegreeButton: {fileID: 297399395}
+  theta90DegreeButton: {fileID: 486047878}
+  theta120DegreeButton: {fileID: 1977429391}
+  theta150DegreeButton: {fileID: 2077415867}
   ExitPanel: {fileID: 84924483}
   ExitText: {fileID: 2031207308}
   thetaSlider: {fileID: 837200552}
