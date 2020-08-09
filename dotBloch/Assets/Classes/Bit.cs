@@ -11,10 +11,6 @@ public class Bit
         this._value = state;
     }
 
-    public void NotGate(){
-        this._value = !this._value;
-    }
-
     public void setOne(){
         this._value = true;
     }
@@ -23,21 +19,25 @@ public class Bit
         this._value = false;
     }
 
+    public void NotGate(){
+        this._value = !this._value;
+    }
+
     public string getState(){
         return Convert.ToInt32(this._value).ToString();
     }
 
     public string getOneProbability(){
         if(this._value)
-            return "P(1)=100%";
+            return "P(1) = 100%";
         else
-            return "P(1)=0%";
+            return "P(1) = 0%";
     }
 
     public string getZeroProbability(){
         if(this._value)
-            return "P(0)=0%";
+            return "P(0) = 0%";
         else
-            return "P(0)=100%";
+            return "P(0) = 100%";
     }
 }

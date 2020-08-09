@@ -13,6 +13,11 @@ public class Constants
         public const string one_label = "P(|1>) = ";
     }
 
+    public static class classical_probability{
+        public const string zero_label = "P(0>) = ";
+        public const string one_label = "P(1>) = ";
+    }
+
     public static class error{
         public const string angle_is_wrong = "Value of theta or phi angle is wrong";
     }
