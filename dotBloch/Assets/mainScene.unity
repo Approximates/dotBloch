@@ -3472,6 +3472,13 @@ MonoBehaviour:
   theta90DegreeButton: {fileID: 486047878}
   theta120DegreeButton: {fileID: 1977429391}
   theta150DegreeButton: {fileID: 2077415867}
+  phi0DegreeButton: {fileID: 1745097366}
+  phi60DegreeButton: {fileID: 1149859812}
+  phi120DegreeButton: {fileID: 1821072371}
+  phi180DegreeButton: {fileID: 2142876348}
+  phi240DegreeButton: {fileID: 1773593412}
+  phi300DegreeButton: {fileID: 619142296}
+  phi360DegreeButton: {fileID: 1903704199}
   ExitPanel: {fileID: 84924483}
   ExitText: {fileID: 2031207308}
   thetaSlider: {fileID: 837200552}

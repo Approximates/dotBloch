@@ -225,6 +225,8 @@ public class mainScript : MonoBehaviour {
 		quantumBitZero.SetActive(false);
 		quantumBitArrow.SetActive(false);
 
+		qubitLabel.text = String.Empty;
+
 		phiInputField.interactable = false;
 		phiInputField.text = "";
 	}
