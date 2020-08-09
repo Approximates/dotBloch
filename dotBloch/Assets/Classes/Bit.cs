@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -20,5 +21,9 @@ public class Bit
 
     public void setZero(){
         this._value = false;
+    }
+
+    public string getState(){
+        return Convert.ToInt32(this._value).ToString();
     }
 }
