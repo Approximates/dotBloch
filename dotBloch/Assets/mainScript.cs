@@ -139,6 +139,7 @@ public class mainScript : MonoBehaviour {
 		classicalZero.SetActive (true);
 		classicalBitArrow.SetActive(true);
 
+		thetaSlider.interactable = false;
 		phiSlider.interactable = false;
 		thetaSlider.wholeNumbers = true;
 	}
@@ -155,7 +156,8 @@ public class mainScript : MonoBehaviour {
 		quantumBitZero.SetActive(true);
 		quantumBitArrow.SetActive(true);
 
-		thetaSlider.maxValue = 180;
+		thetaSlider.interactable = true;
+
 		phiSlider.interactable = true;
 		phiSlider.wholeNumbers = true;
 	}
