@@ -38,6 +38,6 @@ public class Bit
         if(this._value)
             return "P(0)=0%";
         else
-            return "P(1)=100%";
+            return "P(0)=100%";
     }
 }
