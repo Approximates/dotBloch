@@ -87,8 +87,6 @@ public class mainScript : MonoBehaviour {
 			if (quantumBit.thetaAngle != thetaSlider.value) { 
 				quantumBit.thetaAngle = thetaSlider.value;
 			}
-		} else {
-			Debug.Log (thetaSlider.value);
 		}
 
 		setPointers ();
@@ -129,9 +127,6 @@ public class mainScript : MonoBehaviour {
 
 			qubitLabel.text = this.quantumBit.print_bloch_vector();
 		}else{
-			
-
-			Debug.Log("Stan bitu kwantowego " + classicalBit.getState());
 			if(classicalBit.getState()=="1")
 				thetaSlider.value = 0;
 			else
@@ -146,8 +141,6 @@ public class mainScript : MonoBehaviour {
 
 			classicalBitArrow.transform.rotation = Quaternion.Euler((float)this.thetaSlider.value-90, (float)this.phiSlider.value, 0);
 		}
-			
-		 Debug.Log("setPointers here!");
 	}
 
 	public void enableClassicalBit(){
@@ -300,14 +293,12 @@ public class mainScript : MonoBehaviour {
 			isQuantumBitSelected = false;
 			disableQuantumBit();
 			enableClassicalBit();
-			Debug.Log("Classical bit is selected");
 		}
 		else
 		{
 			isQuantumBitSelected = true;
 			disableClassicalBit();
 			enableQuantumBit();
-			Debug.Log("Quantum bit is selected");
 		}
 		setPointers();
 		setListenersForSliders();
