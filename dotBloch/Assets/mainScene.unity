@@ -2760,10 +2760,10 @@ MonoBehaviour:
       m_Calls: []
   m_FontData:
     m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
-    m_FontSize: 14
+    m_FontSize: 20
     m_FontStyle: 0
     m_BestFit: 0
-    m_MinSize: 10
+    m_MinSize: 0
     m_MaxSize: 40
     m_Alignment: 4
     m_AlignByGeometry: 0
@@ -2771,7 +2771,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Classical Bit
+  m_Text: Switch to the Classical bit
 --- !u!222 &679249295
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -3502,6 +3502,7 @@ MonoBehaviour:
   thetaInputField: {fileID: 960357263}
   phiInputField: {fileID: 1726077919}
   isQuantumBitSelected: 0
+  bitSwitcher: {fileID: 679249294}
 --- !u!4 &801406425
 Transform:
   m_ObjectHideFlags: 0

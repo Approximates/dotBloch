@@ -36,6 +36,8 @@ public class Constants
 
     public static class message{
         public const string exit_question = "Do you want to close the app?";
+        public const string switchBitToClassic = "Switch to the Classical bit";
+        public const string switchBitToQuantum = "Switch to the Quantum bit (Qubit)";
     }
 
     public static class latex{

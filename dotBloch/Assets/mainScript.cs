@@ -57,6 +57,8 @@ public class mainScript : MonoBehaviour {
 
 	public bool isQuantumBitSelected;
 
+	public Text bitSwitcher;
+
 	// Use this for initialization
 	void Start () {
 		quantumBit = new Qubit(45,0);
@@ -176,6 +178,7 @@ public class mainScript : MonoBehaviour {
 		thetaSlider.wholeNumbers = true;
 
 		densityMatrix.SetActive(false);
+		bitSwitcher.text = Constants.message.switchBitToQuantum;
 		setTransparencyOfClassicalProbability();
 	}
 
@@ -211,6 +214,8 @@ public class mainScript : MonoBehaviour {
 		phiSlider.wholeNumbers = true;
 
 		densityMatrix.SetActive(true);
+
+		bitSwitcher.text = Constants.message.switchBitToClassic;
 		this.setTransparencyOfQuantumProbabilityLabels(quantumBit);
 	}
 
