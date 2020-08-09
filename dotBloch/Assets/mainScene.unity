@@ -3467,6 +3467,7 @@ MonoBehaviour:
   quantumBitOne: {fileID: 1608110717}
   quantumBitZero: {fileID: 475220153}
   quantumBitArrow: {fileID: 364871383}
+  theta30DegreeButton: {fileID: 313965331}
   ExitPanel: {fileID: 84924483}
   ExitText: {fileID: 2031207308}
   thetaSlider: {fileID: 837200552}
@@ -3474,8 +3475,6 @@ MonoBehaviour:
   quantumZeroLabel: {fileID: 490397308}
   quantumOneLabel: {fileID: 1011817718}
   qubitLabel: {fileID: 2043265321}
-  FPSCounter: {fileID: 0}
-  millisecondsSinceLastFrame: {fileID: 0}
   densityMatrix_0_0: {fileID: 1983109712}
   densityMatrix_0_1: {fileID: 134190154}
   densityMatrix_1_0: {fileID: 573232098}

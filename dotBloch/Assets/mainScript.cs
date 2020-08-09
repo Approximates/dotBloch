@@ -20,6 +20,8 @@ public class mainScript : MonoBehaviour {
 	public GameObject quantumBitZero;
 	public GameObject quantumBitArrow;
 
+	public GameObject theta30DegreeButton;
+
 	public GameObject ExitPanel;
 	public Text ExitText;
 
@@ -145,6 +147,8 @@ public class mainScript : MonoBehaviour {
 		classicalZero.SetActive (true);
 		classicalBitArrow.SetActive(true);
 
+		theta30DegreeButton.SetActive(false);
+
 		thetaSlider.interactable = false;
 		phiSlider.interactable = false;
 		thetaSlider.wholeNumbers = true;
@@ -161,6 +165,8 @@ public class mainScript : MonoBehaviour {
 		quantumBitOne.SetActive(true);
 		quantumBitZero.SetActive(true);
 		quantumBitArrow.SetActive(true);
+
+		theta30DegreeButton.SetActive(true);
 
 		thetaSlider.interactable = true;
 
