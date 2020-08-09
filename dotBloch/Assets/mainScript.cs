@@ -30,9 +30,6 @@ public class mainScript : MonoBehaviour {
 	public Text quantumOneLabel;
 	public Text qubitLabel;
 
-	public Text FPSCounter;
-	public Text millisecondsSinceLastFrame;
-
 	public Text densityMatrix_0_0;
 	public Text densityMatrix_0_1;
 	public Text densityMatrix_1_0;
