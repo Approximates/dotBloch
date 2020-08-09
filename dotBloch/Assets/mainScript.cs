@@ -118,13 +118,19 @@ public class mainScript : MonoBehaviour {
 
 			Debug.Log("Stan bitu kwantowego " + classicalBit.getState());
 			if(classicalBit.getState()=="1")
-					thetaSlider.value = 180;	
+					thetaSlider.value = 0;	
 			else
-				thetaSlider.value = 0;
+				thetaSlider.value = 180;
 
 			thetaInputField.text = thetaSlider.value.ToString();
 			phiSlider.value = 0;
 			phiInputField.text = phiSlider.value.ToString();
+
+
+			Debug.Log("theta slider value:" + ((float)this.thetaSlider.value-90));
+			Debug.Log ("Phi slider value: " + (float)this.phiSlider.value); 
+			classicalBitArrow.transform.rotation = Quaternion.Euler((float)this.thetaSlider.value-90, (float)this.phiSlider.value, 0);
+			//classicalBitArrow.transform.rotation = Quaternion.Euler((float)this.thetaSlider.value+90, (float)this.phiSlider.value, 0);
 		}
 			
 		 Debug.Log("setPointers here!");
@@ -189,7 +195,14 @@ public class mainScript : MonoBehaviour {
 	}
 
 	public void set_theta_angle(double sended_theta_angle){
-        this.quantumBit.thetaAngle = sended_theta_angle;
+		if(isQuantumBitSelected)
+        	this.quantumBit.thetaAngle = sended_theta_angle;
+		else{
+			if(sended_theta_angle==0)
+				this.classicalBit.setOne();
+			else
+				this.classicalBit.setZero();
+		}
         setPointers();
     }
 
