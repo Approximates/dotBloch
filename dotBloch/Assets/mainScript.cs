@@ -125,24 +125,22 @@ public class mainScript : MonoBehaviour {
 
 			qubitLabel.text = this.quantumBit.print_bloch_vector();
 		}else{
-			propabilityZero.text = this.classicalBit.getState();
-			propabilityOne.text = this.classicalBit.getState();
+			
 
 			Debug.Log("Stan bitu kwantowego " + classicalBit.getState());
 			if(classicalBit.getState()=="1")
-					thetaSlider.value = 0;	
+				thetaSlider.value = 0;
 			else
 				thetaSlider.value = 180;
+
+			propabilityZero.text = this.classicalBit.getZeroProbability();
+			propabilityOne.text = this.classicalBit.getOneProbability();		
 
 			thetaInputField.text = thetaSlider.value.ToString();
 			phiSlider.value = 0;
 			phiInputField.text = phiSlider.value.ToString();
 
-
-			Debug.Log("theta slider value:" + ((float)this.thetaSlider.value-90));
-			Debug.Log ("Phi slider value: " + (float)this.phiSlider.value); 
 			classicalBitArrow.transform.rotation = Quaternion.Euler((float)this.thetaSlider.value-90, (float)this.phiSlider.value, 0);
-			//classicalBitArrow.transform.rotation = Quaternion.Euler((float)this.thetaSlider.value+90, (float)this.phiSlider.value, 0);
 		}
 			
 		 Debug.Log("setPointers here!");
