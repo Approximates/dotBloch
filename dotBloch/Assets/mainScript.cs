@@ -172,6 +172,8 @@ public class mainScript : MonoBehaviour {
 		thetaSlider.interactable = false;
 		phiSlider.interactable = false;
 		thetaSlider.wholeNumbers = true;
+
+		setTransparencyOfClassicalProbability();
 	}
 
 	public void enableQuantumBit(){
@@ -204,6 +206,8 @@ public class mainScript : MonoBehaviour {
 
 		phiSlider.interactable = true;
 		phiSlider.wholeNumbers = true;
+
+		this.setTransparencyOfQuantumProbabilityLabels(quantumBit);
 	}
 
 	public void disableClassicalBit(){
@@ -305,5 +309,10 @@ public class mainScript : MonoBehaviour {
 
 		propabilityZero.color = new Color32(255,255,255,zeroTransparency);
 		propabilityOne.color = new Color32(255,255,255,oneTransparency);
+	}
+
+	private void setTransparencyOfClassicalProbability(){
+		propabilityZero.color = new Color32(255,255,255,255);
+		propabilityOne.color = new Color32(255,255,255,255);
 	}
 }
