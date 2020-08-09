@@ -118,8 +118,17 @@ public class mainScript : MonoBehaviour {
 		}else{
 			propabilityZero.text = this.classicalBit.getState();
 			propabilityOne.text = this.classicalBit.getState();
+
+			Debug.Log("Stan bitu kwantowego " + classicalBit.getState());
+			if(classicalBit.getState()=="1")
+					thetaSlider.value = 180;	
+			else
+				thetaSlider.value = 0;
+
+			thetaInputField.text = thetaSlider.value.ToString();
+			phiSlider.value = 0;
+			phiInputField.text = phiSlider.value.ToString();
 		}
-		
 			
 		 Debug.Log("setPointers here!");
 	}
@@ -133,7 +142,6 @@ public class mainScript : MonoBehaviour {
 		classicalZero.SetActive (true);
 		classicalBitArrow.SetActive(true);
 
-		thetaSlider.maxValue = 1;
 		phiSlider.interactable = false;
 		thetaSlider.wholeNumbers = true;
 	}
