@@ -785,7 +785,6 @@ RectTransform:
   - {fileID: 777452120}
   - {fileID: 1377531110}
   - {fileID: 716912266}
-  - {fileID: 1783905502}
   - {fileID: 1885052209}
   m_Father: {fileID: 2050224645}
   m_RootOrder: 0
@@ -1590,7 +1589,7 @@ RectTransform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 982859806}
-  m_RootOrder: 0
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -3018,7 +3017,7 @@ RectTransform:
   - {fileID: 2049118092}
   - {fileID: 1396781284}
   m_Father: {fileID: 982859806}
-  m_RootOrder: 1
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -3839,6 +3838,7 @@ RectTransform:
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 0}
   m_Children:
+  - {fileID: 1783905502}
   - {fileID: 418863882}
   - {fileID: 759571353}
   - {fileID: 1980071419}
@@ -6901,12 +6901,12 @@ RectTransform:
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 0}
   m_Children: []
-  m_Father: {fileID: 293728539}
-  m_RootOrder: 7
+  m_Father: {fileID: 982859806}
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 176, y: -208}
+  m_AnchoredPosition: {x: 167, y: -170.6}
   m_SizeDelta: {x: 38.18814, y: 30}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1783905503
@@ -7179,7 +7179,7 @@ RectTransform:
   m_Children:
   - {fileID: 679249293}
   m_Father: {fileID: 293728539}
-  m_RootOrder: 8
+  m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -9593,7 +9593,7 @@ PrefabInstance:
     - target: {fileID: 8673778494548252794, guid: d7bfb4c8a05cb634b9108424a21a5ebf,
         type: 3}
       propertyPath: m_RootOrder
-      value: 2
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 8673778494548252794, guid: d7bfb4c8a05cb634b9108424a21a5ebf,
         type: 3}
