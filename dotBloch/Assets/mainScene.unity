@@ -340,6 +340,12 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 25576363}
   m_CullTransparentMesh: 0
+--- !u!1 &83406086 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 2665461486805155053, guid: 244b56337713b4c36b86c485a00dd7f6,
+    type: 3}
+  m_PrefabInstance: {fileID: 777452119}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &84924483
 GameObject:
   m_ObjectHideFlags: 0
@@ -779,7 +785,6 @@ RectTransform:
   - {fileID: 777452120}
   - {fileID: 1377531110}
   - {fileID: 716912266}
-  - {fileID: 1783905502}
   - {fileID: 1885052209}
   m_Father: {fileID: 2050224645}
   m_RootOrder: 0
@@ -1584,7 +1589,7 @@ RectTransform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 982859806}
-  m_RootOrder: 0
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -2754,10 +2759,10 @@ MonoBehaviour:
       m_Calls: []
   m_FontData:
     m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
-    m_FontSize: 14
+    m_FontSize: 20
     m_FontStyle: 0
     m_BestFit: 0
-    m_MinSize: 10
+    m_MinSize: 0
     m_MaxSize: 40
     m_Alignment: 4
     m_AlignByGeometry: 0
@@ -2765,7 +2770,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Classical Bit
+  m_Text: Switch to the Classical bit
 --- !u!222 &679249295
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -2900,7 +2905,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 3.600006, y: -152}
+  m_AnchoredPosition: {x: -6.490076, y: -143.8}
   m_SizeDelta: {x: 382.18, y: 40.8}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &751551091
@@ -3012,11 +3017,11 @@ RectTransform:
   - {fileID: 2049118092}
   - {fileID: 1396781284}
   m_Father: {fileID: 982859806}
-  m_RootOrder: 1
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -169.6, y: 170}
+  m_AnchoredPosition: {x: -148, y: 164}
   m_SizeDelta: {x: 30, y: 30}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &759571354
@@ -3295,7 +3300,7 @@ PrefabInstance:
     - target: {fileID: 2665461486805155026, guid: 244b56337713b4c36b86c485a00dd7f6,
         type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: -10
+      value: -27
       objectReference: {fileID: 0}
     - target: {fileID: 2665461486805155026, guid: 244b56337713b4c36b86c485a00dd7f6,
         type: 3}
@@ -3458,7 +3463,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7802870a477b77d4b8943c2135ed4e3b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  bitValue: 0
   classicalOne: {fileID: 1626132729}
   classicalZero: {fileID: 271251731}
   classicalBitArrow: {fileID: 459492292}
@@ -3468,15 +3472,26 @@ MonoBehaviour:
   quantumBitOne: {fileID: 1608110717}
   quantumBitZero: {fileID: 475220153}
   quantumBitArrow: {fileID: 364871383}
+  theta30DegreeButton: {fileID: 313965331}
+  theta60DegreeButton: {fileID: 297399395}
+  theta90DegreeButton: {fileID: 486047878}
+  theta120DegreeButton: {fileID: 1977429391}
+  theta150DegreeButton: {fileID: 2077415867}
+  phi0DegreeButton: {fileID: 1745097366}
+  phi60DegreeButton: {fileID: 1149859812}
+  phi120DegreeButton: {fileID: 1821072371}
+  phi180DegreeButton: {fileID: 2142876348}
+  phi240DegreeButton: {fileID: 1773593412}
+  phi300DegreeButton: {fileID: 619142296}
+  phi360DegreeButton: {fileID: 1903704199}
   ExitPanel: {fileID: 84924483}
+  densityMatrix: {fileID: 83406086}
   ExitText: {fileID: 2031207308}
   thetaSlider: {fileID: 837200552}
   phiSlider: {fileID: 1921602835}
   quantumZeroLabel: {fileID: 490397308}
   quantumOneLabel: {fileID: 1011817718}
   qubitLabel: {fileID: 2043265321}
-  FPSCounter: {fileID: 0}
-  millisecondsSinceLastFrame: {fileID: 0}
   densityMatrix_0_0: {fileID: 1983109712}
   densityMatrix_0_1: {fileID: 134190154}
   densityMatrix_1_0: {fileID: 573232098}
@@ -3486,6 +3501,7 @@ MonoBehaviour:
   thetaInputField: {fileID: 960357263}
   phiInputField: {fileID: 1726077919}
   isQuantumBitSelected: 0
+  bitSwitcher: {fileID: 679249294}
 --- !u!4 &801406425
 Transform:
   m_ObjectHideFlags: 0
@@ -3822,6 +3838,7 @@ RectTransform:
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 0}
   m_Children:
+  - {fileID: 1783905502}
   - {fileID: 418863882}
   - {fileID: 759571353}
   - {fileID: 1980071419}
@@ -4417,7 +4434,7 @@ PrefabInstance:
     - target: {fileID: 7332300869211952330, guid: fcc23280d0a16447284aca3ac69ac7ef,
         type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: 70
+      value: 47
       objectReference: {fileID: 0}
     - target: {fileID: 7332300869211952330, guid: fcc23280d0a16447284aca3ac69ac7ef,
         type: 3}
@@ -5108,7 +5125,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 3.0900574, y: -106.19999}
+  m_AnchoredPosition: {x: -7, y: -98}
   m_SizeDelta: {x: 382.18, y: 40.8}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &1396781283
@@ -6884,12 +6901,12 @@ RectTransform:
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 0}
   m_Children: []
-  m_Father: {fileID: 293728539}
-  m_RootOrder: 7
+  m_Father: {fileID: 982859806}
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 176, y: -208}
+  m_AnchoredPosition: {x: 167, y: -170.6}
   m_SizeDelta: {x: 38.18814, y: 30}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1783905503
@@ -7162,11 +7179,11 @@ RectTransform:
   m_Children:
   - {fileID: 679249293}
   m_Father: {fileID: 293728539}
-  m_RootOrder: 8
+  m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -1.91, y: 179}
+  m_AnchoredPosition: {x: -1.91, y: 152}
   m_SizeDelta: {x: 392.17993, y: 43.620934}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1885052210
@@ -7191,7 +7208,7 @@ MonoBehaviour:
   m_Colors:
     m_NormalColor: {r: 1, g: 1, b: 1, a: 1}
     m_HighlightedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
-    m_PressedColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 1}
+    m_PressedColor: {r: 1, g: 0.84313726, b: 0, a: 1}
     m_SelectedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
     m_DisabledColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 0.5019608}
     m_ColorMultiplier: 1
@@ -7211,7 +7228,18 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1885052211}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 801406424}
+        m_MethodName: switchBit
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1885052211
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -8342,7 +8370,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0.9999237, y: 131}
+  m_AnchoredPosition: {x: 0.9999237, y: 102}
   m_SizeDelta: {x: 387.17, y: 28}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &2043265320
@@ -9565,7 +9593,7 @@ PrefabInstance:
     - target: {fileID: 8673778494548252794, guid: d7bfb4c8a05cb634b9108424a21a5ebf,
         type: 3}
       propertyPath: m_RootOrder
-      value: 2
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 8673778494548252794, guid: d7bfb4c8a05cb634b9108424a21a5ebf,
         type: 3}
@@ -9585,12 +9613,12 @@ PrefabInstance:
     - target: {fileID: 8673778494548252794, guid: d7bfb4c8a05cb634b9108424a21a5ebf,
         type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: -153
+      value: -155
       objectReference: {fileID: 0}
     - target: {fileID: 8673778494548252794, guid: d7bfb4c8a05cb634b9108424a21a5ebf,
         type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: -177
+      value: -159.8
       objectReference: {fileID: 0}
     - target: {fileID: 8673778494548252794, guid: d7bfb4c8a05cb634b9108424a21a5ebf,
         type: 3}

@@ -13,6 +13,11 @@ public class Constants
         public const string one_label = "P(|1>) = ";
     }
 
+    public static class classical_probability{
+        public const string zero_label = "P(0>) = ";
+        public const string one_label = "P(1>) = ";
+    }
+
     public static class error{
         public const string angle_is_wrong = "Value of theta or phi angle is wrong";
     }
@@ -36,6 +41,8 @@ public class Constants
 
     public static class message{
         public const string exit_question = "Do you want to close the app?";
+        public const string switchBitToClassic = "Switch to the Classical bit";
+        public const string switchBitToQuantum = "Switch to the Quantum bit (Qubit)";
     }
 
     public static class latex{
