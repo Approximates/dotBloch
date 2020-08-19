@@ -6,7 +6,8 @@ using Random=UnityEngine.Random;
 public class mainScript : MonoBehaviour {
 
 	Qubit quantumBit;
-	public bool bitValue;
+
+	Bit classicalBit;
 	
 	public GameObject classicalOne;
 	public GameObject classicalZero;
@@ -19,7 +20,21 @@ public class mainScript : MonoBehaviour {
 	public GameObject quantumBitZero;
 	public GameObject quantumBitArrow;
 
+	public GameObject theta30DegreeButton;
+	public GameObject theta60DegreeButton;
+	public GameObject theta90DegreeButton;
+	public GameObject theta120DegreeButton;
+	public GameObject theta150DegreeButton;
+	public GameObject phi0DegreeButton;
+	public GameObject phi60DegreeButton;
+	public GameObject phi120DegreeButton;
+	public GameObject phi180DegreeButton;
+	public GameObject phi240DegreeButton;
+	public GameObject phi300DegreeButton;
+	public GameObject phi360DegreeButton;
 	public GameObject ExitPanel;
+
+	public GameObject densityMatrix;
 	public Text ExitText;
 
 	public Slider thetaSlider;
@@ -28,9 +43,6 @@ public class mainScript : MonoBehaviour {
 	public Text quantumZeroLabel;
 	public Text quantumOneLabel;
 	public Text qubitLabel;
-
-	public Text FPSCounter;
-	public Text millisecondsSinceLastFrame;
 
 	public Text densityMatrix_0_0;
 	public Text densityMatrix_0_1;
@@ -45,18 +57,29 @@ public class mainScript : MonoBehaviour {
 
 	public bool isQuantumBitSelected;
 
+	public Text bitSwitcher;
+
 	// Use this for initialization
 	void Start () {
 		quantumBit = new Qubit(45,0);
+		classicalBit = new Bit(true);
         thetaInputField.characterLimit = 6;
 		phiInputField.characterLimit = 6;
 
 		enableQuantumBit ();
-		setBitsValues (true, 45, 0);
 		setPointers ();
 
+		setListenersForSliders();
+	}
+
+	private void setListenersForSliders(){
 		thetaSlider.onValueChanged.AddListener(delegate {thetaSliderChanged(); });
 		phiSlider.onValueChanged.AddListener(delegate {phiSliderChanged(); });
+	}
+
+	private void disableListenersForSliders(){
+		thetaSlider.onValueChanged.RemoveAllListeners();
+		phiSlider.onValueChanged.RemoveAllListeners();
 	}
 
 	void thetaSliderChanged(){
@@ -64,26 +87,28 @@ public class mainScript : MonoBehaviour {
 			if (quantumBit.thetaAngle != thetaSlider.value) { 
 				quantumBit.thetaAngle = thetaSlider.value;
 			}
-		} else {
-			Debug.Log (thetaSlider.value);
 		}
 
 		setPointers ();
 	}
 
 	void phiSliderChanged(){
-		if (isQuantumBitSelected) {
-			if (quantumBit.phiAngle != phiSlider.value) {
+		if (isQuantumBitSelected) 
+			if (quantumBit.phiAngle != phiSlider.value) 
 				quantumBit.phiAngle = phiSlider.value;
-			}
-		}
-
+			
 		setPointers ();
 	}
 
 	public void setPointers(){
-		if (isQuantumBitSelected) {
-			this.thetaInputField.text = this.quantumBit.thetaAngle.ToString ();
+		if (isQuantumBitSelected)
+			setQuantumPointers();
+		else
+			setClassicalPointers();
+	}
+
+	private void setQuantumPointers(){
+		this.thetaInputField.text = this.quantumBit.thetaAngle.ToString ();
 			this.phiInputField.text = this.quantumBit.phiAngle.ToString ();
 
 			thetaSlider.value = (float)this.quantumBit.thetaAngle;
@@ -105,29 +130,22 @@ public class mainScript : MonoBehaviour {
 			this.setTransparencyOfQuantumProbabilityLabels(quantumBit);
 
 			qubitLabel.text = this.quantumBit.print_bloch_vector();
-		} else if (bitValue) { 
-			this.thetaInputField.text = "1";
-			this.phiInputField.text = "";
-
-			thetaSlider.value = 1;
-			phiSlider.value = 0;
-
-			classicalBitArrow.transform.rotation = Quaternion.Euler(-90, 0, 0);
-		} else {
-			this.thetaInputField.text = "0";
-			this.thetaInputField.text = "";
-
-			thetaSlider.value = 0;
-			phiSlider.value = 0;
-
-			classicalBitArrow.transform.rotation = Quaternion.Euler(90, 0, 0);
-		}		
 	}
+	private void setClassicalPointers(){
+		if(classicalBit.getState()=="1")
+				thetaSlider.value = 0;
+			else
+				thetaSlider.value = 180;
 
-	public void setBitsValues(bool bitValue, float thetaValue, float phiValue){
-		this.bitValue = bitValue;
+			propabilityZero.text = this.classicalBit.getZeroProbability();
+			propabilityOne.text = this.classicalBit.getOneProbability();		
+
+			thetaInputField.text = thetaSlider.value.ToString();
+			phiSlider.value = 0;
+			phiInputField.text = phiSlider.value.ToString();
+
+			classicalBitArrow.transform.rotation = Quaternion.Euler((float)this.thetaSlider.value-90, (float)this.phiSlider.value, 0);
 	}
-
 	public void enableClassicalBit(){
 		disableQuantumBit ();
 
@@ -137,11 +155,27 @@ public class mainScript : MonoBehaviour {
 		classicalZero.SetActive (true);
 		classicalBitArrow.SetActive(true);
 
-		thetaSlider.maxValue = 1;
+		theta30DegreeButton.SetActive(false);
+		theta60DegreeButton.SetActive(false);
+		theta90DegreeButton.SetActive(false);
+		theta120DegreeButton.SetActive(false);
+		theta150DegreeButton.SetActive(false);
+
+		phi0DegreeButton.SetActive(false);
+		phi60DegreeButton.SetActive(false);
+		phi120DegreeButton.SetActive(false);
+		phi180DegreeButton.SetActive(false);
+		phi240DegreeButton.SetActive(false);
+		phi300DegreeButton.SetActive(false);
+		phi360DegreeButton.SetActive(false);
+
+		thetaSlider.interactable = false;
 		phiSlider.interactable = false;
 		thetaSlider.wholeNumbers = true;
 
-		setPointers ();
+		densityMatrix.SetActive(false);
+		bitSwitcher.text = Constants.message.switchBitToQuantum;
+		setTransparencyOfClassicalProbability();
 	}
 
 	public void enableQuantumBit(){
@@ -156,11 +190,29 @@ public class mainScript : MonoBehaviour {
 		quantumBitZero.SetActive(true);
 		quantumBitArrow.SetActive(true);
 
-		thetaSlider.maxValue = 180;
+		theta30DegreeButton.SetActive(true);
+		theta60DegreeButton.SetActive(true);
+		theta90DegreeButton.SetActive(true);
+		theta120DegreeButton.SetActive(true);
+		theta150DegreeButton.SetActive(true);
+
+		phi0DegreeButton.SetActive(true);
+		phi60DegreeButton.SetActive(true);
+		phi120DegreeButton.SetActive(true);
+		phi180DegreeButton.SetActive(true);
+		phi240DegreeButton.SetActive(true);
+		phi300DegreeButton.SetActive(true);
+		phi360DegreeButton.SetActive(true);
+
+		thetaSlider.interactable = true;
+
 		phiSlider.interactable = true;
 		phiSlider.wholeNumbers = true;
 
-		setPointers ();
+		densityMatrix.SetActive(true);
+
+		bitSwitcher.text = Constants.message.switchBitToClassic;
+		this.setTransparencyOfQuantumProbabilityLabels(quantumBit);
 	}
 
 	public void disableClassicalBit(){
@@ -178,6 +230,8 @@ public class mainScript : MonoBehaviour {
 		quantumBitZero.SetActive(false);
 		quantumBitArrow.SetActive(false);
 
+		qubitLabel.text = String.Empty;
+
 		phiInputField.interactable = false;
 		phiInputField.text = "";
 	}
@@ -190,7 +244,14 @@ public class mainScript : MonoBehaviour {
 	}
 
 	public void set_theta_angle(double sended_theta_angle){
-        this.quantumBit.thetaAngle = sended_theta_angle;
+		if(isQuantumBitSelected)
+        	this.quantumBit.thetaAngle = sended_theta_angle;
+		else{
+			if(sended_theta_angle==0)
+				this.classicalBit.setOne();
+			else
+				this.classicalBit.setZero();
+		}
         setPointers();
     }
 
@@ -205,27 +266,43 @@ public class mainScript : MonoBehaviour {
 			ExitText.text = Constants.message.exit_question;
 		}
 	}
-
 	public void measureTheQubit()
 	{	
-		//Debug.Log("Probability |0>: " + quantumBit[0]);
+		if(isQuantumBitSelected){
+			int zeroValue = Convert.ToInt32(Math.Round(quantumBit[0] * 10000));
+			int measurementValue = Convert.ToInt32(Random.Range(1, 10000));
 
-		int zeroValue = Convert.ToInt32(Math.Round(quantumBit[0] * 10000));
-		int measurementValue = Convert.ToInt32(Random.Range(1, 10000));
+			quantumBit.phiAngle = 0;
 
-		//Debug.Log("Measurement value: " + measurementValue);
+			if(measurementValue >= zeroValue){
+				quantumBit.thetaAngle = 180;
+			}		
+			else{
+				quantumBit.thetaAngle = 0;
+			}
+		}
+		else
+			classicalBit.NotGate();
 
-		quantumBit.phiAngle = 0;
+		setPointers();
+	}
 
-		if(measurementValue >= zeroValue){
-			quantumBit.thetaAngle = 180;
-			Debug.Log("One!");
-		}		
-		else{
-			quantumBit.thetaAngle = 0;
-			Debug.Log("Zero!");
+	public void switchBit(){
+		disableListenersForSliders();
+		if(isQuantumBitSelected)
+		{
+			isQuantumBitSelected = false;
+			disableQuantumBit();
+			enableClassicalBit();
+		}
+		else
+		{
+			isQuantumBitSelected = true;
+			disableClassicalBit();
+			enableQuantumBit();
 		}
 		setPointers();
+		setListenersForSliders();
 	}
 
 	private void setTransparencyOfQuantumProbabilityLabels(Qubit quantumBit)
@@ -235,5 +312,10 @@ public class mainScript : MonoBehaviour {
 
 		propabilityZero.color = new Color32(255,255,255,zeroTransparency);
 		propabilityOne.color = new Color32(255,255,255,oneTransparency);
+	}
+
+	private void setTransparencyOfClassicalProbability(){
+		propabilityZero.color = new Color32(255,255,255,255);
+		propabilityOne.color = new Color32(255,255,255,255);
 	}
 }
