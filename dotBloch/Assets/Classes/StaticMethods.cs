@@ -7,7 +7,7 @@ using System.Runtime.InteropServices;
 public class StaticMethods
 {
     [DllImport("__Internal")]
-    private static extern void copyValueToClipboard(string value);
+    private static extern void copyValueToWebGLClipboard(string value);
 
     public static double degree_to_radian(double angle, int? decimalSpaces = null){
         return Math.PI * angle / 180.0;
@@ -23,7 +23,7 @@ public class StaticMethods
         editor.Copy();
         RDG.Vibration.Vibrate(50);
         #if !UNITY_EDITOR && UNITY_WEBGL
-            copyValueToClipboard(toCopy);
+            copyValueToWebGLClipboard(toCopy);
         #endif
     }
 

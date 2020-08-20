@@ -1,6 +1,6 @@
 mergeInto(LibraryManager.library, {
 
-    copyValueToClipboard: function(value) {
+    copyValueToWebGLClipboard: function(value) {
 
         var tempTextarea = document.createElement("textarea");
         document.body.appendChild(tempTextarea);
