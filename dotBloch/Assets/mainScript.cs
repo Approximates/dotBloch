@@ -33,6 +33,7 @@ public class mainScript : MonoBehaviour {
 	public GameObject phi300DegreeButton;
 	public GameObject phi360DegreeButton;
 	public GameObject ExitPanel;
+	public GameObject SettingsPanel;
 
 	public GameObject densityMatrix;
 	public Text ExitText;
@@ -239,7 +240,10 @@ public class mainScript : MonoBehaviour {
 	{
 		if (Input.GetKey(KeyCode.Escape))
 		{
-			open_exit_panel();
+			if (SettingsPanel.activeSelf == true)
+				close_settings_panel();
+			else
+				open_exit_panel();
 		}
 	}
 
@@ -262,10 +266,16 @@ public class mainScript : MonoBehaviour {
 
 	private void open_exit_panel(){
 		if (Application.platform != RuntimePlatform.WebGLPlayer){
-			ExitPanel.SetActive(true);
-			ExitText.text = Constants.message.exit_question;
+				ExitPanel.SetActive(true);
+				ExitText.text = Constants.message.exit_question;
 		}
 	}
+
+	private void close_settings_panel()
+	{
+		SettingsPanel.SetActive(false);
+	}
+
 	public void measureTheQubit()
 	{	
 		if(isQuantumBitSelected){
